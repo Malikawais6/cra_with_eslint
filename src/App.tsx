@@ -1,7 +1,7 @@
 import React from "react";
-
-const App: React.FC = props => {
-  return <div className="App" />;
+import Text from "./components/Text/Text"
+const App: React.FC = () => {
+  return <Text size="large">Test 1312 </Text>;
 };
 
 export default App;
