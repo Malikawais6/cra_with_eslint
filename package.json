@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@testing-library/react": "^9.1.4",
+    "@types/antd": "^1.0.0",
+    "@types/storybook__react": "^4.0.2",
+    "antd": "^3.23.2",
+    "rambda": "^3.0.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
