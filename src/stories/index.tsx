@@ -4,7 +4,7 @@ import { storiesOf } from "@storybook/react";
 // import { action } from "@storybook/addon-actions";
 // import { linkTo } from "@storybook/addon-links";
 
-import Text from "../components/Text/Text";
+import Text from "../components/Icon/Icon";
 
 storiesOf("Text", module).add("Storybook", () => <Text />);
 

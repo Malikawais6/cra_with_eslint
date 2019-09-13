@@ -1,7 +1,9 @@
 import React from "react";
-import Text from "./components/Text/Text"
+import Icon from "./components/Icon/Icon"
 const App: React.FC = () => {
-  return <Text size="large">Test 1312 </Text>;
+  return  <Icon icon={{ type: "star" }} tooltip={{
+    title:()=><span>prompt text</span>
+}} />;
 };
 
 export default App;
