@@ -28,8 +28,6 @@ export interface IconProps {
 export type RenderFunction = () => React.ReactNode;
 export interface TooltipProps {
   placement?: TooltipPlacement;
-  title: string|RenderFunction;
+  title: string | RenderFunction;
   className?: string;
-  
-  
 }
