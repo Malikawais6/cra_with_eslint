@@ -1,17 +1,17 @@
 import React from "react";
-import { Icon as IconComponent, Tooltip as TooltipComponent } from "antd";
+import { Icon as IconAntd, Tooltip as TooltipAntd } from "antd";
 import "antd/dist/antd.css";
 import { IconStyles } from "./Icon.style";
 import { Props } from "./Icon.type";
-const Icon: React.SFC<Props> = (props: Props): any => {
+const Icon = (props: Props) => {
   return (
     <IconStyles>
       {props.tooltip ? (
-        <TooltipComponent {...props.tooltip}>
-          <IconComponent {...props.icon}></IconComponent>
-        </TooltipComponent>
+        <TooltipAntd {...props.tooltip}>
+          <IconAntd {...props.icon}></IconAntd>
+        </TooltipAntd>
       ) : (
-        <IconComponent {...props.icon}></IconComponent>
+        <IconAntd {...props.icon}></IconAntd>
       )}
     </IconStyles>
   );
