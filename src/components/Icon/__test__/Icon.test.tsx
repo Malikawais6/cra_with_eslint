@@ -15,16 +15,16 @@ function renderField() {
 
 it("Make sure icon is working correctly: ", async () => {
   const { container } = render(renderField());
-  const getTooltipElement = () => container.getElementsByClassName("anticon");
-  expect(getTooltipElement().length).not.toBe(0);
+  const getIconElement = () => container.getElementsByClassName("anticon");
+  expect(getIconElement().length).not.toBe(0);
 });
 
 it("Make sure tooltip is working correctly: ", async () => {
   const { container } = render(renderField());
   const barRect = container.querySelector(".antd-tooltip-open") || window;
 
-  const getTooltipElement = () => container.getElementsByClassName("anticon");
+  const getIconElement = () => container.getElementsByClassName("anticon");
 
   fireEvent.mouseOver(barRect);
-  expect(getTooltipElement().length).not.toBe(0);
+  expect(getIconElement().length).not.toBe(0);
 });
