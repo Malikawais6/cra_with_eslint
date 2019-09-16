@@ -60,3 +60,17 @@ export const ArrowUp = () => (
     </g>
   </svg>
 );
+
+export const DeleteIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="9"
+    height="18"
+    viewBox="0 0 9 18"
+  >
+    <g fill="none" fill-rule="evenodd">
+      <path fill="#00C972" d="M9 6.48L4.68.72.36 6.48" />
+      <path stroke="#00C972" stroke-width="2.88" d="M4.68 17.362V3.6" />
+    </g>
+  </svg>
+);

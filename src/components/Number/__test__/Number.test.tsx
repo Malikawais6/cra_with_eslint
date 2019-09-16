@@ -1,12 +1,12 @@
 import * as React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import Number from "../Number";
 
 function renderField() {
   return (
     <Number
       content="$12221455254"
-      size="larger"
+      size="x-large"
       threshold={20}
       thresholdStatus="top"
     />

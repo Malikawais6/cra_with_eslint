@@ -2,7 +2,7 @@ import React from "react";
 import { Alert, Icon } from "antd";
 import "antd/dist/antd.css";
 import { AlertProps } from "antd/lib/alert/";
-
+import {} from "../../assets/"
 import { AlertStyled } from "./Alert.style";
 
 export const AlertComponent = (props: AlertProps) => {

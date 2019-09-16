@@ -8,9 +8,9 @@ function renderField() {
 }
 
 it("Make sure modal renders properly", () => {
-  const { container } = render(renderField());
+  const { getByTestId } = render(renderField());
 
-  const ModalElement = container.getElementsByClassName("ant-modal-mask");
+  const ModalElement = getByTestId("modal-wrapper");
 
-  expect(ModalElement.length).not.toBeLessThan(1);
+  expect(ModalElement.className.length).not.toBeLessThan(1);
 });

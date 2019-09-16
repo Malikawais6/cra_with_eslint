@@ -6,11 +6,12 @@ import { ProgressProps } from "antd/lib/progress/";
 import { ProgressStyled } from "./ProgressBar.style";
 
 export const ProgressBar = (props: ProgressProps) => {
+  const barColor = [];
   return (
     <ProgressStyled>
       <Progress
         percent={props.percent}
-        status={props.status ? props.status : "normal"}
+        strokeColor={props.strokeColor}
         showInfo={false}
       ></Progress>
     </ProgressStyled>

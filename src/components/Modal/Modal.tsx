@@ -7,7 +7,7 @@ import { ModalStyled } from "./Modal.style";
 
 export const ModalComponent = (props: Props) => {
   return (
-    <ModalStyled>
+    <ModalStyled data-testid="modal-wrapper">
       <AntdModal
         title={props.title}
         visible={props.visible}

@@ -8,9 +8,9 @@ storiesOf("Progress Bar", module).add("Progress Bar Default", () => (
 ));
 
 storiesOf("Progress Bar", module).add("Progress Bar Success", () => (
-  <ProgressBar percent={100} status="success" />
+  <ProgressBar percent={100} strokeColor="#00c972" />
 ));
 
 storiesOf("Progress Bar", module).add("Progress Bar Failure", () => (
-  <ProgressBar percent={30} status="exception" />
+  <ProgressBar percent={30} strokeColor="#ce4c00" />
 ));

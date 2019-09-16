@@ -3,13 +3,10 @@ export type Props = {
   threshold?: string | number;
   thresholdStatus?: "top"|"down"|"normal";
   size?:
-    | "smaller"
-    | "xx-small"
     | "x-small"
     | "small"
     | "medium"
-    | "xx-large"
     | "x-large"
-    | "larger";
+    | "large";
   showAmount?: string;
 };
