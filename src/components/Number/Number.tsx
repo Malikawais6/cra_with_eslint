@@ -19,9 +19,9 @@ const Number = (props: Props) => {
               <Icon
                 icon={{
                   component:()=>
-                    props.thresholdStatus === "top" ||
+                    props.thresholdStatus === "top" ?<ArrowUp />:
                     props.thresholdStatus === "normal"
-                      ? <ArrowUp />
+                      ? <ArrowUp isGray={true} />
                       : <ArrowDown />,
                   style: {
                    fontSize: "12px"
