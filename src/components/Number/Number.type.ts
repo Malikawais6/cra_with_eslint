@@ -1,9 +1,7 @@
-import React from "react";
 export type Props = {
   content?: string;
   threshold?: string | number;
-  showTopArrow?: boolean;
-  showDownArrow?: boolean;
+  thresholdStatus?: "top"|"down"|"normal";
   size?:
     | "smaller"
     | "xx-small"
@@ -13,6 +11,5 @@ export type Props = {
     | "xx-large"
     | "x-large"
     | "larger";
-  showIcon?: React.ReactNode;
   showAmount?: string;
 };

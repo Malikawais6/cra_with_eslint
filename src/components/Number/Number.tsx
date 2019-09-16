@@ -7,32 +7,27 @@ const Number = (props: Props) => {
     <NumberStyles {...props}>
       <h1 className="heading">
         {props.content || ""}
-        {props.showIcon ? (
-          <span>
-            <Icon
-              icon={{
-                type: "info-circle",
-                theme: "filled",
-                style: { fontSize: "12px", color: "grey" }
-              }}
-            ></Icon>
-          </span>
-        ) : null}
+
         {props.showAmount ? (
           <div className="amount">{props.showAmount}</div>
         ) : null}
         {props.threshold ? (
           <span>
-            {props.showTopArrow || props.showDownArrow ? (
+            {props.thresholdStatus || props.thresholdStatus===0 ? (
               <Icon
                 icon={{
-                  type: props.showTopArrow ? "arrow-up" : "arrow-down",
+                  type:
+                    props.thresholdStatus === "top" ||
+                    props.thresholdStatus === "normal"
+                      ? "arrow-up"
+                      : "arrow-down",
                   style: {
-                    color: props.showTopArrow
-                      ? "green"
-                      : props.showDownArrow
-                      ? "red"
-                      : "grey",
+                    color:
+                      props.thresholdStatus === "top"
+                        ? "green"
+                        : props.thresholdStatus === "down"
+                        ? "red"
+                        : "grey",
                     fontSize: "12px"
                   }
                 }}

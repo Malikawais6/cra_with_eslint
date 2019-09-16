@@ -5,17 +5,22 @@ export const NumberStyles = styled.h1<Props>`
   .heading {
     font-size: ${props => props.size};
     display: flex;
+    margin: auto 78% auto auto;
   }
   span {
-    margin: ${props =>
-      props.showIcon && !props.threshold ? "4px 0 0 2%" : "2% 0 0 2%"};
+    margin: 8% auto auto auto;
     display: flex;
     font-size: 12px;
     color: ${props =>
-      props.showTopArrow ? "green" : props.showDownArrow ? "red" : "grey"};
+      props.thresholdStatus === "top"
+        ? "green"
+        : props.thresholdStatus === "down"
+        ? "red"
+        : "grey"};
   }
   .amount {
-    margin: auto;
+
+    margin:8% auto auto 100%;
     color: grey;
     font-size: small;
   }

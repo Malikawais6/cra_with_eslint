@@ -19,6 +19,7 @@ storiesOf("Card", module).add(
       }
       width="30vw"
       height="50vh"
+      showInfo={true}
     >
       Content
     </Card>
