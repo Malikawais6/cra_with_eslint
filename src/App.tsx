@@ -8,6 +8,7 @@ import {
   HorizontalGridLines,
   LineSeries
 } from "react-vis";
+import '../node_modules/react-vis/dist/style.css';
 const App = () => {
   return (
     <Card
