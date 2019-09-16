@@ -2,6 +2,7 @@ import React from "react";
 import { NumberStyles } from "./Number.style";
 import { Props } from "./Number.type";
 import Icon from "../Icon/Icon";
+import {ArrowUp,ArrowDown} from "../../assets/"
 const Number = (props: Props) => {
   return (
     <NumberStyles {...props}>
@@ -13,22 +14,17 @@ const Number = (props: Props) => {
         ) : null}
         {props.threshold ? (
           <span>
-            {props.thresholdStatus || props.thresholdStatus===0 ? (
+            {props.thresholdStatus || props.thresholdStatus===0
+             ? (
               <Icon
                 icon={{
-                  type:
+                  component:()=>
                     props.thresholdStatus === "top" ||
                     props.thresholdStatus === "normal"
-                      ? "arrow-up"
-                      : "arrow-down",
+                      ? <ArrowUp />
+                      : <ArrowDown />,
                   style: {
-                    color:
-                      props.thresholdStatus === "top"
-                        ? "green"
-                        : props.thresholdStatus === "down"
-                        ? "red"
-                        : "grey",
-                    fontSize: "12px"
+                   fontSize: "12px"
                   }
                 }}
               />

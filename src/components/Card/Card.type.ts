@@ -4,4 +4,5 @@ export interface Props extends CardProps {
   height?:string,
   width?:string,
   showInfo?:boolean,
+  threshold?:number,
 }

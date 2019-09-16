@@ -3,10 +3,10 @@ import { storiesOf } from "@storybook/react";
 import Number from "./Number";
 
 storiesOf("Number", module).add("Default", () => (
-  <Number content="$12221455254" size="larger"  />
+  <Number content="$12221455254" size="large"  />
 ));
 storiesOf("Number", module).add("Content with down arrow  and threshold", () => (
-  <Number content="$12221455254" size="larger" threshold={20}
+  <Number content="$12221455254" size="large" threshold={20}
   thresholdStatus="down" />
 ));
 storiesOf("Number", module).add(
@@ -14,7 +14,7 @@ storiesOf("Number", module).add(
   () => (
     <Number
       content="$12221455254"
-      size="larger"
+      size="x-large"
       threshold={20}
       thresholdStatus="top"
     />
@@ -26,7 +26,7 @@ storiesOf("Number", module).add(
   () => (
     <Number
       content="$12221455254"
-      size="larger"
+      size="x-large"
       threshold={12}
       thresholdStatus="normal"
     />
@@ -39,7 +39,7 @@ storiesOf("Number", module).add(
   () => (
     <Number
       content="$12221455254"
-      size="larger"
+      size="large"
       showAmount="$153"
     />
   ),

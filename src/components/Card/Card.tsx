@@ -3,22 +3,25 @@ import { Card as CardAntd } from "antd";
 import { CardStyles } from "./Card.style";
 import { Props } from "./Card.type";
 import Icon from "../Icon/Icon";
-
+import { InfoIcon } from "../../assets/";
 const Card = (props: Props) => {
   return (
     <CardStyles>
       <CardAntd
+        className="card"
         title={
           props.showInfo ? (
             <span className="title">
               {props.title}
+              <span className="icon">
               <Icon
-                icon={{ type: "info-circle",style:{color:"grey"}, theme:"filled" }}
-                
+                icon={{ component: () => <InfoIcon /> }}
                 tooltip={{
                   title: () => <span>prompt text</span>
                 }}
               />
+              </span>
+              <span className="threshold">{props.threshold}%</span>
             </span>
           ) : (
             <span>{props.title}</span>
