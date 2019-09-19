@@ -1,10 +1,10 @@
 import * as React from "react";
 import { render } from "@testing-library/react";
 
-import { AlertComponent } from "../Alert";
+import { Alert } from "../Alert";
 
 function renderField() {
-  return <AlertComponent message="test" />;
+  return <Alert message="test" />;
 }
 
 it("Make sure Alert renders properly", () => {

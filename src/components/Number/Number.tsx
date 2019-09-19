@@ -6,7 +6,7 @@ import {ArrowUp,ArrowDown} from "../../assets/"
 const Number = (props: Props) => {
   return (
     <NumberStyles {...props}>
-      <h1 className="heading">
+      <span className="heading">
         {props.content || ""}
 
         {props.showAmount ? (
@@ -32,7 +32,7 @@ const Number = (props: Props) => {
             {props.threshold}%
           </span>
         ) : null}
-      </h1>
+      </span>
     </NumberStyles>
   );
 };
