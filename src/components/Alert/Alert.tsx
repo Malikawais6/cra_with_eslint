@@ -1,15 +1,13 @@
 import React from "react";
-import { Alert, Icon } from "antd";
+import { Alert as AntdAlert } from "antd";
 import "antd/dist/antd.css";
 import { AlertProps } from "antd/lib/alert/";
-import {} from "../../assets/"
 import { AlertStyled } from "./Alert.style";
 
-export const AlertComponent = (props: AlertProps) => {
-  const icon = <Icon style={{ color: "#a7a7bb" }} type="delete" />;
+export const Alert = (props: AlertProps) => {
   return (
     <AlertStyled>
-      <Alert icon={icon} message={props.message} type="info" showIcon />
+      <AntdAlert {...props} />
     </AlertStyled>
   );
 };

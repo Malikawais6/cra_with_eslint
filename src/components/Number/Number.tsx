@@ -21,7 +21,7 @@ const Number = (props: Props) => {
                   component:()=>
                     props.thresholdStatus === "top" ?<ArrowUp />:
                     props.thresholdStatus === "normal"
-                      ? <ArrowUp isGray={true} />
+                      ? <ArrowUp isGrey={true} />
                       : <ArrowDown />,
                   style: {
                    fontSize: "12px"

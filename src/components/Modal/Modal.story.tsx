@@ -14,7 +14,6 @@ storiesOf("Modal", module).add(
   () => {
     return (
       <ModalComponent
-        title="Modal without footer"
         visible={true}
         footer={false}
       >

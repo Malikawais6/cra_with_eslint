@@ -47,7 +47,7 @@ export const ArrowDown = () => (
   </svg>
 );
 
-export const ArrowUp = (props:any) => (
+export const ArrowUp = (props: any) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="9"
@@ -55,8 +55,15 @@ export const ArrowUp = (props:any) => (
     viewBox="0 0 9 18"
   >
     <g fill="none" fill-rule="evenodd">
-      <path fill={props.isGray?"#a7a7bb":"#00C972"} d="M9 6.48L4.68.72.36 6.48" />
-      <path stroke={props.isGray?"#a7a7bb":"#00C972"} stroke-width="2.88" d="M4.68 17.362V3.6" />
+      <path
+        fill={props.isGrey ? "#a7a7bb" : "#00C972"}
+        d="M9 6.48L4.68.72.36 6.48"
+      />
+      <path
+        stroke={props.isGrey ? "#a7a7bb" : "#00C972"}
+        stroke-width="2.88"
+        d="M4.68 17.362V3.6"
+      />
     </g>
   </svg>
 );
@@ -71,6 +78,86 @@ export const DeleteIcon = () => (
     <g fill="none" fill-rule="evenodd">
       <path fill="#00C972" d="M9 6.48L4.68.72.36 6.48" />
       <path stroke="#00C972" stroke-width="2.88" d="M4.68 17.362V3.6" />
+    </g>
+  </svg>
+);
+
+export const AddIconGrey = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="22"
+    height="22"
+    viewBox="0 0 22 22"
+  >
+    <g fill="none" fill-rule="evenodd">
+      <circle cx="11" cy="11" r="11" fill="#F7F7F9" />
+      <text
+        fill="#56556C"
+        font-family="Visuelt-Medium, Visuelt"
+        font-size="13"
+        font-weight="400"
+      >
+        <tspan x="8" y="16">
+          +
+        </tspan>
+      </text>
+    </g>
+  </svg>
+);
+
+export const AddIconBlue = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <g fill="none" fill-rule="evenodd">
+      <circle cx="11" cy="11" r="11" fill="#d4f9ff" />
+      <text
+        fill="#40d1e7"
+        font-family="Visuelt-Medium, Visuelt"
+        font-size="13"
+        font-weight="400"
+      >
+        <tspan x="8" y="16">
+          +
+        </tspan>
+      </text>
+    </g>
+  </svg>
+);
+
+export const CaretDownGray = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="none"
+      fill-rule="evenodd"
+      stroke="#A7A7BB"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      d="M13.314 5l-5.657 5.657L2 5"
+    />
+  </svg>
+);
+
+export const MoreGray = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="4"
+    height="22"
+    viewBox="0 0 4 22"
+  >
+    <g fill="#A7A7BB" fill-rule="nonzero" transform="rotate(90 2 2)">
+      <circle cx="11" cy="2" r="2" />
+      <circle cx="2" cy="2" r="2" />
+      <circle cx="20" cy="2" r="2" />
     </g>
   </svg>
 );
