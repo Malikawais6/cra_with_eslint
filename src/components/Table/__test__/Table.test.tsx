@@ -233,13 +233,26 @@ const TableComponent = () => {
 function renderField() {
   return <TableComponent />;
 }
-it("Make sure Table is working correctly: ", async () => {
-  const { container,queryByText } = render(renderField());
+
+it("Make sure table header working correctly: ", async () => {
+  const { container, queryByText } = render(renderField());
   const header = container.getElementsByClassName("ant-table-thead");
   expect(header.length).toBe(1);
+});
+
+it("Make sure table body working correctly: ", async () => {
+  const { container } = render(renderField());
   const body = container.getElementsByClassName("ant-table-tbody");
   expect(body.length).toBeGreaterThan(0);
+});
+
+it("Make sure table has rows : ", async () => {
+  const { container } = render(renderField());
   const rows = container.getElementsByClassName("ant-table-row");
   expect(rows.length).toBeGreaterThan(0);
-  expect(queryByText("Revenue")).toBeTruthy()
+});
+
+it("Make sure table has text : ", async () => {
+  const { queryByText } = render(renderField());
+  expect(queryByText("Revenue")).toBeTruthy();
 });
