@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render } from "@testing-library/react";
+import { render, fireEvent, getAllByText } from "@testing-library/react";
 import { Table } from "../Table";
 import { TableContext } from "../../../context";
 import { reducer } from "../../../reducers/table";
@@ -230,29 +230,41 @@ const TableComponent = () => {
     </TableContext.Provider>
   );
 };
-function renderField() {
-  return <TableComponent />;
-}
 
 it("Make sure table header working correctly: ", async () => {
-  const { container, queryByText } = render(renderField());
+  const { container, queryByText } = render(<TableComponent />);
   const header = container.getElementsByClassName("ant-table-thead");
   expect(header.length).toBe(1);
-});
-
-it("Make sure table body working correctly: ", async () => {
-  const { container } = render(renderField());
   const body = container.getElementsByClassName("ant-table-tbody");
   expect(body.length).toBeGreaterThan(0);
-});
-
-it("Make sure table has rows : ", async () => {
-  const { container } = render(renderField());
   const rows = container.getElementsByClassName("ant-table-row");
   expect(rows.length).toBeGreaterThan(0);
-});
-
-it("Make sure table has text : ", async () => {
-  const { queryByText } = render(renderField());
   expect(queryByText("Revenue")).toBeTruthy();
 });
+
+it("Make sure add popup is working correctly: ", async () => {
+  const { container, getByText } = render(<TableComponent />);
+  fireEvent.click(getByText("Add Goal"));
+  const panel = container.getElementsByClassName("panel");
+  expect(panel.length).toBe(1);
+});
+
+it("Make sure value change in dropdown is working correctly: ", async () => {
+  const { getByText, getByTitle } = render(<TableComponent />);
+  fireEvent.click(getByText("Add Goal"));
+  fireEvent.click(getByText("Select Item"));
+  fireEvent.click(getByText("Lucy"));
+  expect(getByTitle("Lucy")).toBeTruthy();
+});
+
+it("Make sure value change in dropdown and goal is added : ", async () => {
+  const { getByText, getAllByText, container } = render(<TableComponent />);
+  fireEvent.click(getByText("Add Goal"));
+  fireEvent.click(getByText("Select Item"));
+  fireEvent.click(getByText("Lucy"));
+  fireEvent.click(getAllByText("Add Goal")[1]);
+  const panel = container.getElementsByClassName("panel");
+  expect(panel.length).toBe(0);
+  return
+});
+ 

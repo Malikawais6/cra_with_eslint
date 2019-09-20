@@ -161,3 +161,22 @@ export const MoreGray = () => (
     </g>
   </svg>
 );
+
+export const CaretDownBlue = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+  >
+    <path
+      fill="none"
+      fill-rule="evenodd"
+      stroke="#40D1E7"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+      d="M8 5L6 7 4 5"
+    />
+  </svg>
+);

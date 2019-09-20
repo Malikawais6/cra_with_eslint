@@ -1,4 +1,4 @@
-import React, { useContext,} from "react";
+import React, { useContext } from "react";
 import { GoalButtonStyle } from "./Table.style";
 import { MoreGray } from "../../assets";
 import Icon from "../Icon/Icon";
@@ -8,12 +8,13 @@ import { Menu, Dropdown } from "antd";
 export const DeletePanel = (props: any) => {
   const { onDelete } = useContext(TableContext);
   const menu = (
-    <Menu onClick={()=>onDelete(props)}>
+    <Menu onClick={() => onDelete(props)}>
       <Menu.Item>
         <GoalButtonStyle>
           <span>
             <Icon
               icon={{
+                style: { color: "#a7a7bb" },
                 type: "delete"
               }}
             />
@@ -29,7 +30,7 @@ export const DeletePanel = (props: any) => {
   return (
     <GoalButtonStyle>
       <Dropdown overlay={menu} placement="bottomRight">
-        <a href={undefined}>
+        <a>
           <Icon
             icon={{
               component: () => <MoreGray />,

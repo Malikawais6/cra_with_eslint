@@ -1,4 +1,7 @@
-import { UPDATE_DATA, SAVE_DATA, DELETE_DATA } from "../constants";
+const SAVE_DATA = "SAVE_DATA";
+const UPDATE_DATA = "UPDATE_DATA";
+const DELETE_DATA = "DELETE_DATA";
+
 export const reducer = (state: any, action: any) => {
   switch (action.type) {
     case SAVE_DATA:

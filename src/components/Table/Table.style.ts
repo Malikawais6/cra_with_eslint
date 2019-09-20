@@ -98,6 +98,8 @@ export const TableStyles = styled.div`
       0 8px 18px -10px rgba(0, 0, 0, 0.16);
     border: solid 1px #dbdbe6;
     background-color: #ffffff;
+    width: 25vw;
+    padding: 5%;
   }
   
   .dropdown {
@@ -165,9 +167,6 @@ export const GoalButtonStyle = styled.span`
     letter-spacing: normal;
     color: #40d1e7;
   }
- 
- 
- 
 `;
 
 export default EditableWrapper;
