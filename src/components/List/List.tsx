@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { List as AntdList, Switch, Menu, Dropdown, Icon } from "antd";
+import { List as AntdList, Switch, Menu, Dropdown, Icon, Row, Col } from "antd";
 import "antd/dist/antd.css";
 import { IconStyles } from "./List.style";
 import { CaretDownBlue } from "../../assets";
@@ -38,7 +38,7 @@ const List = () => {
         className="list"
         renderItem={(item: any, index: number) => (
           <AntdList.Item>
-            <AntdList.Item.Meta
+            {/* <AntdList.Item.Meta
               title={<span className="title">{item.title}</span>}
             />
             <span className="content">
@@ -51,7 +51,7 @@ const List = () => {
               <span className="dropdown">
                 {" "}
                 <Dropdown overlay={menu(setstate, index)} >
-                  <a className="ant-dropdown-link" href="#">
+                  <a  href="#">
                     {state.index === index ? (
                       <span>
                         {state.value} <Icon component={()=><CaretDownBlue />} />
@@ -64,7 +64,37 @@ const List = () => {
                   </a>
                 </Dropdown>
               </span>
-            </span>
+            </span> */}
+            <Row type="flex">
+              <Col span={12}>
+                <span className="title">{item.title}</span>
+              </Col>
+              <Col span={12} className="content">
+                <Col span={6}></Col>
+                <Col span={3}>Show Graph</Col>
+                <Col span={4}>
+                  <Switch defaultChecked />
+                </Col>
+                <Col span={2}></Col>
+                <Col span={3}>Visibilty</Col>
+                <Col span={5}>
+                  <Dropdown overlay={menu(setstate, index)}>
+                    <a href="#">
+                      {state.index === index ? (
+                        <span>
+                          {state.value}{" "}
+                          <Icon component={() => <CaretDownBlue />} />
+                        </span>
+                      ) : (
+                        <span>
+                          Hover Me <Icon component={() => <CaretDownBlue />} />
+                        </span>
+                      )}
+                    </a>
+                  </Dropdown>
+                </Col>
+              </Col>
+            </Row>
           </AntdList.Item>
         )}
       />

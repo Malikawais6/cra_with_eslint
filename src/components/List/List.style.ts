@@ -6,7 +6,6 @@ export const IconStyles = styled.span`
     font-size: 0;
   }
   .content {
-    display: flex;
     font-family: Visuelt;
     font-size: 13px;
     font-weight: normal;
@@ -15,7 +14,6 @@ export const IconStyles = styled.span`
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
-    margin-right: 15%;
   }
   .show-graph {
     font-family: Visuelt;
@@ -41,8 +39,8 @@ export const IconStyles = styled.span`
     top: 6%;
   }
   .dropdown {
-    margin: 0 0 0 17%;
-    position: absolute;
+    // margin: 0 0 0 17%;
+     position: absolute;
   }
   a {
     font-family: Visuelt;
@@ -72,5 +70,8 @@ export const IconStyles = styled.span`
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
+  }
+  .ant-list-item {
+    display:block;
   }
 `;
