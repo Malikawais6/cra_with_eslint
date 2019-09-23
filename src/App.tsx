@@ -1,39 +1,28 @@
 import React from "react";
+import Number from "./components/Number/Number";
+import "../node_modules/react-vis/dist/style.css";
+import { GraphIcon } from "./assets";
 import Icon from "./components/Icon/Icon";
 import Card from "./components/Card/Card";
-import {
-  XYPlot,
-  XAxis,
-  YAxis,
-  HorizontalGridLines,
-  LineSeries
-} from "react-vis";
-import '../node_modules/react-vis/dist/style.css';
 const App = () => {
   return (
     <Card
-      title="Default size card"
-      extra={
-        <Icon
-          icon={{ type: "star" }}
-          tooltip={{
-            title: () => <span>prompt text</span>
-          }}
-        />
-      }
-      width="30vw"
-      height="50vh"
-    >
-      <XYPlot width={300} height={100}>
-        <HorizontalGridLines />
-        <LineSeries
-          color="red"
-          data={[{ x: 1, y: 10 }, { x: 2, y: 5 }, { x: 3, y: 15 }]}
-        />
-        <XAxis title="X" />
-        <YAxis />
-      </XYPlot>
-    </Card>
+    title="Title"
+    extra={
+      <Icon
+        icon={{ component:()=> <GraphIcon/> }}
+        tooltip={{
+          title: () => <span>prompt text</span>
+        }}
+      />
+    }
+    width="353px"
+    height="342px"
+    showInfo={true}
+    threshold={20}
+  >
+    Content
+  </Card>
   );
 };
 
