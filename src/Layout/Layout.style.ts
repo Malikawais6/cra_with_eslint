@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const HeaderStyles = styled.header`
   .mode-div {
     display: flex;
@@ -9,7 +8,6 @@ export const HeaderStyles = styled.header`
   .logo-div {
     display: flex;
     width: 100%;
-    
   }
   .ant-layout-header {
     width: 100%;
@@ -24,7 +22,6 @@ export const HeaderStyles = styled.header`
     margin: -13px 13px 0 0px;
   }
   .kpi-dashboard {
-  
     font-family: Visuelt;
     font-size: 14px;
     font-weight: 500;
@@ -35,7 +32,7 @@ export const HeaderStyles = styled.header`
     color: #dbdbe6;
   }
   .presentation-icon {
-      display:flex;
+    display: flex;
   }
   .presentation-mode {
     font-family: Visuelt;
@@ -81,6 +78,51 @@ export const SidebarStyles = styled.aside`
     width: 100%;
     height: 100vh;
     background-color: #242338;
+  }
+  .ant-menu.ant-menu-dark .ant-menu-item-selected,
+  .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+    background-color: rgba(216, 216, 216, 0);
+  }
+  .ant-menu-item {
+    font-family: Visuelt;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #ffffff;
+  }
+  .ant-menu-item-selected,
+  .ant-menu-item-active {
+    font-family: Visuelt;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #00d4ea !important;
+    border-radius: 4px;
+    padding: 2%;
+    background-color: #1d1b32 !important;
+  }
+  .ant-menu-item::after {
+    border-right: none !important;
+  }
+  .teams {
+    font-family: Visuelt;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #56556c;
+    margin: 33px 0 0 33px;
+  }
+  .dot{
+   float:right;
   }
 `;
 

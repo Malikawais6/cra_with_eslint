@@ -244,3 +244,14 @@ export const CaretDownGraySmall = () => (
     />
   </svg>
 );
+
+export const DotBlueCircle = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="12"
+    height="12"
+    viewBox="0 0 12 12"
+  >
+    <circle cx="6" cy="6" r="4" fill="#00D4EA" fillRule="evenodd" />
+  </svg>
+);

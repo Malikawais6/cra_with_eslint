@@ -6,9 +6,7 @@ import Icon from "../components/Icon/Icon";
 const Header = (props: any) => {
   const menu = (
     <Menu>
-      <Menu.Item key="a">1st menu item </Menu.Item>
-      <Menu.Item key="b">2nd menu item </Menu.Item>
-      <Menu.Item key="c">3rd menu item </Menu.Item>
+      <Menu.Item key="logout">Logout </Menu.Item>
     </Menu>
   );
   return (
@@ -29,7 +27,7 @@ const Header = (props: any) => {
           <span className="dropdown">
             <Dropdown overlay={menu}>
               <a className="ant-dropdown-link" href="#">
-                Hover me 123213{" "}
+                Aron Alexander{" "}
                 <Icon icon={{ component: () => <CaretDownGraySmall /> }} />
               </a>
             </Dropdown>
