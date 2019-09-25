@@ -1,7 +1,16 @@
-import React, { useEffect, useReducer } from "react";
-import { Table } from "../../pages/settings/Table/Table";
-import { TableContext } from "../../context/";
+import React, { useEffect, useReducer, createContext } from "react";
+import { Table } from "./Table/Table";
 import { reducer } from "../../reducers/table";
+type GoalContextType = {
+  data?: any;
+  dispatch?: any;
+  onAdd?: any;
+  onDelete?: any;
+  onEdit?: any;
+  columns?:any;
+};
+export const initialContent = {data:[],dispatch:()=>undefined};
+export const GoalContext = createContext<GoalContextType>({data:[],columns:[],dispatch:()=>undefined,onAdd:()=>{},onEdit:()=>{},onDelete:()=>{}});
 const dataSource: any = [
   {
     key: "1",
@@ -207,7 +216,7 @@ const columns: any = [
   }
 ];
 
-export const Goal = () => {
+export const GoalsContextProvider = (props:any) => {
   const [data, dispatch] = useReducer(reducer, { data: dataSource });
   useEffect(() => {
     dispatch({ type: "SAVE_DATA", data: { data: dataSource } });
@@ -224,10 +233,10 @@ export const Goal = () => {
   };
 
   return (
-    <TableContext.Provider
+    <GoalContext.Provider
       value={{ data: data.data, columns, dispatch, onAdd, onEdit, onDelete }}
     >
-      <Table buttonTitle="Add Goal"></Table>
-    </TableContext.Provider>
+      {props.children}
+    </GoalContext.Provider>
   );
 };

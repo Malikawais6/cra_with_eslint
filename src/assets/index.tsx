@@ -255,3 +255,98 @@ export const DotBlueCircle = () => (
     <circle cx="6" cy="6" r="4" fill="#00D4EA" fillRule="evenodd" />
   </svg>
 );
+
+export const EditIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <path
+      fill="none"
+      fillRule="evenodd"
+      stroke="#56556C"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M16.636 5l2.91 2.91L9.363 18.09 5 19.546l1.455-4.363z"
+    />
+  </svg>
+);
+
+export const CalendarIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+  >
+    <g
+      fill="none"
+      fillRule="evenodd"
+      stroke="#56556C"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="1.5"
+    >
+      <path d="M5.5 9.5h14M18.5 6.5h-12a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-11a1 1 0 0 0-1-1zM8.5 4.5v2M16.5 4.5v2M12.5 4.5v2" />
+    </g>
+  </svg>
+);
+
+export const CaretDownMedium = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="none"
+      fillRule="evenodd"
+      stroke="#56556C"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M13 6l-5 5-5-5"
+    />
+  </svg>
+);
+
+export const CaretLeftGray = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="none"
+      fillRule="evenodd"
+      stroke="#A7A7BB"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M9.485 13.485L3.828 7.828l5.657-5.656"
+    />
+  </svg>
+);
+export const CaretRightGray = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="none"
+      fillRule="evenodd"
+      stroke="#A7A7BB"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      d="M5.828 2.172l5.657 5.656-5.657 5.657"
+    />
+  </svg>
+);

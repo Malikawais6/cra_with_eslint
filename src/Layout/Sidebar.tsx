@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Layout, Menu, Icon } from "antd";
+import { Layout, Menu } from "antd";
 import { SidebarStyles } from "./Layout.style";
 import { DotBlueCircle } from "../assets";
+import { Link } from "react-router-dom";
 const SideBar = () => {
   const [state, setState] = useState("");
   return (
@@ -20,6 +21,7 @@ const SideBar = () => {
           onSelect={(item: any) => setState(item.key)}
         >
           <Menu.Item key="1">
+          <Link to="/management">
             <span>
               <span>Management </span>{" "}
               {state === "1" ? (
@@ -27,9 +29,10 @@ const SideBar = () => {
                   <DotBlueCircle />
                 </span>
               ) : null}
-            </span>
+            </span></Link>
           </Menu.Item>
           <Menu.Item key="2">
+          <Link to="/finance">
             <span>
               <span>Finance </span>
               {state === "2" ? (
@@ -38,8 +41,10 @@ const SideBar = () => {
                 </span>
               ) : null}
             </span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="3">
+          <Link to="/sales">
             <span>
               {" "}
               <span>Sales </span>
@@ -49,8 +54,11 @@ const SideBar = () => {
                 </span>
               ) : null}
             </span>
+            </Link>
+           
           </Menu.Item>
           <Menu.Item key="4">
+          <Link to="/customer-success">
             <span>
               {" "}
               <span>Customer Success </span>
@@ -60,8 +68,10 @@ const SideBar = () => {
                 </span>
               ) : null}
             </span>
+            </Link>
           </Menu.Item>
           <Menu.Item key="5">
+          <Link to="/product">
             <span>
               {" "}
               <span>Product </span>
@@ -71,6 +81,7 @@ const SideBar = () => {
                 </span>
               ) : null}
             </span>
+            </Link>
           </Menu.Item>
         </Menu>
       </Layout.Sider>
