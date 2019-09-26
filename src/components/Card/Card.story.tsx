@@ -2,7 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import Card from "./Card";
 import Icon from "../Icon/Icon";
-import {GraphIcon} from "../../assets/"
+import { GraphIcon } from "../../assets/";
+import Number from "../Number/Number"
 storiesOf("Card", module).add("Default", () => <Card>Hello</Card>);
 storiesOf("Card", module).add(
   "Default with Props",
@@ -11,18 +12,21 @@ storiesOf("Card", module).add(
       title="Title"
       extra={
         <Icon
-          icon={{ component:()=> <GraphIcon/> }}
+          icon={{ component: () => <GraphIcon /> }}
           tooltip={{
             title: () => <span>prompt text</span>
           }}
         />
       }
-      width="353px"
-      height="342px"
       showInfo={true}
       threshold={20}
     >
-      Content
+      <Number
+        content="$12221455254"
+        size="x-large"
+        threshold={20}
+        thresholdStatus="top"
+      />
     </Card>
   ),
   { info: { inline: true } }
