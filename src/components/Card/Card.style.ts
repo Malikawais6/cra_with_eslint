@@ -7,6 +7,13 @@ export const CardStyles = styled.div<Props>`
   .ant-card-head {
     border-bottom: 0px;
   }
+  .ant-card-extra {
+    padding: 10px 0;
+  }
+  .ant-card-head-title {
+    padding: 10px 0;
+  }
+    
   .title-container {
     display: flex;
     justify-content: space-between;
@@ -17,7 +24,7 @@ export const CardStyles = styled.div<Props>`
       color: #56556c;
     }
     .icon {
-      padding: 0 0 0 2%;
+      padding: 0 0 0 0.5em;
     }
     .threshold {
       margin-right: 1em;
