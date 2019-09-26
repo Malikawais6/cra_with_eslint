@@ -13,6 +13,7 @@ export const CardVisual = (props: Props) => {
   const {
     showInlineProgressBar,
     numberSize,
+    percentSize,
     showChart,
     showProgressBar
   } = props;
@@ -58,7 +59,7 @@ export const CardVisual = (props: Props) => {
           <Col span={20}>
             <Number
               content={props.data && props.data.percentContent}
-              size={props.data && props.data.percentSize}
+              size={percentSize}
             />
           </Col>
           <Col span={4}>

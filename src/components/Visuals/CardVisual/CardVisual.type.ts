@@ -12,16 +12,16 @@ export type DataProps = {
   numberContent?: string;
   numberThreshold?: number;
   percentContent?: string;
-  percentSize?: SizeProps;
   percentAmount?: string;
   progressPercentage?: number;
   numberThresholdStatus?: ThresholdProps;
 };
 
-export interface Props {
+export type Props = {
   showChart?: boolean;
   showProgressBar?: boolean;
   showInlineProgressBar?: boolean;
   numberSize?: SizeProps;
+  percentSize?: SizeProps;
   data?: DataProps;
-}
+};

@@ -59,6 +59,7 @@ export const Layout = () => {
             showChart={true}
             showProgressBar={true}
             numberSize={"large"}
+            percentSize={"large"}
             data={CompleteCardData}
           />
         </Card>
@@ -82,6 +83,7 @@ export const Layout = () => {
             showChart={true}
             showProgressBar={true}
             numberSize={"large"}
+            percentSize={"large"}
             data={CompleteCardData}
           />
         </Card>

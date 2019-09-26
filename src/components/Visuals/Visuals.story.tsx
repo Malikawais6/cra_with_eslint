@@ -19,6 +19,7 @@ storiesOf("Card Visual", module).add(
       showChart={true}
       showProgressBar={true}
       numberSize={"x-large"}
+      percentSize={"medium"}
       data={CompleteCardData}
     />
   )

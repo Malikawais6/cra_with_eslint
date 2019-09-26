@@ -1,13 +1,12 @@
 export const DefaultCardData = {
   numberContent: "$112312542",
   numberThreshold: 30,
-  numberThresholdStatus: "top"
+  numberThresholdStatus: "normal"
 };
 
 export const CompleteCardData = {
   numberContent: "$112312542",
   percentContent: "120%",
-  percentSize: "medium",
   percentAmount: "$155",
   progressPercentage: 35,
   numberThreshold: 30,
