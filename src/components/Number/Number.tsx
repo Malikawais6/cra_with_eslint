@@ -3,10 +3,11 @@ import { NumberStyles } from "./Number.style";
 import { Props } from "./Number.type";
 import Icon from "../Icon/Icon";
 import { ArrowUp, ArrowDown } from "../../assets/";
+import { ProgressBar } from "../ProgressBar/ProgressBar";
 const Number = (props: Props) => {
   return (
     <NumberStyles {...props}>
-      <div className="container">
+      <div className="numbers-container">
         <div className="content">
           <span className="heading">{props.content || ""} </span>
 

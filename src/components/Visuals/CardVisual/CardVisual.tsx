@@ -19,7 +19,7 @@ export const CardVisual = (props: Props) => {
     showProgressBar
   } = props;
   return (
-    <CardVisualStyled>
+    <CardVisualStyled showChart={showChart}>
       {showInlineProgressBar ? (
         <Row>
           <Col span={14}>
@@ -57,14 +57,12 @@ export const CardVisual = (props: Props) => {
       )}
       {showProgressBar && (
         <Row>
-          <Col span={20}>
+          <Col span={24}>
             <Number
               content={props.data && props.data.percentContent}
               size={percentSize}
+              showAmount={props.data && props.data.percentAmount} 
             />
-          </Col>
-          <Col span={4}>
-            <Number showAmount={props.data && props.data.percentAmount} />
           </Col>
         </Row>
       )}

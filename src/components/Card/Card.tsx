@@ -32,11 +32,7 @@ const Card = (props: Props) => {
       <CardAntd
         className="card"
         title={
-          props.showInfo || props.threshold ? (
             <Title {...props} />
-          ) : (
-            <span>{props.title}</span>
-          )
         }
         extra={props.extra || null}
       >

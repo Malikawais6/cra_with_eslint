@@ -8,10 +8,10 @@ const SIZE = {
   "x-large": "42px"
 };
 export const NumberStyles = styled.div<Props>`
-  .container {
+  .numbers-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     .content {
       display: flex;
       align-self: center;
