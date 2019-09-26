@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Make sure Progress Bar renders properly 1`] = `
+<div
+  class="sc-bdVaJa kxWhAr"
+>
+  <div
+    class="ant-progress ant-progress-line ant-progress-status-normal ant-progress-default"
+  >
+    <div>
+      <div
+        class="ant-progress-outer"
+      >
+        <div
+          class="ant-progress-inner"
+        >
+          <div
+            class="ant-progress-bg"
+            style="width: 0%; height: 8px;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
