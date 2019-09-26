@@ -1,7 +1,6 @@
 export const DefaultCardData = {
   numberContent: "$112312542",
-  numberThreshold: 30,
-  numberThresholdStatus: "normal"
+  numberThreshold: 30
 };
 
 export const CompleteCardData = {
@@ -9,14 +8,12 @@ export const CompleteCardData = {
   percentContent: "120%",
   percentAmount: "$155",
   progressPercentage: 35,
-  numberThreshold: 30,
-  numberThresholdStatus: "top"
+  numberThreshold: 30
 };
 
 export const InlineProgressBarWithNumberData = {
   numberContent: "$112312542",
   numberThreshold: 30,
-  numberThresholdStatus: "top",
   progressPercentage: 85
 };
 
