@@ -14,7 +14,6 @@ export type DataProps = {
   percentContent?: string;
   percentAmount?: string;
   progressPercentage?: number;
-  numberThresholdStatus?: ThresholdProps;
 };
 
 export type Props = {
@@ -23,5 +22,6 @@ export type Props = {
   showInlineProgressBar?: boolean;
   numberSize?: SizeProps;
   percentSize?: SizeProps;
+  numberThresholdStatus?: ThresholdProps;
   data?: DataProps;
 };

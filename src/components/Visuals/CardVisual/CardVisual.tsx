@@ -14,6 +14,7 @@ export const CardVisual = (props: Props) => {
     showInlineProgressBar,
     numberSize,
     percentSize,
+    numberThresholdStatus,
     showChart,
     showProgressBar
   } = props;
@@ -26,7 +27,7 @@ export const CardVisual = (props: Props) => {
               content={props.data && props.data.numberContent}
               size={numberSize}
               threshold={props.data && props.data.numberThreshold}
-              thresholdStatus={props.data && props.data.numberThresholdStatus}
+              thresholdStatus={numberThresholdStatus}
             />
           </Col>
           <Col span={8}>
@@ -41,7 +42,7 @@ export const CardVisual = (props: Props) => {
             <Number
               content={props.data && props.data.numberContent}
               threshold={props.data && props.data.numberThreshold}
-              thresholdStatus={props.data && props.data.numberThresholdStatus}
+              thresholdStatus={numberThresholdStatus}
               size={numberSize}
             />
           </Col>
