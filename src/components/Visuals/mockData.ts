@@ -1,10 +1,15 @@
+import Numeral from "numeral";
+
+const numeralNumberContent = `£${Numeral(12312542).format("0,000,000")}`;
+const inlineNumberContent = `£${Numeral(25425).format("0,000,000")}`;
+
 export const DefaultCardData = {
-  numberContent: "$112312542",
+  numberContent: numeralNumberContent,
   numberThreshold: 30
 };
 
 export const CompleteCardData = {
-  numberContent: "$112312542",
+  numberContent: numeralNumberContent,
   percentContent: "120%",
   percentAmount: "$155",
   progressPercentage: 35,
@@ -12,11 +17,11 @@ export const CompleteCardData = {
 };
 
 export const InlineProgressBarWithNumberData = {
-  numberContent: "$112312542",
+  numberContent: inlineNumberContent,
   numberThreshold: 30,
   progressPercentage: 85
 };
 
 export const SimpleCard = {
-  numberContent: "55months"
+  numberContent: "55 months"
 };

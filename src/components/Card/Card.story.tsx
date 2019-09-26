@@ -17,7 +17,7 @@ storiesOf("Card", module).add("Default", () => (
       showChart={true}
       showProgressBar={true}
       numberSize={"x-large"}
-      percentSize={"medium"}
+      percentSize={"large"}
       data={CompleteCardData}
       numberThresholdStatus={"top"}
     />
@@ -44,7 +44,7 @@ storiesOf("Card", module).add(
         showChart={true}
         showProgressBar={true}
         numberSize={"large"}
-        percentSize={"medium"}
+        percentSize={"large"}
         data={CompleteCardData}
         numberThresholdStatus={"top"}
       />
