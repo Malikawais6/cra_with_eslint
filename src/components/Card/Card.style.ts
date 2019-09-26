@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { Props } from "./Card.type";
 export const CardStyles = styled.div<Props>`
+  .ant-card{
+    background-color: transparent;
+  }
   .ant-card-body {
     padding: 0 24px 24px 24px;
   }
@@ -13,7 +16,7 @@ export const CardStyles = styled.div<Props>`
   .ant-card-head-title {
     padding: 10px 0;
   }
-    
+
   .title-container {
     display: flex;
     justify-content: space-between;
@@ -34,12 +37,10 @@ export const CardStyles = styled.div<Props>`
     }
   }
 
-  .card {
-    border-radius: 8px;
-    box-shadow: 0 7px 14px 0 rgba(48, 50, 54, 0.1);
-    background-color: #ffffff;
-  }
   .ant-card-body {
     padding: 0 24px 0 24px;
+  }
+  .ant-card-bordered{
+    border:none;
   }
 `;
