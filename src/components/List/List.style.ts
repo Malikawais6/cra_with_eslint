@@ -6,21 +6,21 @@ export const IconStyles = styled.span`
     font-size: 0;
   }
   .content {
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
   }
   .show-graph {
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
@@ -43,11 +43,11 @@ export const IconStyles = styled.span`
      position: absolute;
   }
   a {
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #40d1e7;
@@ -62,11 +62,11 @@ export const IconStyles = styled.span`
   .title {
     width: 220px;
     height: 18px;
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;

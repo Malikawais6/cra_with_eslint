@@ -1,5 +1,5 @@
 import * as React from "react";
-import { render, fireEvent, getAllByText } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 import { Table } from "../Table";
 import { TableContext } from "../../../context";
 import { reducer } from "../../../reducers/table";
@@ -207,7 +207,7 @@ const columns: any = [
     ]
   }
 ];
-
+afterEach(cleanup);
 const TableComponent = () => {
   const [data, dispatch] = React.useReducer(reducer, { data: dataSource });
   const onAdd = (data: any) => {
@@ -265,6 +265,4 @@ it("Make sure value change in dropdown and goal is added : ", async () => {
   fireEvent.click(getAllByText("Add Goal")[1]);
   const panel = container.getElementsByClassName("panel");
   expect(panel.length).toBe(0);
-  return
 });
- 

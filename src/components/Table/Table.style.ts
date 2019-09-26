@@ -11,11 +11,11 @@ export const EditableWrapper = styled.div`
     padding: 5px 12px;
     width: 73px;
     height: 18px;
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
@@ -42,11 +42,11 @@ export const EditableWrapper = styled.div`
     cursor: pointer;
     width: 64px;
     height: 18px;
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     text-align: right;
@@ -73,11 +73,11 @@ export const EditableWrapper = styled.div`
     background: none !important;
   }
   .ant-table-thead > tr > th {
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     text-align: right;
@@ -106,11 +106,11 @@ export const TableStyles = styled.div`
     width: 20vw;
     border-radius: 4px;
     background-color: #ffffff;
-    font-family: Visuelt;
+    
     font-size: 14px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: 2;
     letter-spacing: normal;
     color: #56556c;
@@ -136,11 +136,11 @@ export const TableStyles = styled.div`
   .remove {
     width: 133px;
     height: 21px;
-    font-family: Visuelt;
+    
     font-size: 14px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
@@ -158,11 +158,11 @@ export const GoalButtonStyle = styled.span`
   .text {
     display: flex;
     padding: 0.4% 0px 0 1%;
-    font-family: Visuelt;
+    
     font-size: 13px;
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: normal;
     letter-spacing: normal;
     color: #40d1e7;
