@@ -1,5 +1,4 @@
 import React, { useEffect, useReducer, createContext } from "react";
-import { Table } from "./Table/Table";
 import { reducer } from "../../reducers/table";
 type GoalContextType = {
   data?: any;

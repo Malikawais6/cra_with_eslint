@@ -1,9 +1,9 @@
 import React from "react";
-import { Layout, Dropdown, Menu } from "antd";
-import { HeaderStyles } from "./Layout.style";
+import { Menu } from "antd";
+import { HeaderStyles, StyledDropdown, StyledButton } from "./Layout.style";
 import { Wegift, PresentationIcon, CaretDownGraySmall } from "../assets";
 import Icon from "../components/Icon/Icon";
-const Header = (props: any) => {
+const Header = () => {
   const menu = (
     <Menu>
       <Menu.Item key="logout">Logout </Menu.Item>
@@ -11,29 +11,28 @@ const Header = (props: any) => {
   );
   return (
     <HeaderStyles>
-      <Layout.Header>
-        <div className="logo-div">
-          <span className="logo">
+      <div className="container">
+        <div className="left-container">
+          <div>
             <Wegift />
-          </span>
-          <span className="kpi-dashboard">KPI DASHBOARD</span>
+          </div>
+          <div className="kpi-dashboard">KPI DASHBOARD</div>
         </div>
-        <div className="mode-div">
-          <span className="presentation-icon">
+        <div className="right-container">
+          <div className="presentation-icon">
             <PresentationIcon />
-          </span>
+          </div>
 
-          <span className="presentation-mode">Presentation Mode</span>
-          <span className="dropdown">
-            <Dropdown overlay={menu}>
-              <a className="ant-dropdown-link" href="#">
-                Aron Alexander{" "}
-                <Icon icon={{ component: () => <CaretDownGraySmall /> }} />
-              </a>
-            </Dropdown>
-          </span>
+          <StyledButton>Presentation Mode</StyledButton>
+
+          <StyledDropdown overlay={menu}>
+            <a className="ant-dropdown-link" href="#">
+              Aron Alexander
+              <Icon icon={{ component: () => <CaretDownGraySmall /> }} />
+            </a>
+          </StyledDropdown>
         </div>
-      </Layout.Header>
+      </div>
     </HeaderStyles>
   );
 };

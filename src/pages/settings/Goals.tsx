@@ -1,18 +1,17 @@
 import React from "react";
 import { GoalsContextProvider } from "./GoalsContextProvider";
 import { Table } from "./Table/Table";
-import { GoalTableStyles } from "./styles";
-import { Button } from "antd";
+import { GoalTableStyles, StyledCircleButton } from "./styles";
 import { CaretLeftGray, CaretRightGray } from "../../assets";
 const Goals = () => {
   return (
     <GoalsContextProvider>
       <GoalTableStyles>
-        <div className="outter-div">
+        <div className="goal-container">
           <div>
             <span className="year"> 2019 </span>
-            <span ><Button className="circle-button"><CaretLeftGray /></Button></span>
-            <span ><Button className="circle-button"><CaretRightGray /></Button></span>
+            <span ><StyledCircleButton ><CaretLeftGray /></StyledCircleButton></span>
+            <span ><StyledCircleButton ><CaretRightGray /></StyledCircleButton></span>
           </div>
           <div className="view">
           <span className="duration">O</span>

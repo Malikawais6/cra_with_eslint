@@ -17,10 +17,10 @@ const MARGIN = {
 export const NumberStyles = styled.h1<Props>`
   .heading {
     font-size: ${props => SIZE[props.size || "large"]};
-    font-family: Visuelt;
+    
     font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: 1;
     letter-spacing: normal;
     color: #56556c;
@@ -45,11 +45,11 @@ export const NumberStyles = styled.h1<Props>`
   .amount {
     margin: 4% auto auto 100%;
     color: grey;
-    font-family: Visuelt;
+    
     font-size: 16px;
     font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
+    
+    
     line-height: 1.25;
     letter-spacing: normal;
     text-align: right;
