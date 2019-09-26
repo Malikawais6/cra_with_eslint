@@ -2,15 +2,22 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import { ProgressBar } from "./ProgressBar";
+import { ProgressBarStory } from "./ProgressBar.style";
 
 storiesOf("Progress Bar", module).add("Progress Bar Default", () => (
-  <ProgressBar percent={50} />
+  <ProgressBarStory>
+    <ProgressBar percent={50} />
+  </ProgressBarStory>
 ));
 
 storiesOf("Progress Bar", module).add("Progress Bar Success", () => (
-  <ProgressBar percent={100} strokeColor="#00c972" />
+  <ProgressBarStory>
+    <ProgressBar percent={100} />
+  </ProgressBarStory>
 ));
 
 storiesOf("Progress Bar", module).add("Progress Bar Failure", () => (
-  <ProgressBar percent={30} strokeColor="#ce4c00" />
+  <ProgressBarStory>
+    <ProgressBar percent={30} strokeColor="#ce4c00" />
+  </ProgressBarStory>
 ));

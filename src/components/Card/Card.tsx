@@ -1,9 +1,11 @@
 import React from "react";
 import { Card as CardAntd } from "antd";
+
 import { CardStyles } from "./Card.style";
 import { Props } from "./Card.type";
 import Icon from "../Icon/Icon";
 import { InfoIcon } from "../../assets/";
+
 const Title = (props: Props) => (
   <div className="title-container">
     <span className="title">

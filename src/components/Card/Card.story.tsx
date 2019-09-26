@@ -1,12 +1,80 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+
 import Card from "./Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets/";
-import Number from "../Number/Number"
-storiesOf("Card", module).add("Default", () => <Card>Hello</Card>);
+import { CardVisual } from "../Visuals/CardVisual/CardVisual";
+import {
+  CompleteCardData,
+  DefaultCardData,
+  InlineProgressBarWithNumberData
+} from "../Visuals/mockData";
+
+storiesOf("Card", module).add("Default", () => (
+  <Card>
+    <CardVisual
+      showChart={true}
+      showProgressBar={true}
+      numberSize={"x-large"}
+      percentSize={"medium"}
+      data={CompleteCardData}
+    />
+  </Card>
+));
+
 storiesOf("Card", module).add(
-  "Default with Props",
+  "Card with Line Chart and Progress Bar",
+  () => (
+    <Card
+      title="Title"
+      extra={
+        <Icon
+          icon={{ component: () => <GraphIcon /> }}
+          tooltip={{
+            title: () => <span>prompt text</span>
+          }}
+        />
+      }
+      width="353px"
+      height="342px"
+    >
+      <CardVisual
+        showChart={true}
+        showProgressBar={true}
+        numberSize={"large"}
+        percentSize={"medium"}
+        data={CompleteCardData}
+      />
+    </Card>
+  ),
+  { info: { inline: true } }
+);
+
+storiesOf("Card", module).add(
+  "Default without Chart and Progress Bar",
+  () => (
+    <Card
+      title="Title"
+      extra={
+        <Icon
+          icon={{ component: () => <GraphIcon /> }}
+          tooltip={{
+            title: () => <span>prompt text</span>
+          }}
+        />
+      }
+      width="353px"
+      height="342px"
+    >
+      <CardVisual numberSize={"x-large"} data={DefaultCardData} />
+    </Card>
+  ),
+  { info: { inline: true } }
+);
+
+storiesOf("Card", module).add(
+  "Default with Inline Progress Bar",
   () => (
     <Card
       title="Title"
@@ -21,11 +89,10 @@ storiesOf("Card", module).add(
       showInfo={true}
       threshold={20}
     >
-      <Number
-        content="$12221455254"
-        size="x-large"
-        threshold={20}
-        thresholdStatus="top"
+      <CardVisual
+        showInlineProgressBar={true}
+        numberSize={"medium"}
+        data={InlineProgressBarWithNumberData}
       />
     </Card>
   ),
