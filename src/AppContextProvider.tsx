@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React from "react";
 import { createContext } from "react";
 export type AppContextType = {
   data?: any;

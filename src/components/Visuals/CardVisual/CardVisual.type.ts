@@ -18,7 +18,7 @@ export type DataProps = {
   numberThresholdStatus?: ThresholdProps;
 };
 
-export interface Props extends DataProps {
+export interface Props {
   showChart?: boolean;
   showProgressBar?: boolean;
   showInlineProgressBar?: boolean;

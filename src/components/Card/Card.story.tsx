@@ -6,9 +6,9 @@ import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets/";
 import { CardVisual } from "../Visuals/CardVisual/CardVisual";
 import {
-  cardData,
-  defaultVisualData,
-  inlineBarCardData
+  CompleteCardData,
+  DefaultCardData,
+  InlineProgressBarWithNumberData
 } from "../Visuals/mockData";
 
 storiesOf("Card", module).add("Default", () => (
@@ -17,7 +17,7 @@ storiesOf("Card", module).add("Default", () => (
       showChart={true}
       showProgressBar={true}
       numberSize={"x-large"}
-      data={cardData}
+      data={CompleteCardData}
     />
   </Card>
 ));
@@ -42,7 +42,7 @@ storiesOf("Card", module).add(
         showChart={true}
         showProgressBar={true}
         numberSize={"large"}
-        data={cardData}
+        data={CompleteCardData}
       />
     </Card>
   ),
@@ -65,7 +65,7 @@ storiesOf("Card", module).add(
       width="353px"
       height="342px"
     >
-      <CardVisual numberSize={"x-large"} data={defaultVisualData} />
+      <CardVisual numberSize={"x-large"} data={DefaultCardData} />
     </Card>
   ),
   { info: { inline: true } }
@@ -92,7 +92,7 @@ storiesOf("Card", module).add(
       <CardVisual
         showInlineProgressBar={true}
         numberSize={"medium"}
-        data={inlineBarCardData}
+        data={InlineProgressBarWithNumberData}
       />
     </Card>
   ),

@@ -10,14 +10,20 @@ import { ProgressBar } from "../../ProgressBar/ProgressBar";
 import { Props } from "./CardVisual.type";
 
 export const CardVisual = (props: Props) => {
+  const {
+    showInlineProgressBar,
+    numberSize,
+    showChart,
+    showProgressBar
+  } = props;
   return (
     <CardVisualStyled>
-      {props.showInlineProgressBar ? (
+      {showInlineProgressBar ? (
         <Row>
           <Col span={14}>
             <Number
               content={props.data && props.data.numberContent}
-              size={props.numberSize}
+              size={numberSize}
               threshold={props.data && props.data.numberThreshold}
               thresholdStatus={props.data && props.data.numberThresholdStatus}
             />
@@ -35,19 +41,19 @@ export const CardVisual = (props: Props) => {
               content={props.data && props.data.numberContent}
               threshold={props.data && props.data.numberThreshold}
               thresholdStatus={props.data && props.data.numberThresholdStatus}
-              size={props.numberSize}
+              size={numberSize}
             />
           </Col>
         </Row>
       )}
-      {props.showChart && (
+      {showChart && (
         <Row>
           <Col className="chart-style" span={24}>
             <Line seriesData={LegendSeriesData}></Line>
           </Col>
         </Row>
       )}
-      {props.showProgressBar && (
+      {showProgressBar && (
         <Row>
           <Col span={20}>
             <Number
@@ -60,7 +66,7 @@ export const CardVisual = (props: Props) => {
           </Col>
         </Row>
       )}
-      {props.showProgressBar && (
+      {showProgressBar && (
         <Row>
           <Col span={24}>
             <ProgressBar

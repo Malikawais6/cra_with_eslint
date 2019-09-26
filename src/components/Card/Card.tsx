@@ -5,7 +5,7 @@ import { CardStyles } from "./Card.style";
 import { Props } from "./Card.type";
 import Icon from "../Icon/Icon";
 import { InfoIcon } from "../../assets/";
-import "../../visualt/styles.css";
+import "../../assets/visualt/styles.css";
 
 const Card = (props: Props) => {
   return (

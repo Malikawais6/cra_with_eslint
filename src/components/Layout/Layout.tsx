@@ -6,11 +6,10 @@ import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets";
 import { CardVisual } from "../Visuals/CardVisual/CardVisual";
 import {
-  cardData,
-  smallCardData,
-  inlineBarCardData,
-  simpleCard,
-  defaultVisualData
+  CompleteCardData,
+  InlineProgressBarWithNumberData,
+  SimpleCard,
+  DefaultCardData
 } from "../Visuals/mockData";
 
 export const Layout = () => {
@@ -60,7 +59,7 @@ export const Layout = () => {
             showChart={true}
             showProgressBar={true}
             numberSize={"large"}
-            data={cardData}
+            data={CompleteCardData}
           />
         </Card>
       </div>
@@ -83,14 +82,14 @@ export const Layout = () => {
             showChart={true}
             showProgressBar={true}
             numberSize={"large"}
-            data={cardData}
+            data={CompleteCardData}
           />
         </Card>
       </div>
 
       <div key="c" style={{ border: "solid" }}>
         <Card title="Cost per code" width="353px" height="85px" showInfo={true}>
-          <CardVisual numberSize={"medium"} data={smallCardData} />
+          <CardVisual numberSize={"medium"} data={DefaultCardData} />
         </Card>
       </div>
 
@@ -101,7 +100,7 @@ export const Layout = () => {
           height="85px"
           showInfo={true}
         >
-          <CardVisual numberSize={"medium"} data={smallCardData} />
+          <CardVisual numberSize={"medium"} data={DefaultCardData} />
         </Card>
       </div>
 
@@ -116,20 +115,20 @@ export const Layout = () => {
           <CardVisual
             showInlineProgressBar={true}
             numberSize={"medium"}
-            data={inlineBarCardData}
+            data={InlineProgressBarWithNumberData}
           />
         </Card>
       </div>
 
       <div key="f" style={{ border: "solid" }}>
         <Card title="Miscallaneous" width="353px" height="85px">
-          <CardVisual numberSize={"medium"} data={smallCardData} />
+          <CardVisual numberSize={"medium"} data={DefaultCardData} />
         </Card>
       </div>
 
       <div key="g" style={{ border: "solid" }}>
         <Card title="Runway" width="353px" height="90px">
-          <CardVisual numberSize={"large"} data={simpleCard} />
+          <CardVisual numberSize={"large"} data={SimpleCard} />
         </Card>
       </div>
 
@@ -147,7 +146,7 @@ export const Layout = () => {
             />
           }
         >
-          <CardVisual numberSize={"large"} data={simpleCard} />
+          <CardVisual numberSize={"large"} data={SimpleCard} />
         </Card>
       </div>
 
@@ -158,19 +157,19 @@ export const Layout = () => {
           height="90px"
           showInfo={true}
         >
-          <CardVisual numberSize={"large"} data={simpleCard} />
+          <CardVisual numberSize={"large"} data={SimpleCard} />
         </Card>
       </div>
 
       <div key="j" style={{ border: "solid" }}>
         <Card title="Floats with Brand" width="353px" height="90px">
-          <CardVisual numberSize={"large"} data={defaultVisualData} />
+          <CardVisual numberSize={"large"} data={DefaultCardData} />
         </Card>
       </div>
 
       <div key="k" style={{ border: "solid" }}>
         <Card title="Stock held" width="353px" height="90px">
-          <CardVisual numberSize={"large"} data={defaultVisualData} />
+          <CardVisual numberSize={"large"} data={DefaultCardData} />
         </Card>
       </div>
 
@@ -193,7 +192,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"medium"}
             showInlineProgressBar={true}
-            data={inlineBarCardData}
+            data={InlineProgressBarWithNumberData}
           />
         </Card>
       </div>
@@ -212,13 +211,13 @@ export const Layout = () => {
             />
           }
         >
-          <CardVisual numberSize={"large"} data={simpleCard} />
+          <CardVisual numberSize={"large"} data={SimpleCard} />
         </Card>
       </div>
 
       <div key="n" style={{ border: "solid" }}>
         <Card title="days stock held" width="353px" height="90px">
-          <CardVisual numberSize={"large"} data={defaultVisualData} />
+          <CardVisual numberSize={"large"} data={DefaultCardData} />
         </Card>
       </div>
     </GridLayout>

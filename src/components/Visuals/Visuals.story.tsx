@@ -3,13 +3,13 @@ import { storiesOf } from "@storybook/react";
 
 import { CardVisual } from "./CardVisual/CardVisual";
 import {
-  defaultVisualData,
-  cardData,
-  inlineBarCardData
+  DefaultCardData,
+  CompleteCardData,
+  InlineProgressBarWithNumberData
 } from "../Visuals/mockData";
 
 storiesOf("Card Visual", module).add("Card Visual Default", () => (
-  <CardVisual data={defaultVisualData} numberSize={"large"} />
+  <CardVisual data={DefaultCardData} numberSize={"large"} />
 ));
 
 storiesOf("Card Visual", module).add(
@@ -19,7 +19,7 @@ storiesOf("Card Visual", module).add(
       showChart={true}
       showProgressBar={true}
       numberSize={"x-large"}
-      data={cardData}
+      data={CompleteCardData}
     />
   )
 );
@@ -30,7 +30,7 @@ storiesOf("Card Visual", module).add(
     <CardVisual
       showInlineProgressBar={true}
       numberSize={"medium"}
-      data={inlineBarCardData}
+      data={InlineProgressBarWithNumberData}
     />
   )
 );
