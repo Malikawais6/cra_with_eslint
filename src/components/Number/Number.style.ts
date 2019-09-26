@@ -16,26 +16,29 @@ export const NumberStyles = styled.div<Props>`
       display: flex;
       align-self: center;
       align-items: baseline;
-      .heading {
-        font-size: ${props => SIZE[props.size || "large"]};
-        font-weight: 500;
-        line-height: 1;
-        letter-spacing: normal;
-        color: #56556c;
-      }
-      .threshold {
-        display: flex;
-        margin-left: 1em;
-        font-size: 12px;
-        color: ${props =>
-          props.thresholdStatus === "top"
-            ? "#00c972"
-            : props.thresholdStatus === "down"
-            ? "#ce4c00"
-            : "#a7a7bb"};
-        .ratio {
-          padding-left: 2px;
-        }
+      
+    }
+    .heading {
+      font-size: ${props => SIZE[props.size || "large"]};
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #56556c;
+    }
+    .threshold {
+      display: flex;
+      margin-left: 1em;
+      margin-bottom: 0;
+      font-size: 12px;
+      align-items: baseline;
+      color: ${props =>
+        props.thresholdStatus === "top"
+          ? "#00c972"
+          : props.thresholdStatus === "down"
+          ? "#ce4c00"
+          : "#a7a7bb"};
+      .ratio {
+        padding-left: 2px;
       }
     }
     .amount {
