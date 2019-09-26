@@ -1,10 +1,10 @@
 import React from "react";
-import GridLayout from "react-grid-layout";
 
 import Card from "../Card/Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets";
 import { CardVisual } from "../Visuals/CardVisual/CardVisual";
+import { GridLayoutStyle as GridLayout } from "./Layout.style";
 import {
   CompleteCardData,
   InlineProgressBarWithNumberData,
