@@ -40,7 +40,7 @@ export const Layout = () => {
       compactType={"vertical"}
       isDraggable={false}
     >
-      <div key="a" style={{ border: "solid" }}>
+      <div key="a">
         <Card
           title="Gift Card Volume"
           extra={
@@ -63,7 +63,7 @@ export const Layout = () => {
         </Card>
       </div>
 
-      <div key="b" style={{ border: "solid" }}>
+      <div key="b">
         <Card
           title="Revenue"
           extra={
@@ -85,19 +85,19 @@ export const Layout = () => {
         </Card>
       </div>
 
-      <div key="c" style={{ border: "solid" }}>
+      <div key="c">
         <Card title="Cost per code" showInfo={true}>
           <CardVisual numberSize={"medium"} data={DefaultCardData} />
         </Card>
       </div>
 
-      <div key="d" style={{ border: "solid" }}>
+      <div key="d">
         <Card title="Processing fee" showInfo={true}>
           <CardVisual numberSize={"medium"} data={DefaultCardData} />
         </Card>
       </div>
 
-      <div key="e" style={{ border: "solid" }}>
+      <div key="e">
         <Card title="SaaS" threshold={20} showInfo={true}>
           <CardVisual
             showInlineProgressBar={true}
@@ -107,19 +107,19 @@ export const Layout = () => {
         </Card>
       </div>
 
-      <div key="f" style={{ border: "solid" }}>
+      <div key="f">
         <Card title="Miscallaneous">
           <CardVisual numberSize={"medium"} data={DefaultCardData} />
         </Card>
       </div>
 
-      <div key="g" style={{ border: "solid" }}>
+      <div key="g">
         <Card title="Runway">
           <CardVisual numberSize={"large"} data={SimpleCard} />
         </Card>
       </div>
 
-      <div key="h" style={{ border: "solid" }}>
+      <div key="h">
         <Card
           title="Cash in Bank"
           extra={
@@ -135,25 +135,25 @@ export const Layout = () => {
         </Card>
       </div>
 
-      <div key="i" style={{ border: "solid" }}>
+      <div key="i">
         <Card title="Monthly budget" showInfo={true}>
           <CardVisual numberSize={"large"} data={SimpleCard} />
         </Card>
       </div>
 
-      <div key="j" style={{ border: "solid" }}>
+      <div key="j">
         <Card title="Floats with Brand">
           <CardVisual numberSize={"large"} data={DefaultCardData} />
         </Card>
       </div>
 
-      <div key="k" style={{ border: "solid" }}>
+      <div key="k">
         <Card title="Stock held">
           <CardVisual numberSize={"large"} data={DefaultCardData} />
         </Card>
       </div>
 
-      <div key="l" style={{ border: "solid" }}>
+      <div key="l">
         <Card
           title="Deposits"
           threshold={20}
@@ -175,7 +175,7 @@ export const Layout = () => {
         </Card>
       </div>
 
-      <div key="m" style={{ border: "solid" }}>
+      <div key="m">
         <Card
           title="Average days float held"
           extra={
@@ -191,7 +191,7 @@ export const Layout = () => {
         </Card>
       </div>
 
-      <div key="n" style={{ border: "solid" }}>
+      <div key="n">
         <Card title="days stock held">
           <CardVisual numberSize={"large"} data={DefaultCardData} />
         </Card>
