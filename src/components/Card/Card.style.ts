@@ -21,12 +21,15 @@ export const CardStyles = styled.div<Props>`
   .icon {
     padding: 0 0 0 2%;
   }
-  .threshold{
-    margin:auto auto auto 85%;
+  .threshold {
+    margin: auto auto auto 85%;
   }
-  .card{
+  .card {
     border-radius: 8px;
     box-shadow: 0 7px 14px 0 rgba(48, 50, 54, 0.1);
     background-color: #ffffff;
+  }
+  .ant-card-body {
+    padding: 0 24px 0 24px;
   }
 `;

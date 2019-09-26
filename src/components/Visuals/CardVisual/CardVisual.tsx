@@ -1,0 +1,74 @@
+import React from "react";
+import { Row, Col } from "antd";
+import "antd/dist/antd.css";
+
+import { CardVisualStyled } from "./CardVisual.style";
+import Number from "../../Number/Number";
+import Line from "../../Line/Line";
+import { LegendSeriesData } from "../../Line/__mock__/mockdata";
+import { ProgressBar } from "../../ProgressBar/ProgressBar";
+import { Props } from "./CardVisual.type";
+
+export const CardVisual = (props: Props) => {
+  return (
+    <CardVisualStyled>
+      {props.showInlineProgressBar ? (
+        <Row>
+          <Col span={14}>
+            <Number
+              content={props.data && props.data.numberContent}
+              size={props.numberSize}
+              threshold={props.data && props.data.numberThreshold}
+              thresholdStatus={props.data && props.data.numberThresholdStatus}
+            />
+          </Col>
+          <Col span={8}>
+            <ProgressBar
+              percent={props.data && props.data.progressPercentage}
+            />
+          </Col>
+        </Row>
+      ) : (
+        <Row>
+          <Col span={24}>
+            <Number
+              content={props.data && props.data.numberContent}
+              threshold={props.data && props.data.numberThreshold}
+              thresholdStatus={props.data && props.data.numberThresholdStatus}
+              size={props.numberSize}
+            />
+          </Col>
+        </Row>
+      )}
+      {props.showChart && (
+        <Row>
+          <Col className="chart-style" span={24}>
+            <Line seriesData={LegendSeriesData}></Line>
+          </Col>
+        </Row>
+      )}
+      {props.showProgressBar && (
+        <Row>
+          <Col span={20}>
+            <Number
+              content={props.data && props.data.percentContent}
+              size={props.data && props.data.percentSize}
+            />
+          </Col>
+          <Col span={4}>
+            <Number showAmount={props.data && props.data.percentAmount} />
+          </Col>
+        </Row>
+      )}
+      {props.showProgressBar && (
+        <Row>
+          <Col span={24}>
+            <ProgressBar
+              percent={props.data && props.data.progressPercentage}
+            />
+          </Col>
+        </Row>
+      )}
+    </CardVisualStyled>
+  );
+};

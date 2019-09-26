@@ -1,12 +1,31 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Line from "./Line";
 
-storiesOf("Line", module).add("Default", () => (
-  <div>
-    <Line HorizontalGridLines="dashed"></Line>
-  </div>
+import Line from "./Line";
+import { LegendSeriesData } from "./__mock__/mockdata";
+import { LineChartStory } from "./Line.style";
+
+storiesOf("Line", module).add("Line Chart with Props", () => (
+  <LineChartStory>
+    <Line
+      showXAxis={true}
+      showYAxis={true}
+      showLegends={true}
+      showLabels={true}
+      showGridLines={true}
+      showLineMarks={true}
+      seriesData={LegendSeriesData}
+    ></Line>
+  </LineChartStory>
 ));
-storiesOf("Line", module).add("Default with Props", () => <Line></Line>, {
-  info: { inline: true }
-});
+storiesOf("Line", module).add(
+  "Line Chart without Props",
+  () => (
+    <LineChartStory>
+      <Line seriesData={LegendSeriesData}></Line>
+    </LineChartStory>
+  ),
+  {
+    info: { inline: true }
+  }
+);

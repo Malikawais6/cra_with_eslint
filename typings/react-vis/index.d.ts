@@ -9,7 +9,7 @@ declare module "react-vis" {
     TouchEventHandler,
     WheelEventHandler,
     MouseEvent,
-    CSSProperties,
+    CSSProperties
   } from "react";
 
   export interface AbstractSeriesPoint {
@@ -23,12 +23,12 @@ declare module "react-vis" {
   export type RVItemEventHandler = (
     item: any,
     index: number,
-    event: MouseEvent<HTMLElement>,
+    event: MouseEvent<HTMLElement>
   ) => void;
 
   export type RVValueEventHandler<T extends AbstractSeriesPoint> = (
     datapoint: T,
-    event: MouseEvent<HTMLElement>,
+    event: MouseEvent<HTMLElement>
   ) => void;
 
   export type RVNearestXData<T extends AbstractSeriesPoint> = {
@@ -38,7 +38,7 @@ declare module "react-vis" {
   };
   export type RVNearestXEventHandler<T extends AbstractSeriesPoint> = (
     datapoint: T,
-    data: RVNearestXData<T>,
+    data: RVNearestXData<T>
   ) => void;
 
   export type RVNearestXYData<T extends AbstractSeriesPoint> = {
@@ -49,20 +49,20 @@ declare module "react-vis" {
   };
   export type RVNearestXYEventHandler<T extends AbstractSeriesPoint> = (
     datapoint: T,
-    data: RVNearestXYData<T>,
+    data: RVNearestXYData<T>
   ) => void;
 
   export type RVGet<T extends AbstractSeriesPoint, K extends keyof T> = (
-    datapoint: T,
+    datapoint: T
   ) => T[K];
   export type RVGetNull<T extends AbstractSeriesPoint> = (datapoint: T) => any;
   export type RVGetAlignStyle = (
     align: { horizontal: string; vertical: string },
     x: number,
-    y: number,
+    y: number
   ) => CSSProperties;
 
-  export type RVTickFormat = (tick: any) => string;
+  export type RVTickFormat = (tick: any) => string | ReactNode;
 
   export interface LineSeriesPoint extends AbstractSeriesPoint {
     x: number;
@@ -840,7 +840,7 @@ declare module "react-vis" {
     title: string;
     color?: string;
     disabled?: boolean;
-    data?: HorizontalBarSeriesPoint[];
+    data?: LineMarkSeriesProps[];
   };
 
   export type LegendItems = Array<LegendItem | string | ReactChild>;
@@ -1312,7 +1312,7 @@ declare module "react-vis" {
       allData?: any,
       accessor?: any,
       accessor0?: any,
-      type?: any,
+      type?: any
     ) => any;
     getFontColorFromBackground: (background?: any) => any;
     getMissingScaleProps: (props?: any, data?: any, attributes?: any) => any;
@@ -1581,6 +1581,6 @@ declare module "react-vis/es/make-vis-flexible" {
     makeWidthFlexible,
     FlexibleXYPlot,
     FlexibleWidthXYPlot,
-    FlexibleHeightXYPlot,
+    FlexibleHeightXYPlot
   } from "react-vis";
 }
