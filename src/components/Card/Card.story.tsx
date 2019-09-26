@@ -19,6 +19,7 @@ storiesOf("Card", module).add("Default", () => (
       numberSize={"x-large"}
       percentSize={"medium"}
       data={CompleteCardData}
+      numberThresholdStatus={"top"}
     />
   </Card>
 ));
@@ -45,6 +46,7 @@ storiesOf("Card", module).add(
         numberSize={"large"}
         percentSize={"medium"}
         data={CompleteCardData}
+        numberThresholdStatus={"top"}
       />
     </Card>
   ),
@@ -67,7 +69,11 @@ storiesOf("Card", module).add(
       width="353px"
       height="342px"
     >
-      <CardVisual numberSize={"x-large"} data={DefaultCardData} />
+      <CardVisual
+        numberSize={"x-large"}
+        numberThresholdStatus={"top"}
+        data={DefaultCardData}
+      />
     </Card>
   ),
   { info: { inline: true } }
@@ -93,6 +99,7 @@ storiesOf("Card", module).add(
         showInlineProgressBar={true}
         numberSize={"medium"}
         data={InlineProgressBarWithNumberData}
+        numberThresholdStatus={"top"}
       />
     </Card>
   ),
