@@ -86,8 +86,6 @@ storiesOf("Card", module).add(
           }}
         />
       }
-      width="353px"
-      height="342px"
       showInfo={true}
       threshold={20}
     >
