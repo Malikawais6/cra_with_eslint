@@ -51,12 +51,11 @@ export const Layout = () => {
               }}
             />
           }
-          threshold={20}
         >
           <CardVisual
             showChart={true}
             showProgressBar={true}
-            numberSize={"large"}
+            numberSize={"x-large"}
             percentSize={"large"}
             numberThresholdStatus={"top"}
             data={CompleteCardData}
@@ -79,7 +78,7 @@ export const Layout = () => {
           <CardVisual
             showChart={true}
             showProgressBar={true}
-            numberSize={"large"}
+            numberSize={"x-large"}
             percentSize={"large"}
             data={CompleteCardData}
             numberThresholdStatus={"top"}
@@ -191,7 +190,7 @@ export const Layout = () => {
           }
         >
           <CardVisual
-            numberSize={"medium"}
+            numberSize={"large"}
             showInlineProgressBar={true}
             data={InlineProgressBarWithNumberData}
             numberThresholdStatus={"top"}

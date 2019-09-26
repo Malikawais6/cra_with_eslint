@@ -18,6 +18,7 @@ export const CardVisual = (props: Props) => {
     showChart,
     showProgressBar
   } = props;
+
   return (
     <CardVisualStyled>
       {showInlineProgressBar ? (
