@@ -15,7 +15,7 @@ const Title = (props: Props) => (
           <Icon
             icon={{ component: () => <InfoIcon /> }}
             tooltip={{
-              title: () => <span>prompt text</span>
+              title: () => <span>prompt text</span>,
             }}
           />
         </span>
@@ -28,12 +28,16 @@ const Title = (props: Props) => (
 );
 const Card = (props: Props) => {
   return (
-    <CardStyles hasChart={props.hasChart}>
+    <CardStyles cardType={props.cardType}>
       <CardAntd
-        className="card"
-        title={
-            <Title {...props} />
+        className={
+          props.cardType === "visual"
+            ? "visualization-card"
+            : props.cardType === "cost"
+            ? "cost-card"
+            : "default-card-wrapper"
         }
+        title={<Title {...props} />}
         extra={props.extra || null}
       >
         {props.children}

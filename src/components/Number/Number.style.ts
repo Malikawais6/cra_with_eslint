@@ -12,20 +12,19 @@ const SIZE = {
 export const NumberStyles = styled.div<Props>`
   .numbers-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: ${(props:any)=>props.showAmount?"space-between":"flex-start"};
     align-items: flex-end;
-    .content {
-      display: flex;
-      align-self: center;
-      align-items: baseline;
-    }
+    line-height: 1;
+
     .heading {
+      flex: inherit;
       font-size: ${props => SIZE[props.size || "large"]};
       font-weight: 500;
       line-height: 1;
       letter-spacing: normal;
       color: #56556c;
     }
+
     .threshold {
       display: flex;
       margin-left: 1em;
@@ -40,6 +39,7 @@ export const NumberStyles = styled.div<Props>`
           : "#a7a7bb"};
       .ratio {
         padding-left: 2px;
+        font-size: 20px;
       }
     }
     .amount {
