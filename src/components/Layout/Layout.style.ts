@@ -1,5 +1,6 @@
-import { Responsive, WidthProvider } from 'react-grid-layout';
+import { Responsive, WidthProvider } from "react-grid-layout";
 import styled from "styled-components";
+
 const ResponsiveGridLayout = WidthProvider(Responsive);
 export const GridLayoutStyle = styled(ResponsiveGridLayout)`
   .react-grid-item {

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Dropdown, Button, Menu } from "antd";
-export const HeaderStyles = styled.header`
+import { Dropdown, Button, Menu,Layout } from "antd";
+export const HeaderStyles = styled.div`
   .container {
     display: flex;
     justify-content: space-between;
@@ -65,7 +65,7 @@ export const StyledMenu = styled(Menu)`
     padding: 5%;
   }
 `;
-export const SidebarStyles = styled.aside`
+export const SidebarStyles = styled(Layout.Sider)`
   & {
     background-color: #242338;
   }

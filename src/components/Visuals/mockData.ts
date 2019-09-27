@@ -1,15 +1,92 @@
 import Numeral from "numeral";
 
-const numeralNumberContent = `£${Numeral(12312542).format("0,000,000")}`;
-const inlineNumberContent = `£${Numeral(25425).format("0,000,000")}`;
+const getNumeralFigure = (digit: number) => {
+  return `£${Numeral(digit).format("0,000,000")}`;
+};
+
+export const GiftCardVolumeData = {
+  numberContent: getNumeralFigure(2100000),
+  percentContent: "120%",
+  percentAmount: getNumeralFigure(1000000),
+  progressPercentage: 100,
+  numberThreshold: "0"
+};
+
+export const RevenueCardData = {
+  numberContent: getNumeralFigure(65505),
+  percentContent: "30%",
+  percentAmount: getNumeralFigure(130000),
+  progressPercentage: 30,
+  numberThreshold: 4.5
+};
+
+export const CostPerCodeCardData = {
+  numberContent: getNumeralFigure(6000),
+  numberThreshold: 13
+};
+
+export const ProcessingFeeCardData = {
+  numberContent: getNumeralFigure(12000),
+  numberThreshold: 6
+};
+
+export const SaasCardData = {
+  numberContent: getNumeralFigure(45000),
+  numberThreshold: 11,
+  progressPercentage: 100,
+  percentContent: "120%"
+};
+
+export const MiscallaneousCardData = {
+  numberContent: getNumeralFigure(1402),
+  numberThreshold: 4.5
+};
+
+export const RunawayCardData = {
+  numberContent: "55 months"
+};
+
+export const CashInBankCardData = {
+  numberContent: getNumeralFigure(1500000)
+};
+
+export const MonthlyBudgetCardData = {
+  numberContent: getNumeralFigure(155450)
+};
+
+export const FloatsWithBrandCardData = {
+  numberContent: getNumeralFigure(406000),
+  numberThreshold: 306
+};
+
+export const StockHeldCardData = {
+  numberContent: getNumeralFigure(318000),
+  numberThreshold: 4.5
+};
+
+export const DepositsCardData = {
+  numberContent: getNumeralFigure(153000),
+  numberThreshold: 4.5,
+  progressPercentage: 100,
+  percentContent: "120%"
+};
+
+export const AverageDaysFloatHeldCardData = {
+  numberContent: "15 days"
+};
+
+export const DayStockHeldCardData = {
+  numberContent: "18 days",
+  numberThreshold: 33
+};
 
 export const DefaultCardData = {
-  numberContent: numeralNumberContent,
+  numberContent: getNumeralFigure(2100000),
   numberThreshold: 30
 };
 
 export const CompleteCardData = {
-  numberContent: numeralNumberContent,
+  numberContent: getNumeralFigure(2100000),
   percentContent: "120%",
   percentAmount: "$155",
   progressPercentage: 35,
@@ -17,11 +94,7 @@ export const CompleteCardData = {
 };
 
 export const InlineProgressBarWithNumberData = {
-  numberContent: inlineNumberContent,
+  numberContent: getNumeralFigure(45000),
   numberThreshold: 30,
   progressPercentage: 85
-};
-
-export const SimpleCard = {
-  numberContent: "55 months"
 };

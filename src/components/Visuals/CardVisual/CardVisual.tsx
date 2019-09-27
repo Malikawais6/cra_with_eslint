@@ -32,7 +32,10 @@ export const CardVisual = (props: Props) => {
             />
           </Col>
           <Col span={8} className="progressBar">
-            <span className="threshold-ratio"> 20%</span>
+            <span className="threshold-ratio">
+              {" "}
+              {props.data && props.data.percentContent}
+            </span>
             <span>
               <ProgressBar
                 percent={props.data && props.data.progressPercentage}
@@ -55,7 +58,7 @@ export const CardVisual = (props: Props) => {
       {showChart && (
         <Row>
           <Col className="chart-style" span={24}>
-            <Line seriesData={LegendSeriesData}></Line>
+            <Line showTitle={true} seriesData={LegendSeriesData}></Line>
           </Col>
         </Row>
       )}

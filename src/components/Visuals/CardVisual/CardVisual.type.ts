@@ -10,7 +10,7 @@ export type ThresholdProps = "top" | "down" | "normal" | undefined;
 
 export type DataProps = {
   numberContent?: string;
-  numberThreshold?: number;
+  numberThreshold?: number | string;
   percentContent?: string;
   percentAmount?: string;
   progressPercentage?: number;

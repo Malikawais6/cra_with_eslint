@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { List as AntdList, Switch, Menu, Dropdown, Icon, Row, Col } from "antd";
 import "antd/dist/antd.css";
+
 import { IconStyles } from "./List.style";
 import { CaretDownBlue } from "../../assets";
+
 const menu = (setstate: any, index: number) => (
   <Menu
     onClick={(e: any) => {
