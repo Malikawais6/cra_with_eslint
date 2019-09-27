@@ -63,7 +63,7 @@ const Line = (props: Props) => {
     showYAxis,
     showTitle
   } = props;
-  console.log("PROPS ", showTitle);
+
   return (
     <LineStyles HorizontalGridLines="dashed">
       {showLegends && (

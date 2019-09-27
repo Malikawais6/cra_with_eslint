@@ -1,7 +1,9 @@
+import { TableProps, ColumnProps } from "antd/lib/table";
+import { ValidationRule, FormComponentProps } from "antd/lib/form";
+import { ButtonProps } from "antd/lib/button";
+
 import { CellType } from "./Table.types";
-import { TableProps, ColumnProps } from 'antd/lib/table';
-import { ValidationRule, FormComponentProps } from 'antd/lib/form';
-import { ButtonProps } from 'antd/lib/button';
+
 export interface CellProps {
   form: any;
   dataIndex: string;

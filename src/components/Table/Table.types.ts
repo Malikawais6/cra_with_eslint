@@ -1,4 +1,5 @@
 import { FormComponentProps } from "antd/lib/form";
+
 import { EditableProps } from "./Table.interfaces";
 
 export type CellType = {
@@ -14,5 +15,5 @@ export type TableContextType = {
   onAdd?: any;
   onDelete?: any;
   onEdit?: any;
-  columns?:any;
+  columns?: any;
 };

@@ -6,10 +6,20 @@ import { GraphIcon } from "../../assets";
 import { CardVisual } from "../Visuals/CardVisual/CardVisual";
 import { GridLayoutStyle as GridLayout } from "./Layout.style";
 import {
-  CompleteCardData,
-  InlineProgressBarWithNumberData,
-  SimpleCard,
-  DefaultCardData
+  GiftCardVolumeData,
+  RevenueCardData,
+  CostPerCodeCardData,
+  ProcessingFeeCardData,
+  SaasCardData,
+  MiscallaneousCardData,
+  RunawayCardData,
+  CashInBankCardData,
+  MonthlyBudgetCardData,
+  FloatsWithBrandCardData,
+  StockHeldCardData,
+  DepositsCardData,
+  AverageDaysFloatHeldCardData,
+  DayStockHeldCardData
 } from "../Visuals/mockData";
 
 export const Layout = () => {
@@ -30,16 +40,17 @@ export const Layout = () => {
     { i: "n", x: 4, y: 20, w: 4, h: 0.8 }
   ];
   const layouts = {
-    lg:layout,
-    sm: layout,         
-    md: layout,        
-    xs:layout,
-    xxs:layout
+    lg: layout,
+    sm: layout,
+    md: layout,
+    xs: layout,
+    xxs: layout
   };
   useEffect(() => {
-    setTimeout(() => { window.dispatchEvent(new Event('resize')) }, 10) 
-   
-  }, [])
+    setTimeout(() => {
+      window.dispatchEvent(new Event("resize"));
+    }, 10);
+  }, []);
   return (
     <GridLayout
       isDraggable={false}
@@ -67,8 +78,8 @@ export const Layout = () => {
             showProgressBar={true}
             numberSize={"x-large"}
             percentSize={"large"}
-            numberThresholdStatus={"top"}
-            data={CompleteCardData}
+            numberThresholdStatus={"normal"}
+            data={GiftCardVolumeData}
           />
         </Card>
       </div>
@@ -91,7 +102,7 @@ export const Layout = () => {
             showProgressBar={true}
             numberSize={"x-large"}
             percentSize={"large"}
-            data={CompleteCardData}
+            data={RevenueCardData}
             numberThresholdStatus={"top"}
           />
         </Card>
@@ -102,7 +113,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={CostPerCodeCardData}
           />
         </Card>
       </div>
@@ -112,7 +123,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={ProcessingFeeCardData}
           />
         </Card>
       </div>
@@ -122,7 +133,7 @@ export const Layout = () => {
           <CardVisual
             showInlineProgressBar={true}
             numberSize={"medium"}
-            data={InlineProgressBarWithNumberData}
+            data={SaasCardData}
             numberThresholdStatus={"top"}
           />
         </Card>
@@ -133,14 +144,14 @@ export const Layout = () => {
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={MiscallaneousCardData}
           />
         </Card>
       </div>
 
       <div key="g">
         <Card title="Runway">
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual numberSize={"large"} data={RunawayCardData} />
         </Card>
       </div>
 
@@ -156,13 +167,13 @@ export const Layout = () => {
             />
           }
         >
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual numberSize={"large"} data={CashInBankCardData} />
         </Card>
       </div>
 
       <div key="i">
         <Card title="Monthly budget" showInfo={true}>
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual numberSize={"large"} data={MonthlyBudgetCardData} />
         </Card>
       </div>
 
@@ -171,7 +182,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"large"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={FloatsWithBrandCardData}
           />
         </Card>
       </div>
@@ -181,7 +192,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"large"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={StockHeldCardData}
           />
         </Card>
       </div>
@@ -202,7 +213,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"large"}
             showInlineProgressBar={true}
-            data={InlineProgressBarWithNumberData}
+            data={DepositsCardData}
             numberThresholdStatus={"top"}
           />
         </Card>
@@ -220,7 +231,10 @@ export const Layout = () => {
             />
           }
         >
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual
+            numberSize={"large"}
+            data={AverageDaysFloatHeldCardData}
+          />
         </Card>
       </div>
 
@@ -228,8 +242,8 @@ export const Layout = () => {
         <Card title="days stock held">
           <CardVisual
             numberSize={"large"}
-            numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            numberThresholdStatus={"down"}
+            data={DayStockHeldCardData}
           />
         </Card>
       </div>

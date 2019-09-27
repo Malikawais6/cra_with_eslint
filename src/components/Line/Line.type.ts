@@ -1,4 +1,5 @@
 import { LineMarkSeriesProps } from "react-vis";
+
 export type Props = LineMarkSeriesProps & {
   HorizontalGridLines?: "dashed" | "fill";
   curve?: boolean;
