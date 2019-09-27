@@ -57,17 +57,17 @@ const Finance = ({ match, history, location }: any) => {
               </div>
             ) : (
               <div className="buttons">
-                <span className="content">
+                <div className="edit-button">
                   <EditIcon />
-                </span>
-                <EditStyledButton
-                  onClick={() => {
-                    setSetting(true);
-                    history.push(`${match.path}/settings`);
-                  }}
-                >
-                  <span>Edit</span>
-                </EditStyledButton>
+                  <EditStyledButton
+                    onClick={() => {
+                      setSetting(true);
+                      history.push(`${match.path}/settings`);
+                    }}
+                  >
+                    <span>Edit</span>
+                  </EditStyledButton>
+                </div>
                 <PeriodSelect options={options} />
               </div>
             )}

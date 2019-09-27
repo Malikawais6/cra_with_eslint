@@ -12,7 +12,6 @@ export const EditStyledButton = styled(Button)`
     border: none;
     background: transparent;
     box-shadow: none;
-    padding: 1px 3em 0 0;
     &:hover {
       background: transparent;
       color: #56556c;
@@ -45,7 +44,7 @@ export const StyledButton = styled(Button)`
 `;
 
 export const FinanceStyles = styled.div<any>`
-  margin: 2em;
+  padding: 15px 30px;
   .container {
     box-shadow: ${(props: any) =>
       props.settings ? "none" : "inset 0 -1px 0 0 #dbdbe6"};
@@ -57,6 +56,8 @@ export const FinanceStyles = styled.div<any>`
     color: #56556c;
   }
   .heading {
+    display: flex;
+    align-items: center;
     font-size: 28px;
     font-weight: 500;
     line-height: 1.14;
@@ -76,8 +77,20 @@ export const FinanceStyles = styled.div<any>`
     display: flex;
   }
   .buttons {
-    float: right;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 45px;
+
+    .edit-button {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 8px;
+      align-items: center;
+
+      .ant-btn {
+        padding: 0;
+      }
+    }
   }
 
   .content {
@@ -88,7 +101,7 @@ export const FinanceStyles = styled.div<any>`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1em 0 1em 0;
+    padding: 0 0 15px 0;
   }
   .settings {
     font-size: 16px;
