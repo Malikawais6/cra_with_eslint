@@ -54,6 +54,7 @@ export const Layout = () => {
       <div key="a">
         <Card
           title="Gift Card Volume"
+          hasChart={true}
           extra={
             <Icon
               icon={{ component: () => <GraphIcon /> }}
@@ -77,6 +78,7 @@ export const Layout = () => {
       <div key="b">
         <Card
           title="Revenue"
+          hasChart={true}
           extra={
             <Icon
               icon={{ component: () => <GraphIcon /> }}
@@ -118,7 +120,7 @@ export const Layout = () => {
       </div>
 
       <div key="e">
-        <Card title="SaaS" threshold={20} showInfo={true}>
+        <Card title="SaaS" showInfo={true}>
           <CardVisual
             showInlineProgressBar={true}
             numberSize={"medium"}
@@ -189,7 +191,6 @@ export const Layout = () => {
       <div key="l">
         <Card
           title="Deposits"
-          threshold={20}
           showInfo={true}
           extra={
             <Icon

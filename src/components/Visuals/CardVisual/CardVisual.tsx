@@ -22,7 +22,7 @@ export const CardVisual = (props: Props) => {
   return (
     <CardVisualStyled showChart={showChart}>
       {showInlineProgressBar ? (
-        <Row>
+        <Row className="inlineNumberWithProgress">
           <Col span={14}>
             <Number
               content={props.data && props.data.numberContent}
@@ -31,10 +31,13 @@ export const CardVisual = (props: Props) => {
               thresholdStatus={numberThresholdStatus}
             />
           </Col>
-          <Col span={8}>
-            <ProgressBar
-              percent={props.data && props.data.progressPercentage}
-            />
+          <Col span={8} className="progressBar">
+            <span className="threshold-ratio"> 20%</span>
+            <span>
+              <ProgressBar
+                percent={props.data && props.data.progressPercentage}
+              />
+            </span>
           </Col>
         </Row>
       ) : (
@@ -62,7 +65,7 @@ export const CardVisual = (props: Props) => {
             <Number
               content={props.data && props.data.percentContent}
               size={percentSize}
-              showAmount={props.data && props.data.percentAmount} 
+              showAmount={props.data && props.data.percentAmount}
             />
           </Col>
         </Row>

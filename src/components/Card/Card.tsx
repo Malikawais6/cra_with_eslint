@@ -28,7 +28,7 @@ const Title = (props: Props) => (
 );
 const Card = (props: Props) => {
   return (
-    <CardStyles>
+    <CardStyles hasChart={props.hasChart}>
       <CardAntd
         className="card"
         title={

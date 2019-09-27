@@ -23,7 +23,7 @@ export const CardStyles = styled.div<Props>`
     align-items: center;
     .title {
       display: flex;
-      font-size: 18px;
+      font-size: ${(props:Props)=>props.hasChart?"18px":"16px"};
       color: #56556c;
     }
     .icon {
@@ -36,7 +36,6 @@ export const CardStyles = styled.div<Props>`
       color: #56556c;
     }
   }
-
   .ant-card-body {
     padding: 0 24px 0 24px;
   }
