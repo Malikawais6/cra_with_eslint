@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { Dropdown, Button, Menu,Layout } from "antd";
+import { Dropdown, Button, Menu, Layout } from "antd";
 export const HeaderStyles = styled.div`
   .container {
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
     align-items: center;
-    padding: 1em;
+    padding: 15px 32px;
   }
 
   .left-container {
@@ -22,19 +22,26 @@ export const HeaderStyles = styled.div`
     padding-left: 1em;
   }
 
-  .right-container {
-    display: flex;
+  .nav-items {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 40px;
     align-items: center;
   }
-  .presentation-icon {
+
+  .presentation-mode {
     display: flex;
+    align-items: center;
+    
+    svg {
+      margin-right: 12px;
+    }
   }
 `;
 export const StyledDropdown = styled(Dropdown)`
   &.ant-dropdown-link {
     font-size: 16px;
     color: #56556c;
-    margin: 0 2em 0 2em;
     display: flex;
   }
 `;
@@ -46,16 +53,15 @@ export const StyledButton = styled(Button)`
     color: #56556c;
     border: none;
     box-shadow: none;
-    padding-left: 5px;
+    padding: 0;
   }
 `;
 export const StyledMenu = styled(Menu)`
   &.ant-menu {
-    width: 202px;
-    height: 44px;
     border-radius: 8px;
     background-color: rgba(219, 219, 230, 0);
     padding: 5%;
+    border: 0;
   }
 `;
 export const SidebarStyles = styled(Layout.Sider)`
@@ -73,7 +79,14 @@ export const SidebarStyles = styled(Layout.Sider)`
     letter-spacing: normal;
     color: #ffffff;
     border-radius: 4px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
+
   .ant-menu {
     &:not(.ant-menu-horizontal) {
       .ant-menu-item-selected {
@@ -90,6 +103,11 @@ export const SidebarStyles = styled(Layout.Sider)`
         border-right: none;
       }
     }
+    
+    &.ant-menu-inline{ .ant-menu-item:not(:last-child) {
+      margin-bottom: 0px;
+      margin-top: 0;
+    }}
   }
   .teams {
     font-size: 12px;
@@ -100,7 +118,8 @@ export const SidebarStyles = styled(Layout.Sider)`
     margin: 3em 0 0 2.7em;
   }
   .dot {
-    float: right;
+    display: flex;
+    justify-content: space-between;
   }
   .ant-menu-item {
     a {

@@ -45,7 +45,7 @@ export const CardVisual = (props: Props) => {
         </Row>
       ) : (
         <Row>
-          <Col span={24}>
+          <Col span={24} className = "chart-figures">
             <Number
               content={props.data && props.data.numberContent}
               threshold={props.data && props.data.numberThreshold}
