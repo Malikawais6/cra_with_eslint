@@ -57,9 +57,7 @@ const Finance = ({ match, history, location }: any) => {
               </div>
             ) : (
               <div className="buttons">
-                <span className="content">
-                  <EditIcon />
-                </span>
+                <EditIcon />
                 <EditStyledButton
                   onClick={() => {
                     setSetting(true);

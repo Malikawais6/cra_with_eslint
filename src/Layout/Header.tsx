@@ -13,17 +13,16 @@ const Header = () => {
     <HeaderStyles>
       <div className="container">
         <div className="left-container">
-          <div>
-            <Wegift />
-          </div>
+          <Wegift />
+          
           <div className="kpi-dashboard">KPI DASHBOARD</div>
         </div>
-        <div className="right-container">
-          <div className="presentation-icon">
+        <div className="nav-items">
+          <div className="presentation-mode">
             <PresentationIcon />
+            <StyledButton>Presentation Mode</StyledButton>
           </div>
 
-          <StyledButton>Presentation Mode</StyledButton>
 
           <StyledDropdown overlay={menu}>
             <a className="ant-dropdown-link" href="#">

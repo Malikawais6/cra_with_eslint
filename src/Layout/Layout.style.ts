@@ -6,7 +6,7 @@ export const HeaderStyles = styled.header`
     justify-content: space-between;
     background-color: #ffffff;
     align-items: center;
-    padding: 1em;
+    padding: 15px 32px;
   }
 
   .left-container {
@@ -22,19 +22,26 @@ export const HeaderStyles = styled.header`
     padding-left: 1em;
   }
 
-  .right-container {
-    display: flex;
+  .nav-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
     align-items: center;
   }
-  .presentation-icon {
+
+  .presentation-mode {
     display: flex;
+    align-items: center;
+    
+    svg {
+      margin-right: 12px;
+    }
   }
 `;
 export const StyledDropdown = styled(Dropdown)`
   &.ant-dropdown-link {
     font-size: 16px;
     color: #56556c;
-    margin: 0 2em 0 2em;
     display: flex;
   }
 `;
@@ -46,7 +53,7 @@ export const StyledButton = styled(Button)`
     color: #56556c;
     border: none;
     box-shadow: none;
-    padding-left: 5px;
+    padding: 0;
   }
 `;
 export const StyledMenu = styled(Menu)`
