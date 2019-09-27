@@ -11,6 +11,7 @@ export type Props = LineMarkSeriesProps & {
   showLabels?: boolean;
   showGridLines?: boolean;
   showLineMarks?: boolean;
+  showTitle?: boolean;
 };
 
 export type dataProps = { [key: string]: string | number };
