@@ -2,6 +2,8 @@ import { Responsive, WidthProvider } from 'react-grid-layout';
 import styled from "styled-components";
 const ResponsiveGridLayout = WidthProvider(Responsive);
 export const GridLayoutStyle = styled(ResponsiveGridLayout)`
+  margin: 0 -15px;
+  
   .react-grid-item {
     background: white;
     border-radius: 8px;

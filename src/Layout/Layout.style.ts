@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Dropdown, Button, Menu } from "antd";
+import { Dropdown, Button, Menu, Layout } from "antd";
 export const HeaderStyles = styled.header`
   .container {
     display: flex;
@@ -24,7 +24,7 @@ export const HeaderStyles = styled.header`
 
   .nav-items {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-column-gap: 40px;
     align-items: center;
   }
@@ -58,14 +58,13 @@ export const StyledButton = styled(Button)`
 `;
 export const StyledMenu = styled(Menu)`
   &.ant-menu {
-    width: 202px;
-    height: 44px;
     border-radius: 8px;
     background-color: rgba(219, 219, 230, 0);
     padding: 5%;
+    border: 0;
   }
 `;
-export const SidebarStyles = styled.aside`
+export const SidebarStyles = styled(Layout.Sider)`
   & {
     background-color: #242338;
   }
@@ -80,7 +79,14 @@ export const SidebarStyles = styled.aside`
     letter-spacing: normal;
     color: #ffffff;
     border-radius: 4px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
+
   .ant-menu {
     &:not(.ant-menu-horizontal) {
       .ant-menu-item-selected {
@@ -97,6 +103,11 @@ export const SidebarStyles = styled.aside`
         border-right: none;
       }
     }
+    
+    &.ant-menu-inline{ .ant-menu-item:not(:last-child) {
+      margin-bottom: 0px;
+      margin-top: 0;
+    }}
   }
   .teams {
     font-size: 12px;
@@ -107,7 +118,8 @@ export const SidebarStyles = styled.aside`
     margin: 3em 0 0 2.7em;
   }
   .dot {
-    float: right;
+    display: flex;
+    justify-content: space-between;
   }
   .ant-menu-item {
     a {

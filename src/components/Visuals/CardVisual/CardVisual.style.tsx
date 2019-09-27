@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const CardVisualStyled = styled.div<any>`
   .chart-style {
-    width: 100%;
-    height: 150px;
+    height: 160px;
     margin-left: -25px;
+  }
+  .chart-figures {
+    justify-content: ${(props: any) => (props.showChart ? "flex-start" : "none")};
   }
   .ant-row {
     margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
@@ -17,7 +19,7 @@ export const CardVisualStyled = styled.div<any>`
   }
   .threshold-ratio {
     position: absolute;
-    margin: -55px 0;
+    margin: -30px 0;
     font-family: Visuelt;
     font-size: 24px;
     font-weight: 500;

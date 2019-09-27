@@ -14,20 +14,20 @@ import {
 
 export const Layout = () => {
   var layout = [
-    { i: "a", x: 0, y: 0, w: 4, h: 2.4 },
-    { i: "b", x: 4, y: 0, w: 4, h: 2.4 },
-    { i: "c", x: 8, y: 0, w: 4, h: 0.6 },
-    { i: "d", x: 8, y: 3, w: 4, h: 0.6 },
-    { i: "e", x: 8, y: 6, w: 4, h: 0.6 },
-    { i: "f", x: 8, y: 9, w: 4, h: 0.6 },
-    { i: "g", x: 0, y: 12, w: 4, h: 0.8 },
-    { i: "h", x: 4, y: 12, w: 4, h: 0.8 },
-    { i: "i", x: 8, y: 12, w: 4, h: 0.8 },
-    { i: "j", x: 0, y: 16, w: 4, h: 0.8 },
-    { i: "k", x: 4, y: 16, w: 4, h: 0.8 },
-    { i: "l", x: 8, y: 16, w: 4, h: 0.8 },
-    { i: "m", x: 0, y: 20, w: 4, h: 0.8 },
-    { i: "n", x: 4, y: 20, w: 4, h: 0.8 }
+    { i: "a", x: 0, y: 0, w: 4, h: 4 },
+    { i: "b", x: 4, y: 0, w: 4, h: 4 },
+    { i: "c", x: 8, y: 0, w: 4, h: 1 },
+    { i: "d", x: 8, y: 3, w: 4, h: 1 },
+    { i: "e", x: 8, y: 6, w: 4, h: 1 },
+    { i: "f", x: 8, y: 9, w: 4, h: 1 },
+    { i: "g", x: 0, y: 12, w: 4, h: 1.23 },
+    { i: "h", x: 4, y: 12, w: 4, h: 1.23 },
+    { i: "i", x: 8, y: 12, w: 4, h: 1.23 },
+    { i: "j", x: 0, y: 16, w: 4, h: 1.23 },
+    { i: "k", x: 4, y: 16, w: 4, h: 1.23 },
+    { i: "l", x: 8, y: 16, w: 4, h: 1.23 },
+    { i: "m", x: 0, y: 20, w: 4, h: 1.23 },
+    { i: "n", x: 4, y: 20, w: 4, h: 1.23 }
   ];
   const layouts = {
     lg:layout,
@@ -45,14 +45,16 @@ export const Layout = () => {
       isDraggable={false}
       className="layout"
       layouts={layouts}
+      rowHeight={75}
+      margin = {[15, 15]}
       measureBeforeMount={false}
       breakpoints={{ lg: 1100, md: 996, sm: 768, xs: 480, xxs: 0 }}
       cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
     >
-      <div key="a">
+      <div key="a" className="card-wrapper">
         <Card
           title="Gift Card Volume"
-          hasChart={true}
+          cardType="visual"
           extra={
             <Icon
               icon={{ component: () => <GraphIcon /> }}
@@ -76,7 +78,7 @@ export const Layout = () => {
       <div key="b">
         <Card
           title="Revenue"
-          hasChart={true}
+          cardType="visual"
           extra={
             <Icon
               icon={{ component: () => <GraphIcon /> }}
@@ -98,7 +100,7 @@ export const Layout = () => {
       </div>
 
       <div key="c">
-        <Card title="Cost per code" showInfo={true}>
+        <Card title="Cost per code" cardType="cost" showInfo={true}>
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
@@ -108,7 +110,7 @@ export const Layout = () => {
       </div>
 
       <div key="d">
-        <Card title="Processing fee" showInfo={true}>
+        <Card title="Processing fee" cardType="cost" showInfo={true}>
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
@@ -118,7 +120,7 @@ export const Layout = () => {
       </div>
 
       <div key="e">
-        <Card title="SaaS" showInfo={true}>
+        <Card title="SaaS" cardType="cost" showInfo={true}>
           <CardVisual
             showInlineProgressBar={true}
             numberSize={"medium"}
@@ -129,7 +131,7 @@ export const Layout = () => {
       </div>
 
       <div key="f">
-        <Card title="Miscallaneous">
+        <Card title="Miscallaneous" cardType="cost">
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}

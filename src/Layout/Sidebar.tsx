@@ -20,7 +20,6 @@ const SideBar = () => {
 
   return (
     <SidebarStyles>
-      <Layout.Sider>
         <div className="teams">Teams</div>
         <StyledMenu mode="inline" onSelect={(item: any) => setState(item.key)}>
           <Menu.Item key="1">
@@ -49,7 +48,6 @@ const SideBar = () => {
             <MenuItem title="Product" path="/product" state={state} value="5" />
           </Menu.Item>
         </StyledMenu>
-      </Layout.Sider>
     </SidebarStyles>
   );
 };
