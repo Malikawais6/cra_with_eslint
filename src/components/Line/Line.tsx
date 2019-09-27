@@ -7,7 +7,8 @@ import {
   LabelSeries,
   LineSeries,
   LineMarkSeries,
-  LegendItem
+  LegendItem,
+  GradientDefs
 } from "react-vis";
 import "../../../node_modules/react-vis/dist/style.css";
 
@@ -75,6 +76,13 @@ const Line = (props: Props) => {
       )}
       <FlexibleXYPlot xType="ordinal">
         {showGridLines && <HorizontalGridLines />}
+
+        <GradientDefs>
+          <linearGradient id="CoolGradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor="#40D1E7" />
+            <stop offset="100%" stopColor="#74A4EA" />
+          </linearGradient>
+        </GradientDefs>
 
         {legendsData.map((legend: any, index: number) => {
           return (

@@ -30,7 +30,7 @@ storiesOf("Modal", module).add(
             showLabels={true}
             showGridLines={true}
             showLineMarks={true}
-            seriesData={LegendSeriesData}
+            seriesData={LegendSeriesData(false)}
           ></Line>
         </LineChartStyled>
       </ModalComponent>
