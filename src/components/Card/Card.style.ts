@@ -48,7 +48,6 @@ export const CardStyles = styled.div<Props>`
     padding: 0;
     overflow:unset;
   }
-
   .title-container {
     display: flex;
     justify-content: space-between;
