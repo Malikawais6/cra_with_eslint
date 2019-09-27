@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const CardVisualStyled = styled.div<any>`
   .chart-style {
-    width: 340px;
-    height: 140px;
-    margin-left: -30px;
+    width: 100%;
+    height: 150px;
+    margin-left: -25px;
   }
   .ant-row {
-    margin-top:${(props:any)=>props.showChart?"10px":"0px"}
+    margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
   }
 `;
