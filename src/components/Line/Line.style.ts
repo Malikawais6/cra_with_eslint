@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import { Props } from "./Line.type";
+
 export const LineStyles = styled.div<Props>`
   height: 100%;
   width: 100%;

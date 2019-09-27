@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import { Props } from "./Number.type";
+
 const SIZE = {
   "x-small": "12px",
   small: "16px",
@@ -16,7 +18,6 @@ export const NumberStyles = styled.div<Props>`
       display: flex;
       align-self: center;
       align-items: baseline;
-      
     }
     .heading {
       font-size: ${props => SIZE[props.size || "large"]};

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
+import { Menu, Dropdown } from "antd";
+
 import { GoalButtonStyle } from "./Table.style";
 import { MoreGray } from "../../assets";
 import Icon from "../Icon/Icon";
 import { TableContext } from "../../context/";
-import { Menu, Dropdown } from "antd";
 
 export const DeletePanel = (props: any) => {
   const { onDelete } = useContext(TableContext);

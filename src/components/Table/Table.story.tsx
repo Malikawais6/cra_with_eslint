@@ -1,9 +1,11 @@
 import React, { useState, useReducer, Fragment } from "react";
 import { storiesOf } from "@storybook/react";
+
 import { Table } from "./Table";
 import { TableContext, initialContent } from "../../context/";
 import { reducer } from "../../reducers/table";
 import Icon from "../Icon/Icon";
+
 const dataSource: any = [
   {
     key: "1",
