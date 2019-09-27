@@ -14,20 +14,20 @@ import {
 
 export const Layout = () => {
   var layout = [
-    { i: "a", x: 0, y: 0, w: 3.8, h: 9.2 },
-    { i: "b", x: 3.9, y: 0, w: 3.8, h: 9.2 },
-    { i: "c", x: 7.8, y: 0, w: 3.8, h: 2.3 },
-    { i: "d", x: 7.8, y: 2, w: 3.8, h: 2.3 },
-    { i: "e", x: 7.8, y: 4, w: 3.8, h: 2.3 },
-    { i: "f", x: 7.8, y: 6, w: 3.8, h: 2.3 },
-    { i: "g", x: 0, y: 8, w: 3.8, h: 2.7 },
-    { i: "h", x: 3.9, y: 8, w: 3.8, h: 2.7 },
-    { i: "i", x: 7.8, y: 8, w: 3.8, h: 2.7 },
-    { i: "j", x: 0, y: 10, w: 3.8, h: 2.7 },
-    { i: "k", x: 3.9, y: 10, w: 3.8, h: 2.7 },
-    { i: "l", x: 7.8, y: 10, w: 3.8, h: 2.7 },
-    { i: "m", x: 0, y: 12, w: 3.8, h: 2.7 },
-    { i: "n", x: 3.9, y: 14, w: 3.8, h: 2.7 }
+    { i: "a", x: 0, y: 0, w: 4, h: 9.2 },
+    { i: "b", x: 4, y: 0, w: 4, h: 9.2 },
+    { i: "c", x: 8, y: 0, w: 4, h: 2.3 },
+    { i: "d", x: 8, y: 3, w: 4, h: 2.3 },
+    { i: "e", x: 8, y: 6, w: 4, h: 2.3 },
+    { i: "f", x: 8, y: 9, w: 4, h: 2.3 },
+    { i: "g", x: 0, y: 12, w: 4, h: 2.7 },
+    { i: "h", x: 4, y: 12, w: 4, h: 2.7 },
+    { i: "i", x: 8, y: 12, w: 4, h: 2.7 },
+    { i: "j", x: 0, y: 16, w: 4, h: 2.7 },
+    { i: "k", x: 4, y: 16, w: 4, h: 2.7 },
+    { i: "l", x: 8, y: 16, w: 4, h: 2.7 },
+    { i: "m", x: 0, y: 20, w: 4, h: 2.7 },
+    { i: "n", x: 4, y: 20, w: 4, h: 2.7 }
   ];
 
   return (
@@ -51,12 +51,11 @@ export const Layout = () => {
               }}
             />
           }
-          threshold={20}
         >
           <CardVisual
             showChart={true}
             showProgressBar={true}
-            numberSize={"large"}
+            numberSize={"x-large"}
             percentSize={"large"}
             numberThresholdStatus={"top"}
             data={CompleteCardData}
@@ -79,7 +78,7 @@ export const Layout = () => {
           <CardVisual
             showChart={true}
             showProgressBar={true}
-            numberSize={"large"}
+            numberSize={"x-large"}
             percentSize={"large"}
             data={CompleteCardData}
             numberThresholdStatus={"top"}
@@ -191,7 +190,7 @@ export const Layout = () => {
           }
         >
           <CardVisual
-            numberSize={"medium"}
+            numberSize={"large"}
             showInlineProgressBar={true}
             data={InlineProgressBarWithNumberData}
             numberThresholdStatus={"top"}
