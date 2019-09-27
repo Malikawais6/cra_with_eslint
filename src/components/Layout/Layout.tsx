@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Card from "../Card/Card";
 import Icon from "../Icon/Icon";
@@ -36,14 +36,12 @@ export const Layout = () => {
     xs:layout,
     xxs:layout
   };
-
+  useEffect(() => {
+    setTimeout(() => { window.dispatchEvent(new Event('resize')) }, 10) 
+   
+  }, [])
   return (
     <GridLayout
-      // layout={layout}
-      // cols={12}
-      // rowHeight={30}
-      // width={1200}
-      // compactType={"vertical"}
       isDraggable={false}
       className="layout"
       layouts={layouts}
