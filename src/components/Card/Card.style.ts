@@ -46,6 +46,7 @@ export const CardStyles = styled.div<Props>`
   }
   .ant-card-head-title {
     padding: 0;
+    overflow:unset;
   }
 
   .title-container {
