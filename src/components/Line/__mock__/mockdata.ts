@@ -28,11 +28,11 @@ export const dataSeriesTwo = [
   { x: "Dec", y: 11.5, label: "$2.8" }
 ];
 
-export const LegendSeriesData = [
+export const LegendSeriesData = (isGradient?: boolean) => [
   {
     title: "Actual",
     data: dataSeriesOne,
-    color: "#40D1E7",
+    color: isGradient ? "url(#CoolGradient)" : "#40d1e7",
     disabled: false
   },
   {

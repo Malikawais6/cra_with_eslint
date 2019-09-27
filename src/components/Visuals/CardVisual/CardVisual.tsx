@@ -57,7 +57,7 @@ export const CardVisual = (props: Props) => {
       {showChart && (
         <Row>
           <Col className="chart-style" span={24}>
-            <Line showTitle={true} seriesData={LegendSeriesData}></Line>
+            <Line showTitle={true} seriesData={LegendSeriesData(true)}></Line>
           </Col>
         </Row>
       )}
