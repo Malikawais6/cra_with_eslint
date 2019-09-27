@@ -14,31 +14,42 @@ import {
 
 export const Layout = () => {
   var layout = [
-    { i: "a", x: 0, y: 0, w: 4, h: 9.2 },
-    { i: "b", x: 4, y: 0, w: 4, h: 9.2 },
-    { i: "c", x: 8, y: 0, w: 4, h: 2.3 },
-    { i: "d", x: 8, y: 3, w: 4, h: 2.3 },
-    { i: "e", x: 8, y: 6, w: 4, h: 2.3 },
-    { i: "f", x: 8, y: 9, w: 4, h: 2.3 },
-    { i: "g", x: 0, y: 12, w: 4, h: 2.7 },
-    { i: "h", x: 4, y: 12, w: 4, h: 2.7 },
-    { i: "i", x: 8, y: 12, w: 4, h: 2.7 },
-    { i: "j", x: 0, y: 16, w: 4, h: 2.7 },
-    { i: "k", x: 4, y: 16, w: 4, h: 2.7 },
-    { i: "l", x: 8, y: 16, w: 4, h: 2.7 },
-    { i: "m", x: 0, y: 20, w: 4, h: 2.7 },
-    { i: "n", x: 4, y: 20, w: 4, h: 2.7 }
+    { i: "a", x: 0, y: 0, w: 4, h: 2.4 },
+    { i: "b", x: 4, y: 0, w: 4, h: 2.4 },
+    { i: "c", x: 8, y: 0, w: 4, h: 0.6 },
+    { i: "d", x: 8, y: 3, w: 4, h: 0.6 },
+    { i: "e", x: 8, y: 6, w: 4, h: 0.6 },
+    { i: "f", x: 8, y: 9, w: 4, h: 0.6 },
+    { i: "g", x: 0, y: 12, w: 4, h: 0.8 },
+    { i: "h", x: 4, y: 12, w: 4, h: 0.8 },
+    { i: "i", x: 8, y: 12, w: 4, h: 0.8 },
+    { i: "j", x: 0, y: 16, w: 4, h: 0.8 },
+    { i: "k", x: 4, y: 16, w: 4, h: 0.8 },
+    { i: "l", x: 8, y: 16, w: 4, h: 0.8 },
+    { i: "m", x: 0, y: 20, w: 4, h: 0.8 },
+    { i: "n", x: 4, y: 20, w: 4, h: 0.8 }
   ];
+  const layouts = {
+    lg:layout,
+    sm: layout,         
+    md: layout,        
+    xs:layout,
+    xxs:layout
+  };
 
   return (
     <GridLayout
-      className="layout"
-      layout={layout}
-      cols={12}
-      rowHeight={30}
-      width={1200}
-      compactType={"vertical"}
+      // layout={layout}
+      // cols={12}
+      // rowHeight={30}
+      // width={1200}
+      // compactType={"vertical"}
       isDraggable={false}
+      className="layout"
+      layouts={layouts}
+      measureBeforeMount={false}
+      breakpoints={{ lg: 1100, md: 996, sm: 768, xs: 480, xxs: 0 }}
+      cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
     >
       <div key="a">
         <Card
