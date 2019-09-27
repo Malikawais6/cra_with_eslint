@@ -69,7 +69,6 @@ export const SidebarStyles = styled(Layout.Sider)`
     background-color: #242338;
   }
   .ant-layout-sider-children {
-    height: 100vh;
     background-color: #242338;
   }
   .ant-menu-item {

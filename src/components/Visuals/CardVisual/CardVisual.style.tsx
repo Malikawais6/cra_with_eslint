@@ -12,10 +12,13 @@ export const CardVisualStyled = styled.div<any>`
     margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
   }
   .inlineNumberWithProgress {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 20px;
   }
   .progressBar {
     align-self: flex-end;
+    width: 100%;
   }
   .threshold-ratio {
     position: absolute;

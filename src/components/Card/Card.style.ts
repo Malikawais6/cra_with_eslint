@@ -11,6 +11,10 @@ export const CardStyles = styled.div<Props>`
     .ant-card-head-wrapper {
       line-height: 1;
     }
+
+    .threshold-ratio {
+      margin: -45px 0;
+    }
   }
 
   .visualization-card {
