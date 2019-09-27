@@ -13,6 +13,14 @@ export const LineStyles = styled.div<Props>`
         : "0px";
     }};
   }
+  .rv-xy-plot__axis__title text {
+    font-size: 12px;
+    fill: #a7a7bb;
+  }
+  .rv-xy-plot__axis__title > g {
+    transform: rotate(3600deg);
+    transform: translate(60px, 20px);
+  }
 `;
 
 export const ThresholdStyled = styled.div`
