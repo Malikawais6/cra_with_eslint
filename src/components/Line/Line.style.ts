@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Props } from "./Line.type";
 
 export const LineStyles = styled.div<Props>`
+  padding-top: 20px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -15,6 +16,7 @@ export const LineStyles = styled.div<Props>`
         : "0px";
     }};
   }
+
   .rv-xy-plot__axis__title text {
     font-size: 12px;
     fill: #a7a7bb;
@@ -23,6 +25,11 @@ export const LineStyles = styled.div<Props>`
     transform: rotate(3600deg);
     transform: translate(60px, 20px);
   }
+  /* .rv-xy-plot__series {
+    .rv-xy-plot__series--label {
+      transform: translate(10px, -36px);
+    }
+  } */
 `;
 
 export const ThresholdStyled = styled.div`
