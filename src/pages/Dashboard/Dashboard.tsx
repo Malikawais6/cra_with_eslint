@@ -63,6 +63,7 @@ const Dashboard = (props: any) => {
       <PageStructure
         moduleTitle={moduleName}
         pageTitle="Dashboard"
+        headerBorderBottom
         TimeTracker={TimeTracker}
         Extras={Extras}
       >

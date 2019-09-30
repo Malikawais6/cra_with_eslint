@@ -5,15 +5,23 @@ import { PageStructureStyle } from "./styles";
 interface PageStructureProps {
   moduleTitle: string;
   pageTitle: string;
+  headerBorderBottom?: boolean;
   TimeTracker?: React.ReactType;
   Extras?: React.ReactType;
 }
 
 export const PageStructure: React.FC<PageStructureProps> = props => {
-  const { moduleTitle, pageTitle, TimeTracker, Extras, children } = props;
+  const {
+    moduleTitle,
+    pageTitle,
+    TimeTracker,
+    Extras,
+    children,
+    headerBorderBottom
+  } = props;
 
   return (
-    <PageStructureStyle>
+    <PageStructureStyle headerBorderBottom={headerBorderBottom}>
       <header className="page-header">
         <div className="title-wrapper">
           <h3>{moduleTitle}</h3>

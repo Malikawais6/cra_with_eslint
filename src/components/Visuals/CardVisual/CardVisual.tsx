@@ -22,24 +22,29 @@ export const CardVisual = (props: Props) => {
   return (
     <CardVisualStyled showChart={showChart}>
       {showInlineProgressBar ? (
-        <Row>
-          <Col span={14}>
-            <Number
-              content={props.data && props.data.numberContent}
-              size={numberSize}
-              threshold={props.data && props.data.numberThreshold}
-              thresholdStatus={numberThresholdStatus}
-            />
-          </Col>
-          <Col span={8}>
-            <ProgressBar
-              percent={props.data && props.data.progressPercentage}
-            />
-          </Col>
-        </Row>
+        <div className="inlineNumberWithProgress">
+          <Number
+            content={props.data && props.data.numberContent}
+            size={numberSize}
+            threshold={props.data && props.data.numberThreshold}
+            thresholdStatus={numberThresholdStatus}
+          />
+
+          <div className="progressBar">
+            <span className="threshold-ratio">
+              {" "}
+              {props.data && props.data.percentContent}
+            </span>
+            <span>
+              <ProgressBar
+                percent={props.data && props.data.progressPercentage}
+              />
+            </span>
+          </div>
+        </div>
       ) : (
         <Row>
-          <Col span={24}>
+          <Col span={24} className="chart-figures">
             <Number
               content={props.data && props.data.numberContent}
               threshold={props.data && props.data.numberThreshold}
@@ -52,7 +57,7 @@ export const CardVisual = (props: Props) => {
       {showChart && (
         <Row>
           <Col className="chart-style" span={24}>
-            <Line seriesData={LegendSeriesData}></Line>
+            <Line showTitle={true} seriesData={LegendSeriesData(true)}></Line>
           </Col>
         </Row>
       )}
@@ -62,7 +67,7 @@ export const CardVisual = (props: Props) => {
             <Number
               content={props.data && props.data.percentContent}
               size={percentSize}
-              showAmount={props.data && props.data.percentAmount} 
+              showAmount={props.data && props.data.percentAmount}
             />
           </Col>
         </Row>

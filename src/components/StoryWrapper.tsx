@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 import { AppStyles } from "../App.style";
 
 const StoryWrapperStyle = styled.div`

@@ -1,11 +1,13 @@
 import React, { useContext, useState, Fragment } from "react";
+import { Button } from "antd";
+import { Select } from "antd";
+
 import { GoalButtonStyle } from "./Table.style";
 import { AddIconBlue } from "../../assets";
 import Icon from "../Icon/Icon";
 import { Alert } from "../Alert/Alert";
 import { TableContext } from "../../context/";
-import { Button } from "antd";
-import { Select } from "antd";
+
 const { Option } = Select;
 
 export const AddPanel = (props: any) => {

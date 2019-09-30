@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
-export const PageStructureStyle = styled.section`
+interface PageStructureStyleProps {
+  headerBorderBottom?: boolean;
+}
+export const PageStructureStyle = styled("section")<PageStructureStyleProps>`
   .page-header {
     display: grid;
     grid-template-columns: auto 321px;
+    border-bottom: ${props =>
+      props.headerBorderBottom ? "1px solid #dbdbe6" : "none"};
 
     .module-title {
       font-size: 14px;

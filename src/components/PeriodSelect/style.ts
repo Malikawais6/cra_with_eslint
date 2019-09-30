@@ -22,6 +22,7 @@ export const PeriodSelectStyle = styled.div`
     .ant-select-arrow {
       color: #56556c;
       margin-top: -9px;
+      right: 20px;
     }
 
     .ant-select-selection__rendered {

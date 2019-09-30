@@ -1,4 +1,5 @@
 import React from "react";
+
 import Editable from "./Editable/Editable";
 import { TableStyles } from "./Table.style";
 import "../../assets/visualt/styles.css";
