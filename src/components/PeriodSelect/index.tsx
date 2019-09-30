@@ -38,7 +38,7 @@ export const PeriodSelect: React.FC<PeriodSelectProps> = props => {
       <Select
         defaultValue={defaultValue}
         onChange={onChange}
-        suffixIcon={CaretDownMedium}
+        suffixIcon={CaretDownMedium()}
       >
         {optionElements}
       </Select>

@@ -1,19 +1,36 @@
 import React, { useState } from "react";
 import { FinanceStyles, StyledButton, EditStyledButton } from "./styles";
-import { EditIcon, CalendarIcon, CaretDownMedium } from "../assets";
+import {
+  EditIcon,
+  CalendarIcon,
+  CaretDownMedium,
+  CaretDownGray
+} from "../assets";
 import { Dropdown, Menu, Button } from "antd";
 import Dashboard from "./Dashboard";
 import Settings from "./settings";
 import { Route, Redirect, Switch } from "react-router";
+import { PeriodSelect } from "../components/PeriodSelect";
 
 const Finance = ({ match, history, location }: any) => {
   const isSettingPage = location.pathname.includes("settings");
   const [settings, setSetting] = useState(isSettingPage);
-  const menu = (
-    <Menu>
-      <Menu.Item key="week">Last Week </Menu.Item>
-    </Menu>
-  );
+
+  const options = [
+    {
+      value: "lastmonth",
+      label: "Last Month"
+    },
+    {
+      value: "lastweek",
+      label: "Last Week"
+    },
+    {
+      value: "lastyear",
+      label: "Last Year"
+    }
+  ];
+
   return (
     <FinanceStyles settings={settings}>
       <div className="container">
@@ -40,29 +57,18 @@ const Finance = ({ match, history, location }: any) => {
               </div>
             ) : (
               <div className="buttons">
-                <span className="content">
+                <div className="edit-button">
                   <EditIcon />
-                </span>
-                <EditStyledButton
-                  onClick={() => {
-                    setSetting(true);
-                    history.push(`${match.path}/settings`);
-                  }}
-                >
-                  <span>Edit</span>
-                </EditStyledButton>
-
-                <Dropdown overlay={menu}>
-                  <StyledButton>
-                    <span className="calendar-icon">
-                      <CalendarIcon />
-                    </span>
-                    <span>Last Month</span>
-                    <span className="icon-down">
-                      <CaretDownMedium />
-                    </span>
-                  </StyledButton>
-                </Dropdown>
+                  <EditStyledButton
+                    onClick={() => {
+                      setSetting(true);
+                      history.push(`${match.path}/settings`);
+                    }}
+                  >
+                    <span>Edit</span>
+                  </EditStyledButton>
+                </div>
+                <PeriodSelect options={options} />
               </div>
             )}
           </div>

@@ -14,7 +14,7 @@ storiesOf("Line", module).add("Line Chart with Props", () => (
       showLabels={true}
       showGridLines={true}
       showLineMarks={true}
-      seriesData={LegendSeriesData}
+      seriesData={LegendSeriesData(false)}
     ></Line>
   </LineChartStory>
 ));
@@ -22,7 +22,7 @@ storiesOf("Line", module).add(
   "Line Chart without Props",
   () => (
     <LineChartStory>
-      <Line seriesData={LegendSeriesData}></Line>
+      <Line showTitle={true} seriesData={LegendSeriesData(true)}></Line>
     </LineChartStory>
   ),
   {

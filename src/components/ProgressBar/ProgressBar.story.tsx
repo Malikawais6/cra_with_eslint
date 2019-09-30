@@ -18,6 +18,6 @@ storiesOf("Progress Bar", module).add("Progress Bar Success", () => (
 
 storiesOf("Progress Bar", module).add("Progress Bar Failure", () => (
   <ProgressBarStory>
-    <ProgressBar percent={30} strokeColor="#ce4c00" />
+    <ProgressBar percent={30} />
   </ProgressBarStory>
 ));

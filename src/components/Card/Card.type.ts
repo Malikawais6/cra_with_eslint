@@ -5,4 +5,5 @@ export interface Props extends CardProps {
   width?:string,
   showInfo?:boolean,
   threshold?:number,
+  cardType? :"visual" | "cost"
 }

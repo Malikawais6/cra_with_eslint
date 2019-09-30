@@ -2,11 +2,36 @@ import styled from "styled-components";
 
 export const CardVisualStyled = styled.div<any>`
   .chart-style {
-    width: 340px;
-    height: 140px;
-    margin-left: -30px;
+    height: 160px;
+    margin-left: -25px;
+  }
+  .chart-figures {
+    justify-content: ${(props: any) =>
+      props.showChart ? "flex-start" : "none"};
   }
   .ant-row {
-    margin-top:${(props:any)=>props.showChart?"10px":"0px"}
+    margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
+  }
+  .inlineNumberWithProgress {
+    display: flex;
+    justify-content: space-between;
+  }
+  .progressBar {
+    align-self: flex-end;
+    width: 100%;
+    max-width: 113px;
+    margin-left: 10px;
+  }
+  .threshold-ratio {
+    position: absolute;
+    margin: -30px 0;
+    font-family: Visuelt;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: #56556c;
   }
 `;
