@@ -1,5 +1,4 @@
-import React, { useState, useMemo } from "react";
-import styled from "styled-components";
+import React from "react";
 
 import Dashboard from "./Dashboard/Dashboard";
 import Settings from "./settings";
@@ -7,7 +6,7 @@ import { Route, Redirect, Switch } from "react-router";
 
 // ------------- Page Structure ------------------------
 
-const Finance = ({ match, history, location }: any) => {
+const Sales = ({ match, history, location }: any) => {
   return (
     <Switch>
       <Route path={`${match.path}/dashboard`} component={Dashboard} />
@@ -18,4 +17,4 @@ const Finance = ({ match, history, location }: any) => {
   );
 };
 
-export default Finance;
+export default Sales;

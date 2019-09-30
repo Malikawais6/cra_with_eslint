@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Dropdown, Button, Menu } from "antd";
+import { Dropdown, Button, Menu, Layout } from "antd";
+
 export const HeaderStyles = styled.header`
   .container {
     display: flex;
@@ -59,13 +60,13 @@ export const StyledMenu = styled(Menu)`
   }
 `;
 export const SidebarStyles = styled.aside`
-  & {
-    background-color: #242338;
-  }
+  background-color: #242338;
+
   .ant-layout-sider-children {
     height: 100vh;
     background-color: #242338;
   }
+
   .ant-menu-item {
     font-size: 16px;
     font-weight: normal;
@@ -110,4 +111,8 @@ export const SidebarStyles = styled.aside`
       color: inherit;
     }
   }
+`;
+
+export const ContentWrapperStyle = styled(Layout.Content)`
+  padding: 1em 1.5em;
 `;

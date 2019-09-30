@@ -295,7 +295,7 @@ export const CalendarIcon = () => (
   </svg>
 );
 
-export const CaretDownMedium = () => (
+export const CaretDownMedium = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"

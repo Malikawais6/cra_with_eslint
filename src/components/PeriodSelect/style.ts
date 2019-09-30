@@ -34,6 +34,7 @@ export const PeriodSelectStyle = styled.div`
     margin-right: 10px;
     font-size: 16px;
     font-weight: 500;
+    line-height: 51px;
     color: #56556c;
   }
 `;
