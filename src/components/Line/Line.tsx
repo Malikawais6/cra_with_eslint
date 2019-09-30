@@ -74,7 +74,7 @@ const Line = (props: Props) => {
           colors={["#40d1e7", "#a7a7bb"]}
         />
       )}
-      <FlexibleXYPlot xType="ordinal">
+      <FlexibleXYPlot xType="ordinal" style={{ padding: 0, margin: 0 }}>
         {showGridLines && <HorizontalGridLines />}
 
         <GradientDefs>

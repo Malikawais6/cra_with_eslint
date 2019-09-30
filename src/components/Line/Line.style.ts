@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Props } from "./Line.type";
 
 export const LineStyles = styled.div<Props>`
-  padding-top: 20px;
+  padding: 20px 0 20px;
   height: 100%;
   width: 100%;
   display: flex;
@@ -22,8 +22,8 @@ export const LineStyles = styled.div<Props>`
     fill: #a7a7bb;
   }
   .rv-xy-plot__axis__title > g {
-    transform: rotate(3600deg);
-    transform: translate(60px, 20px);
+    transform: rotate(360deg);
+    transform: translate(70px, 20px);
   }
   /* .rv-xy-plot__series {
     .rv-xy-plot__series--label {

@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const CardVisualStyled = styled.div<any>`
   .chart-style {
     height: 160px;
-    margin-left: -25px;
+    margin-left: -54px;
+    width: calc(100% + 78px);
   }
   .chart-figures {
     justify-content: ${(props: any) =>
