@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import { Props } from "./Number.type";
+
 const SIZE = {
   "x-small": "12px",
   small: "16px",

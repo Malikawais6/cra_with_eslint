@@ -1,5 +1,7 @@
 import styled from "styled-components";
+
 import { Props } from "./Card.type";
+
 export const CardStyles = styled.div<Props>`
   .default-card-wrapper {
     padding: 17px 25px;
@@ -8,6 +10,10 @@ export const CardStyles = styled.div<Props>`
 
     .ant-card-head-wrapper {
       line-height: 1;
+    }
+
+    .threshold-ratio {
+      margin: -45px 0;
     }
   }
 
@@ -40,8 +46,8 @@ export const CardStyles = styled.div<Props>`
   }
   .ant-card-head-title {
     padding: 0;
+    overflow:unset;
   }
-
   .title-container {
     display: flex;
     justify-content: space-between;
@@ -69,7 +75,6 @@ export const CardStyles = styled.div<Props>`
       margin: 0;
     }
   }
-
   .ant-card-bordered {
     border: none;
   }

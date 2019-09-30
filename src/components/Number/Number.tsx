@@ -1,9 +1,10 @@
 import React from "react";
+
 import { NumberStyles } from "./Number.style";
 import { Props } from "./Number.type";
 import Icon from "../Icon/Icon";
 import { ArrowUp, ArrowDown } from "../../assets/";
-import { ProgressBar } from "../ProgressBar/ProgressBar";
+
 const Number = (props: Props) => {
   return (
     <NumberStyles {...props}>
@@ -24,9 +25,6 @@ const Number = (props: Props) => {
                       ) : (
                         <ArrowDown />
                       ),
-                    style: {
-                      fontSize: "12px"
-                    }
                   }}
                 />
               ) : null}
