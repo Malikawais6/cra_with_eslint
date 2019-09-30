@@ -1,6 +1,7 @@
 import React, { useContext, createContext, useReducer, Dispatch } from "react";
 
 import { CardVisual } from "../../components/Visuals/CardVisual/CardVisual";
+import { Props } from "../../components/Visuals/CardVisual/CardVisual.type";
 
 const INITIALIZE_DASHBOARD = "INITIALIZE_DASHBOARD";
 
@@ -12,6 +13,7 @@ interface Metric {
   id: string;
   title: string;
   data: any;
+  visual: (props: any) => JSX.Element;
 }
 
 interface PeriodFiler {
@@ -35,7 +37,8 @@ const defaultState = {
     {
       id: "cardVolume",
       title: "Gift Card Volume",
-      data: null
+      data: null,
+      visual: CardVisual
     }
   ],
   periodFilters: [
