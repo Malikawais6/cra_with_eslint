@@ -1,9 +1,9 @@
 import React from "react";
-import { ComponentLayout } from "../components/ComponentLayout/ComponentLayout";
+import { GridLayout } from "../components/GridLayout/GridLayout";
 const Dashboard = () => {
   return (
     <div>
-      <ComponentLayout />
+      <GridLayout />
     </div>
   );
 };
