@@ -2,32 +2,39 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import Number from "./Number";
+import { StoryWrapper } from "../StoryWrapper";
 
 storiesOf("Number", module).add("Default", () => (
-  <Number content="$12221455254" size="large" />
+  <StoryWrapper>
+    <Number content="$12221455254" size="large" />
+  </StoryWrapper>
 ));
 
 storiesOf("Number", module).add(
   "Content with down arrow  and threshold",
   () => (
-    <Number
-      content="$12221455254"
-      size="large"
-      threshold={20}
-      thresholdStatus="down"
-    />
+    <StoryWrapper>
+      <Number
+        content="$12221455254"
+        size="large"
+        threshold={20}
+        thresholdStatus="down"
+      />
+    </StoryWrapper>
   )
 );
 
 storiesOf("Number", module).add(
   "Content with up arrow and threshold",
   () => (
-    <Number
-      content="$12221455254"
-      size="x-large"
-      threshold={20}
-      thresholdStatus="top"
-    />
+    <StoryWrapper>
+      <Number
+        content="$12221455254"
+        size="x-large"
+        threshold={20}
+        thresholdStatus="top"
+      />
+    </StoryWrapper>
   ),
   { info: { inline: true } }
 );
@@ -35,18 +42,24 @@ storiesOf("Number", module).add(
 storiesOf("Number", module).add(
   " Content with threshold and normal style",
   () => (
-    <Number
-      content="$12221455254"
-      size="x-large"
-      threshold={12}
-      thresholdStatus="normal"
-    />
+    <StoryWrapper>
+      <Number
+        content="$12221455254"
+        size="x-large"
+        threshold={12}
+        thresholdStatus="normal"
+      />
+    </StoryWrapper>
   ),
   { info: { inline: true } }
 );
 
 storiesOf("Number", module).add(
   "Content with amount",
-  () => <Number content="$12221455254" size="large" showAmount="$153" />,
+  () => (
+    <StoryWrapper>
+      <Number content="$12221455254" size="large" showAmount="$153" />
+    </StoryWrapper>
+  ),
   { info: { inline: true } }
 );
