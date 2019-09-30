@@ -7,31 +7,38 @@ import {
   CompleteCardData,
   InlineProgressBarWithNumberData
 } from "../Visuals/mockData";
+import { StoryWrapper } from "../StoryWrapper";
 
 storiesOf("Card Visual", module).add("Card Visual Default", () => (
-  <CardVisual data={DefaultCardData} numberSize={"large"} />
+  <StoryWrapper>
+    <CardVisual data={DefaultCardData} numberSize={"large"} />
+  </StoryWrapper>
 ));
 
 storiesOf("Card Visual", module).add(
   "Card Visual With Line Chart and Progress Bar",
   () => (
-    <CardVisual
-      showChart={true}
-      showProgressBar={true}
-      numberSize={"x-large"}
-      percentSize={"large"}
-      data={CompleteCardData}
-    />
+    <StoryWrapper>
+      <CardVisual
+        showChart={true}
+        showProgressBar={true}
+        numberSize={"x-large"}
+        percentSize={"large"}
+        data={CompleteCardData}
+      />
+    </StoryWrapper>
   )
 );
 
 storiesOf("Card Visual", module).add(
   "Card Visual With Number and Progress Bar",
   () => (
-    <CardVisual
-      showInlineProgressBar={true}
-      numberSize={"medium"}
-      data={InlineProgressBarWithNumberData}
-    />
+    <StoryWrapper>
+      <CardVisual
+        showInlineProgressBar={true}
+        numberSize={"medium"}
+        data={InlineProgressBarWithNumberData}
+      />
+    </StoryWrapper>
   )
 );
