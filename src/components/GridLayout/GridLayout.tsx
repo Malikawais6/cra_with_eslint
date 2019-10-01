@@ -4,7 +4,7 @@ import Card from "../Card/Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets";
 import { CardVisual } from "../Visuals/CardVisual/CardVisual";
-import { GridLayoutStyle as GridLayout } from "./Layout.style";
+import { GridLayoutStyle as AntdGridLayout } from "./GridLayout.style";
 import {
   GiftCardVolumeData,
   RevenueCardData,
@@ -22,7 +22,7 @@ import {
   DayStockHeldCardData
 } from "../Visuals/mockData";
 
-export const Layout = () => {
+export const GridLayout = () => {
   var layout = [
     { i: "a", x: 0, y: 0, w: 4, h: 4 },
     { i: "b", x: 4, y: 0, w: 4, h: 4 },
@@ -52,12 +52,12 @@ export const Layout = () => {
     }, 10);
   }, []);
   return (
-    <GridLayout
+    <AntdGridLayout
       isDraggable={false}
       className="layout"
       layouts={layouts}
       rowHeight={75}
-      margin = {[15, 15]}
+      margin={[15, 15]}
       measureBeforeMount={false}
       breakpoints={{ lg: 1100, md: 996, sm: 768, xs: 480, xxs: 0 }}
       cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
@@ -249,6 +249,6 @@ export const Layout = () => {
           />
         </Card>
       </div>
-    </GridLayout>
+    </AntdGridLayout>
   );
 };

@@ -34,6 +34,10 @@ export const LegendSeriesData = (isGradient?: boolean) => [
     data: dataSeriesOne,
     color: isGradient ? "url(#CoolGradient)" : "#40d1e7",
     disabled: false
+    // style: {
+    //   fillOpacity: isGradient && 1.04,
+    //   fill: isGradient && "#D2E7FD"
+    // }
   },
   {
     title: "Goal",

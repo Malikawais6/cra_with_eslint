@@ -1,6 +1,9 @@
 import React from "react";
-import { Layout } from "antd";
+
+import { ContentWrapperStyle } from "./Layout.style";
+
 const Content = (props: any) => {
-  return <Layout.Content>{props.children}</Layout.Content>;
+  return <ContentWrapperStyle>{props.children}</ContentWrapperStyle>;
 };
+
 export default Content;

@@ -24,7 +24,7 @@ const Number = (props: Props) => {
                         <ArrowUp isGrey={true} />
                       ) : (
                         <ArrowDown />
-                      ),
+                      )
                   }}
                 />
               ) : null}

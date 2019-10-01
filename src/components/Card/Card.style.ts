@@ -13,23 +13,55 @@ export const CardStyles = styled.div<Props>`
     }
 
     .threshold-ratio {
+      position: absolute;
+      font-family: Visuelt;
+      font-size: 24px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      color: #56556c;
       margin: -45px 0;
     }
   }
 
   .visualization-card {
     padding: 20px 25px;
+
     .numbers-container {
       margin-bottom: 10px;
+    }
+
+    .ant-card-head {
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .threshold {
+      padding-bottom: 3px;
     }
   }
 
   .cost-card {
     padding: 15px 25px;
-    display: grid;
-    grid-row-gap: 10px;
+    /* display: grid;
+    grid-row-gap: 10px; */
     .ant-card-head-wrapper {
       line-height: 1;
+    }
+    
+    .threshold-ratio {
+      position: absolute;
+      margin: -30px 0;
+      font-family: Visuelt;
+      font-size: 24px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      color: #56556c;
     }
   }
   .ant-card {
@@ -46,7 +78,7 @@ export const CardStyles = styled.div<Props>`
   }
   .ant-card-head-title {
     padding: 0;
-    overflow:unset;
+    overflow: unset;
   }
   .title-container {
     display: flex;
@@ -65,7 +97,6 @@ export const CardStyles = styled.div<Props>`
       margin-right: 1em;
       font-size: 20px;
       line-height: 1.2;
-      color: #56556c;
     }
   }
   .ant-card-body {

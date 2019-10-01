@@ -1,45 +1,30 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Button } from "antd";
-export const EditStyledButton = styled(Button)`
-  &.ant-btn {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #56556c;
-    align-self: center;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    &:hover {
-      background: transparent;
-      color: #56556c;
-    }
-  }
+
+export const DashboardActionsStyle = styled.div`
+  display: flex;
+  padding: 1.1em 0;
 `;
-export const StyledButton = styled(Button)`
-  &.ant-btn {
-    width: 214px;
-    height: 51px;
-    border-radius: 8px;
-    box-shadow: 0 5px 18px -10px rgba(90, 91, 105, 0.25);
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-around;
-    float: left;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: normal;
-    letter-spacing: normal;
+
+export const EditDashboardLinkStyle = styled(Link)`
+  font-size: 16px;
+  font-weight: 500;
+  align-self: center;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  padding: 1px 2em 0 0;
+  display: flex;
+
+  &:hover {
+    background: transparent;
     color: #56556c;
-    .icon-down {
-      float: right;
-      padding: 2%;
-    }
-    .calendar-icon {
-      float: left;
-    }
+  }
+
+  > span {
+    margin-left: 0.2em;
   }
 `;
 
@@ -73,9 +58,7 @@ export const FinanceStyles = styled.div<any>`
     color: #56556c;
     margin-left: 1em;
   }
-  .inner-container {
-    display: flex;
-  }
+  
   .buttons {
     display: grid;
     grid-template-columns: auto auto;
@@ -98,10 +81,15 @@ export const FinanceStyles = styled.div<any>`
     padding-top: 0.5em;
   }
   .inner-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
     padding: 0 0 15px 0;
+
+    .heading {
+      display: flex;
+      align-items: baseline;
+    }
   }
   .settings {
     font-size: 16px;

@@ -12,7 +12,8 @@ const SIZE = {
 export const NumberStyles = styled.div<Props>`
   .numbers-container {
     display: flex;
-    justify-content: ${(props:any)=>props.showAmount?"space-between":"flex-start"};
+    justify-content: ${(props: any) =>
+      props.showAmount ? "space-between" : "flex-start"};
     align-items: flex-end;
     line-height: 1;
 
