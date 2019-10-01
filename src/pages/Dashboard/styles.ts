@@ -58,9 +58,7 @@ export const FinanceStyles = styled.div<any>`
     color: #56556c;
     margin-left: 1em;
   }
-  .inner-container {
-    display: flex;
-  }
+  
   .buttons {
     display: grid;
     grid-template-columns: auto auto;
@@ -83,10 +81,15 @@ export const FinanceStyles = styled.div<any>`
     padding-top: 0.5em;
   }
   .inner-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
     padding: 0 0 15px 0;
+
+    .heading {
+      display: flex;
+      align-items: baseline;
+    }
   }
   .settings {
     font-size: 16px;

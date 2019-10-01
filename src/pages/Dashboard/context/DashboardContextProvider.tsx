@@ -1,13 +1,23 @@
-import React, { useContext, createContext, useReducer, Dispatch } from "react";
+import React, {
+  useContext,
+  createContext,
+  useReducer,
+  Dispatch,
+  useEffect
+} from "react";
 
-import { CardVisual } from "../../components/Visuals/CardVisual/CardVisual";
-import { Props } from "../../components/Visuals/CardVisual/CardVisual.type";
+import { CardVisual } from "../../../components/Visuals/CardVisual/CardVisual";
 
-const INITIALIZE_DASHBOARD = "INITIALIZE_DASHBOARD";
+export const INITIALIZE_DASHBOARD = "INITIALIZE_DASHBOARD";
 
-type Action = {
-  type: "INITIALIZE_DASHBOARD";
-};
+type Action =
+  | {
+      type: "INITIALIZE_DASHBOARD";
+    }
+  | {
+      type: "FILTER";
+      periodFilterId: string;
+    };
 
 interface Metric {
   id: string;
@@ -66,6 +76,8 @@ const reducer = (state: DashboardState, action: Action): DashboardState => {
   switch (action.type) {
     case INITIALIZE_DASHBOARD:
       return defaultState;
+    default:
+      return defaultState;
   }
 };
 
@@ -73,6 +85,10 @@ export const useDashboardContext = () => useContext(DashboardContext);
 
 export const DashboardContextProvider = (props: any) => {
   const [state, dispatch] = useReducer(reducer, defaultState);
+
+  useEffect(() => {
+    // dispatch(fetchCardsData);
+  }, []);
 
   return (
     <DashboardContext.Provider value={{ state, dispatch }}>

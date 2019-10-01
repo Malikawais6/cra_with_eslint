@@ -3,9 +3,12 @@ import { Menu } from "antd";
 
 import { PageStructure } from "../PageStructure/PageStructure";
 import { EditIcon } from "../../assets";
-import { Layout } from "../../components/Layout/Layout";
+import { GridLayout as Layout } from "../../components/GridLayout/GridLayout";
 import { PeriodSelect } from "../../components/PeriodSelect";
-import { DashboardContextProvider } from "./DashboardContextProvider";
+import {
+  DashboardContextProvider,
+  useDashboardContext
+} from "./context/DashboardContextProvider";
 import { extractModuleNameFromPath, extractModuleUrlFromPath } from "../util";
 
 import { EditDashboardLinkStyle, DashboardActionsStyle } from "./styles";
@@ -44,9 +47,15 @@ const DashboardActions = ({ match, history }: any) => {
 
 const Dashboard = (props: any) => {
   const { match, history, location } = props;
+
+  /**
+   * @Note: we are using Dashboard component for multiple modules [Sales, Finance etc]
+   * so get the module name we just extract the name from router path. i.e /finance/dashboard
+   * the module name in that case will be "Finance"
+   */
   const moduleName = extractModuleNameFromPath(match.path);
 
-  // @Noted TimeTracker component should implemented with dynamic logic of Time
+  // @Noted TimeTracker component should be implemented with dynamic logic of Time
   const TimeTracker = useMemo(() => {
     return () => <span className="date-time">Last updated Today, 9:45am</span>;
   }, []);
