@@ -81,6 +81,15 @@ export const SidebarStyles = styled(Layout.Sider)`
     border-radius: 4px;
     display: flex;
 
+    
+    &.ant-menu-item-selected {
+      a {
+        span {
+          color: #00d4ea;
+        }
+      }
+    }
+
     a {
       display: flex;
       align-items: center;

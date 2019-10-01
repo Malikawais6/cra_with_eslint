@@ -15,6 +15,15 @@ export const AppStyles = createGlobalStyle`
       letter-spacing: normal;
       color: #56556c;
     }
+
+    .ant-tooltip {
+      .ant-tooltip-inner {
+
+        > span {
+          color: #fff;
+        }
+      }
+    }
   }
 `;
 
