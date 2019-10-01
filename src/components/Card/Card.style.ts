@@ -45,8 +45,8 @@ export const CardStyles = styled.div<Props>`
 
   .cost-card {
     padding: 15px 25px;
-    display: grid;
-    grid-row-gap: 10px;
+    /* display: grid;
+    grid-row-gap: 10px; */
     .ant-card-head-wrapper {
       line-height: 1;
     }
@@ -78,7 +78,7 @@ export const CardStyles = styled.div<Props>`
   }
   .ant-card-head-title {
     padding: 0;
-    overflow:unset;
+    overflow: unset;
   }
   .title-container {
     display: flex;
@@ -97,7 +97,6 @@ export const CardStyles = styled.div<Props>`
       margin-right: 1em;
       font-size: 20px;
       line-height: 1.2;
-      color: #56556c;
     }
   }
   .ant-card-body {

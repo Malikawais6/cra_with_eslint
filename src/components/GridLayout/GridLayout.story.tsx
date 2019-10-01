@@ -2,10 +2,10 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 
 import { StoryWrapper } from "../StoryWrapper";
-import { Layout } from "./Layout";
+import { GridLayout } from "./GridLayout";
 
 storiesOf("Layout", module).add("Layout Default", () => (
   <StoryWrapper>
-    <Layout />
+    <GridLayout />
   </StoryWrapper>
 ));

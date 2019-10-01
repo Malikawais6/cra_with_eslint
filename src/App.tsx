@@ -6,28 +6,35 @@ import { Layout } from "antd";
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from "react-router-dom";
+
 import Finance from "./pages/Finance";
+import Sales from "./pages/Sales";
 import { AppContextProvider } from "./AppContextProvider";
-import { AppStyles } from "./App.style";
+
+import { AppStyles, AppMainStyle } from "./App.style";
 const App = () => {
-  // )
   return (
     <Fragment>
       <AppStyles />
       <AppContextProvider>
         <Router>
           <Switch>
-            <Layout>
+            <AppMainStyle>
               <Header />
               <Layout>
                 <Sidebar />
                 <Content>
                   <Route path="/finance" component={Finance} />
+                  <Route path="/Sales" component={Sales} />
+
+                  {/** Later we will update the landing page path */}
+                  <Redirect from={"/"} to={`/finance`} exact />
                 </Content>
               </Layout>
-            </Layout>
+            </AppMainStyle>
           </Switch>
         </Router>
       </AppContextProvider>
