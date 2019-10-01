@@ -5,6 +5,7 @@ import { Button } from "antd";
 export const DashboardActionsStyle = styled.div`
   display: flex;
   padding: 1.1em 0;
+  justify-content: flex-end;
 `;
 
 export const EditDashboardLinkStyle = styled(Link)`

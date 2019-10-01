@@ -41,6 +41,7 @@ export const NumberStyles = styled.div<Props>`
       .ratio {
         padding-left: 2px;
         font-size: 20px;
+        color: inherit;
       }
     }
     .amount {
