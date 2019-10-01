@@ -45,10 +45,37 @@ export const CardStyles = styled.div<Props>`
 
   .cost-card {
     padding: 15px 25px;
-    /* display: grid;
-    grid-row-gap: 10px; */
+    display: grid;
+    grid-row-gap: 10px;
+
     .ant-card-head-wrapper {
       line-height: 1;
+    }
+
+    .title {
+      line-height: 1;
+      align-items: center;
+
+      .icon {
+        > div {
+          display: flex;
+        }
+      }
+    }
+
+    .numbers-container {
+      .threshold {
+        .ratio {
+          line-height: 1;
+          font-size: 18px;
+        }
+
+        .anticon {
+          svg {
+            height: 16px;
+          }
+        }
+      }
     }
     
     .threshold-ratio {

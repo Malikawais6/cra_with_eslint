@@ -7,6 +7,7 @@ export const PageStructureStyle = styled("section")<PageStructureStyleProps>`
   .page-header {
     display: grid;
     grid-template-columns: auto 321px;
+    margin: 0 -8px;
     border-bottom: ${props =>
       props.headerBorderBottom ? "1px solid #dbdbe6" : "none"};
 
