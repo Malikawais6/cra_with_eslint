@@ -1,44 +1,34 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 
 import Card from "../Card/Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets";
-import { CardVisual } from "../Visuals/CardVisual/CardVisual";
 import { GridLayoutStyle as AntdGridLayout } from "./GridLayout.style";
-import {
-  GiftCardVolumeData,
-  RevenueCardData,
-  CostPerCodeCardData,
-  ProcessingFeeCardData,
-  SaasCardData,
-  MiscallaneousCardData,
-  RunawayCardData,
-  CashInBankCardData,
-  MonthlyBudgetCardData,
-  FloatsWithBrandCardData,
-  StockHeldCardData,
-  DepositsCardData,
-  AverageDaysFloatHeldCardData,
-  DayStockHeldCardData
-} from "../Visuals/mockData";
+import { useDashboardContext } from "../../pages/Dashboard/context/DashboardContextProvider";
 
 export const GridLayout = () => {
-  var layout = [
-    { i: "a", x: 0, y: 0, w: 4, h: 4 },
-    { i: "b", x: 4, y: 0, w: 4, h: 4 },
-    { i: "c", x: 8, y: 0, w: 4, h: 1 },
-    { i: "d", x: 8, y: 3, w: 4, h: 1 },
-    { i: "e", x: 8, y: 6, w: 4, h: 1 },
-    { i: "f", x: 8, y: 9, w: 4, h: 1 },
-    { i: "g", x: 0, y: 12, w: 4, h: 1.23 },
-    { i: "h", x: 4, y: 12, w: 4, h: 1.23 },
-    { i: "i", x: 8, y: 12, w: 4, h: 1.23 },
-    { i: "j", x: 0, y: 16, w: 4, h: 1.23 },
-    { i: "k", x: 4, y: 16, w: 4, h: 1.23 },
-    { i: "l", x: 8, y: 16, w: 4, h: 1.23 },
-    { i: "m", x: 0, y: 20, w: 4, h: 1.23 },
-    { i: "n", x: 4, y: 20, w: 4, h: 1.23 }
-  ];
+  const { state } = useDashboardContext();
+  const layout =
+    useMemo(() => {
+      return state && state.metrics.map(x => x.layout);
+    }, []) || [];
+  // var layout = [
+  //   { i: "a", x: 0, y: 0, w: 4, h: 4 },
+  //   { i: "b", x: 4, y: 0, w: 4, h: 4 },
+  //   { i: "c", x: 8, y: 0, w: 4, h: 1 },
+  //   { i: "d", x: 8, y: 3, w: 4, h: 1 },
+  //   { i: "e", x: 8, y: 6, w: 4, h: 1 },
+  //   { i: "f", x: 8, y: 9, w: 4, h: 1 },
+  //   { i: "g", x: 0, y: 12, w: 4, h: 1.23 },
+  //   { i: "h", x: 4, y: 12, w: 4, h: 1.23 },
+  //   { i: "i", x: 8, y: 12, w: 4, h: 1.23 },
+  //   { i: "j", x: 0, y: 16, w: 4, h: 1.23 },
+  //   { i: "k", x: 4, y: 16, w: 4, h: 1.23 },
+  //   { i: "l", x: 8, y: 16, w: 4, h: 1.23 },
+  //   { i: "m", x: 0, y: 20, w: 4, h: 1.23 },
+  //   { i: "n", x: 4, y: 20, w: 4, h: 1.23 }
+  // ];
+
   const layouts = {
     lg: layout,
     sm: layout,
@@ -62,7 +52,29 @@ export const GridLayout = () => {
       breakpoints={{ lg: 1100, md: 996, sm: 768, xs: 480, xxs: 0 }}
       cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
     >
-      <div key="a" className="card-wrapper">
+      {state &&
+        state.metrics.map(metric => (
+          <div key={metric.id}>
+            <Card
+              title={metric.title}
+              cardType={metric.cardType}
+              showInfo={metric.showInfo}
+              extra={
+                metric.showGraphIcon ? (
+                  <Icon
+                    icon={{ component: () => <GraphIcon /> }}
+                    tooltip={{
+                      title: () => <span>prompt text</span>
+                    }}
+                  />
+                ) : null
+              }
+            >
+              {metric.visual({data:metric.data})}
+            </Card>
+          </div>
+        ))}
+      {/* <div key="cardVolume">
         <Card
           title="Gift Card Volume"
           cardType="visual"
@@ -86,7 +98,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="b">
+      <div key="revenue">
         <Card
           title="Revenue"
           cardType="visual"
@@ -110,7 +122,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="c">
+      <div key="codeCost">
         <Card title="Cost per code" cardType="cost" showInfo={true}>
           <CardVisual
             numberSize={"medium"}
@@ -120,7 +132,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="d">
+      <div key="processingFee">
         <Card title="Processing fee" cardType="cost" showInfo={true}>
           <CardVisual
             numberSize={"medium"}
@@ -130,7 +142,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="e">
+      <div key="saas">
         <Card title="SaaS" cardType="cost" showInfo={true}>
           <CardVisual
             showInlineProgressBar={true}
@@ -141,7 +153,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="f">
+      <div key="miscallaneous">
         <Card title="Miscallaneous" cardType="cost">
           <CardVisual
             numberSize={"medium"}
@@ -151,13 +163,13 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="g">
+      <div key="runway">
         <Card title="Runway">
           <CardVisual numberSize={"large"} data={RunawayCardData} />
         </Card>
       </div>
 
-      <div key="h">
+      <div key="bankCash">
         <Card
           title="Cash in Bank"
           extra={
@@ -173,13 +185,13 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="i">
+      <div key="monthlyBudget">
         <Card title="Monthly budget" showInfo={true}>
           <CardVisual numberSize={"large"} data={MonthlyBudgetCardData} />
         </Card>
       </div>
 
-      <div key="j">
+      <div key="floatsBrand">
         <Card title="Floats with Brand">
           <CardVisual
             numberSize={"large"}
@@ -189,7 +201,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="k">
+      <div key="stockheld">
         <Card title="Stock held">
           <CardVisual
             numberSize={"large"}
@@ -199,7 +211,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="l">
+      <div key="deposits">
         <Card
           title="Deposits"
           showInfo={true}
@@ -221,7 +233,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="m">
+      <div key="avgDayFloatHeld">
         <Card
           title="Average days float held"
           extra={
@@ -240,7 +252,7 @@ export const GridLayout = () => {
         </Card>
       </div>
 
-      <div key="n">
+      <div key="daysStockheld">
         <Card title="days stock held">
           <CardVisual
             numberSize={"large"}
@@ -248,7 +260,7 @@ export const GridLayout = () => {
             data={DayStockHeldCardData}
           />
         </Card>
-      </div>
+      </div> */}
     </AntdGridLayout>
   );
 };

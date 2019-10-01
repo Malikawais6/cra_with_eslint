@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import { Menu } from "antd";
 
 import { PageStructure } from "../PageStructure/PageStructure";
 import { EditIcon } from "../../assets";
