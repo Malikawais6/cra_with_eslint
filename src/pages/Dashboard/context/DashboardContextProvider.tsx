@@ -1,16 +1,13 @@
-import React, {
-  useContext,
-  createContext,
-  Dispatch,
-  useEffect
-} from "react";
+import React, { useContext, createContext, Dispatch, useEffect } from "react";
 
 import { useCustomReducer } from "../../../components/customHooks/useCustomReducer";
-import { CardVisualWithChart } from "../../../components/Visuals/CardVisual/CardVisualWithChart/CardVisualWithChart";
-import { CardWithLargeNumberSize } from "../../../components/Visuals/CardVisual/CardWithContentSizes/CardWithLargeNumberSize";
-import { CardWithMediumNumberSize } from "../../../components/Visuals/CardVisual/CardWithContentSizes/CardWithMediumNumberSize";
-import { CardWithLargeContentSizeAndInlineProgressBar } from "../../../components/Visuals/CardVisual/CardWithInlineProgressBar/CardWithLargeContentSizeAndProressBar";
-import { CardWithMediumContentSizeAndInlineProgressBar } from "../../../components/Visuals/CardVisual/CardWithInlineProgressBar/CardWithMediumContentSizeAndProgressBar";
+import {
+  CardVisualWithChart,
+  CardWithMediumNumberSize,
+  CardWithLargeNumberSize,
+  CardWithLargeContentSizeAndInlineProgressBar,
+  CardWithMediumContentSizeAndInlineProgressBar
+} from "../../../components/Visuals/CardVisual";
 import {
   GiftCardVolumeData,
   RevenueCardData,
@@ -26,7 +23,7 @@ import {
   DepositsCardData,
   AverageDaysFloatHeldCardData,
   DayStockHeldCardData
-  } from "../../../components/Visuals/mockData";
+} from "../../../components/Visuals/mockData";
 
 export const INITIALIZE_DASHBOARD = "INITIALIZE_DASHBOARD";
 
@@ -53,7 +50,7 @@ interface Metric {
   visual: (props: any) => JSX.Element;
   showInfo?: boolean;
   showGraphIcon?: boolean;
-  cardType?:  "visual" | "cost";
+  cardType?: "visual" | "cost";
   layout: Layout;
 }
 
@@ -73,7 +70,7 @@ interface DashboardContextProps {
   dispatch: Dispatch<Action>;
 }
 
-const defaultState:DashboardState = {
+const defaultState: DashboardState = {
   metrics: [
     {
       id: "cardVolume",
@@ -99,7 +96,7 @@ const defaultState:DashboardState = {
       data: CostPerCodeCardData,
       visual: CardWithMediumNumberSize,
       cardType: "cost",
-      showInfo:true,
+      showInfo: true,
       layout: { i: "codeCost", x: 8, y: 0, w: 4, h: 1 }
     },
     {
@@ -108,7 +105,7 @@ const defaultState:DashboardState = {
       data: ProcessingFeeCardData,
       visual: CardWithMediumNumberSize,
       cardType: "cost",
-      showInfo:true,
+      showInfo: true,
       layout: { i: "processingFee", x: 8, y: 3, w: 4, h: 1 }
     },
     {
@@ -117,7 +114,7 @@ const defaultState:DashboardState = {
       data: SaasCardData,
       visual: CardWithMediumContentSizeAndInlineProgressBar,
       cardType: "cost",
-      showInfo:true,
+      showInfo: true,
       layout: { i: "saas", x: 8, y: 6, w: 4, h: 1 }
     },
     {
@@ -149,7 +146,7 @@ const defaultState:DashboardState = {
       title: "Monthly budget",
       data: MonthlyBudgetCardData,
       visual: CardWithLargeNumberSize,
-      showInfo:true,
+      showInfo: true,
       layout: { i: "monthlyBudget", x: 8, y: 12, w: 4, h: 1.23 }
     },
     {
@@ -171,7 +168,7 @@ const defaultState:DashboardState = {
       title: "Deposits",
       data: DepositsCardData,
       visual: CardWithLargeContentSizeAndInlineProgressBar,
-      showInfo:true,
+      showInfo: true,
       showGraphIcon: true,
       layout: { i: "deposits", x: 8, y: 16, w: 4, h: 1.23 }
     },

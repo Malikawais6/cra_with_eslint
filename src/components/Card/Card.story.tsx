@@ -4,12 +4,13 @@ import { storiesOf } from "@storybook/react";
 import Card from "./Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets/";
-import { CardVisualWithChart } from "../Visuals/CardVisual/CardVisualWithChart/CardVisualWithChart";
-import { CardWithMediumNumberSize } from "../Visuals/CardVisual/CardWithContentSizes/CardWithMediumNumberSize";
-import { CardWithLargeNumberSize } from "../Visuals/CardVisual/CardWithContentSizes/CardWithLargeNumberSize";
-import { CardWithMediumContentSizeAndInlineProgressBar } from "../Visuals/CardVisual/CardWithInlineProgressBar/CardWithMediumContentSizeAndProgressBar";
-import { CardWithLargeContentSizeAndInlineProgressBar } from "../Visuals/CardVisual/CardWithInlineProgressBar/CardWithLargeContentSizeAndProressBar";
-
+import {
+  CardVisualWithChart,
+  CardWithMediumNumberSize,
+  CardWithLargeNumberSize,
+  CardWithLargeContentSizeAndInlineProgressBar,
+  CardWithMediumContentSizeAndInlineProgressBar
+} from "../Visuals/CardVisual";
 import { StoryWrapper } from "../StoryWrapper";
 import {
   CompleteCardData,
