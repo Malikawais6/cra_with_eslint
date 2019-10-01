@@ -1,4 +1,5 @@
 import { LineMarkSeriesProps } from "react-vis";
+
 export type Props = LineMarkSeriesProps & {
   HorizontalGridLines?: "dashed" | "fill";
   curve?: boolean;
@@ -11,6 +12,7 @@ export type Props = LineMarkSeriesProps & {
   showLabels?: boolean;
   showGridLines?: boolean;
   showLineMarks?: boolean;
+  showTitle?: boolean;
 };
 
 export type dataProps = { [key: string]: string | number };

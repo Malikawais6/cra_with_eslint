@@ -35,8 +35,8 @@ export const GraphIcon = () => (
 export const ArrowDown = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="6"
-    height="11"
+    width="9"
+    height="18"
     viewBox="0 0 6 11"
   >
     <path
@@ -295,7 +295,7 @@ export const CalendarIcon = () => (
   </svg>
 );
 
-export const CaretDownMedium = () => (
+export const CaretDownMedium = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="16"

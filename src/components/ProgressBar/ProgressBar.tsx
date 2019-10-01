@@ -1,14 +1,16 @@
 import React from "react";
-import { Progress } from "antd";
 import "antd/dist/antd.css";
 import { ProgressProps } from "antd/lib/progress/";
+
 import { ProgressStyled } from "./ProgressBar.style";
+import { getBarColor } from "./ProgerssBar.parser";
 
 export const ProgressBar = (props: ProgressProps) => {
+  const { percent } = props;
   return (
     <ProgressStyled
-      percent={props.percent}
-      strokeColor={props.percent == 100 ? "#00c972" : props.strokeColor}
+      percent={percent}
+      strokeColor={percent ? getBarColor(percent) : "blue"}
       showInfo={false}
     />
   );

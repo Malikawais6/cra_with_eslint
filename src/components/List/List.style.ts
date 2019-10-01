@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 export const IconStyles = styled.span`
   .ant-list-item-meta {
     display: table-row;
@@ -6,21 +7,17 @@ export const IconStyles = styled.span`
     font-size: 0;
   }
   .content {
-    
     font-size: 13px;
     font-weight: normal;
-    
-    
+
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
   }
   .show-graph {
-    
     font-size: 13px;
     font-weight: normal;
-    
-    
+
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
@@ -40,14 +37,12 @@ export const IconStyles = styled.span`
   }
   .dropdown {
     // margin: 0 0 0 17%;
-     position: absolute;
+    position: absolute;
   }
   a {
-    
     font-size: 13px;
     font-weight: normal;
-    
-    
+
     line-height: normal;
     letter-spacing: normal;
     color: #40d1e7;
@@ -62,16 +57,15 @@ export const IconStyles = styled.span`
   .title {
     width: 220px;
     height: 18px;
-    
+
     font-size: 13px;
     font-weight: 500;
-    
-    
+
     line-height: normal;
     letter-spacing: normal;
     color: #56556c;
   }
   .ant-list-item {
-    display:block;
+    display: block;
   }
 `;

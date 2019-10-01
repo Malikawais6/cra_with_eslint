@@ -1,48 +1,71 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Card from "../Card/Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets";
 import { CardVisual } from "../Visuals/CardVisual/CardVisual";
-import { GridLayoutStyle as GridLayout } from "./Layout.style";
+import { GridLayoutStyle as AntdGridLayout } from "./GridLayout.style";
 import {
-  CompleteCardData,
-  InlineProgressBarWithNumberData,
-  SimpleCard,
-  DefaultCardData
+  GiftCardVolumeData,
+  RevenueCardData,
+  CostPerCodeCardData,
+  ProcessingFeeCardData,
+  SaasCardData,
+  MiscallaneousCardData,
+  RunawayCardData,
+  CashInBankCardData,
+  MonthlyBudgetCardData,
+  FloatsWithBrandCardData,
+  StockHeldCardData,
+  DepositsCardData,
+  AverageDaysFloatHeldCardData,
+  DayStockHeldCardData
 } from "../Visuals/mockData";
 
-export const Layout = () => {
+export const GridLayout = () => {
   var layout = [
-    { i: "a", x: 0, y: 0, w: 3.8, h: 9.2 },
-    { i: "b", x: 3.9, y: 0, w: 3.8, h: 9.2 },
-    { i: "c", x: 7.8, y: 0, w: 3.8, h: 2.3 },
-    { i: "d", x: 7.8, y: 2, w: 3.8, h: 2.3 },
-    { i: "e", x: 7.8, y: 4, w: 3.8, h: 2.3 },
-    { i: "f", x: 7.8, y: 6, w: 3.8, h: 2.3 },
-    { i: "g", x: 0, y: 8, w: 3.8, h: 2.7 },
-    { i: "h", x: 3.9, y: 8, w: 3.8, h: 2.7 },
-    { i: "i", x: 7.8, y: 8, w: 3.8, h: 2.7 },
-    { i: "j", x: 0, y: 10, w: 3.8, h: 2.7 },
-    { i: "k", x: 3.9, y: 10, w: 3.8, h: 2.7 },
-    { i: "l", x: 7.8, y: 10, w: 3.8, h: 2.7 },
-    { i: "m", x: 0, y: 12, w: 3.8, h: 2.7 },
-    { i: "n", x: 3.9, y: 14, w: 3.8, h: 2.7 }
+    { i: "a", x: 0, y: 0, w: 4, h: 4 },
+    { i: "b", x: 4, y: 0, w: 4, h: 4 },
+    { i: "c", x: 8, y: 0, w: 4, h: 1 },
+    { i: "d", x: 8, y: 3, w: 4, h: 1 },
+    { i: "e", x: 8, y: 6, w: 4, h: 1 },
+    { i: "f", x: 8, y: 9, w: 4, h: 1 },
+    { i: "g", x: 0, y: 12, w: 4, h: 1.23 },
+    { i: "h", x: 4, y: 12, w: 4, h: 1.23 },
+    { i: "i", x: 8, y: 12, w: 4, h: 1.23 },
+    { i: "j", x: 0, y: 16, w: 4, h: 1.23 },
+    { i: "k", x: 4, y: 16, w: 4, h: 1.23 },
+    { i: "l", x: 8, y: 16, w: 4, h: 1.23 },
+    { i: "m", x: 0, y: 20, w: 4, h: 1.23 },
+    { i: "n", x: 4, y: 20, w: 4, h: 1.23 }
   ];
-
+  const layouts = {
+    lg: layout,
+    sm: layout,
+    md: layout,
+    xs: layout,
+    xxs: layout
+  };
+  useEffect(() => {
+    setTimeout(() => {
+      window.dispatchEvent(new Event("resize"));
+    }, 10);
+  }, []);
   return (
-    <GridLayout
-      className="layout"
-      layout={layout}
-      cols={12}
-      rowHeight={30}
-      width={1200}
-      compactType={"vertical"}
+    <AntdGridLayout
       isDraggable={false}
+      className="layout"
+      layouts={layouts}
+      rowHeight={75}
+      margin={[15, 15]}
+      measureBeforeMount={false}
+      breakpoints={{ lg: 1100, md: 996, sm: 768, xs: 480, xxs: 0 }}
+      cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
     >
-      <div key="a">
+      <div key="a" className="card-wrapper">
         <Card
           title="Gift Card Volume"
+          cardType="visual"
           extra={
             <Icon
               icon={{ component: () => <GraphIcon /> }}
@@ -51,15 +74,14 @@ export const Layout = () => {
               }}
             />
           }
-          threshold={20}
         >
           <CardVisual
             showChart={true}
             showProgressBar={true}
-            numberSize={"large"}
+            numberSize={"x-large"}
             percentSize={"large"}
-            numberThresholdStatus={"top"}
-            data={CompleteCardData}
+            numberThresholdStatus={"normal"}
+            data={GiftCardVolumeData}
           />
         </Card>
       </div>
@@ -67,6 +89,7 @@ export const Layout = () => {
       <div key="b">
         <Card
           title="Revenue"
+          cardType="visual"
           extra={
             <Icon
               icon={{ component: () => <GraphIcon /> }}
@@ -79,58 +102,58 @@ export const Layout = () => {
           <CardVisual
             showChart={true}
             showProgressBar={true}
-            numberSize={"large"}
+            numberSize={"x-large"}
             percentSize={"large"}
-            data={CompleteCardData}
+            data={RevenueCardData}
             numberThresholdStatus={"top"}
           />
         </Card>
       </div>
 
       <div key="c">
-        <Card title="Cost per code" showInfo={true}>
+        <Card title="Cost per code" cardType="cost" showInfo={true}>
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={CostPerCodeCardData}
           />
         </Card>
       </div>
 
       <div key="d">
-        <Card title="Processing fee" showInfo={true}>
+        <Card title="Processing fee" cardType="cost" showInfo={true}>
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={ProcessingFeeCardData}
           />
         </Card>
       </div>
 
       <div key="e">
-        <Card title="SaaS" threshold={20} showInfo={true}>
+        <Card title="SaaS" cardType="cost" showInfo={true}>
           <CardVisual
             showInlineProgressBar={true}
             numberSize={"medium"}
-            data={InlineProgressBarWithNumberData}
+            data={SaasCardData}
             numberThresholdStatus={"top"}
           />
         </Card>
       </div>
 
       <div key="f">
-        <Card title="Miscallaneous">
+        <Card title="Miscallaneous" cardType="cost">
           <CardVisual
             numberSize={"medium"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={MiscallaneousCardData}
           />
         </Card>
       </div>
 
       <div key="g">
         <Card title="Runway">
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual numberSize={"large"} data={RunawayCardData} />
         </Card>
       </div>
 
@@ -146,13 +169,13 @@ export const Layout = () => {
             />
           }
         >
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual numberSize={"large"} data={CashInBankCardData} />
         </Card>
       </div>
 
       <div key="i">
         <Card title="Monthly budget" showInfo={true}>
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual numberSize={"large"} data={MonthlyBudgetCardData} />
         </Card>
       </div>
 
@@ -161,7 +184,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"large"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={FloatsWithBrandCardData}
           />
         </Card>
       </div>
@@ -171,7 +194,7 @@ export const Layout = () => {
           <CardVisual
             numberSize={"large"}
             numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            data={StockHeldCardData}
           />
         </Card>
       </div>
@@ -179,7 +202,6 @@ export const Layout = () => {
       <div key="l">
         <Card
           title="Deposits"
-          threshold={20}
           showInfo={true}
           extra={
             <Icon
@@ -191,9 +213,9 @@ export const Layout = () => {
           }
         >
           <CardVisual
-            numberSize={"medium"}
+            numberSize={"large"}
             showInlineProgressBar={true}
-            data={InlineProgressBarWithNumberData}
+            data={DepositsCardData}
             numberThresholdStatus={"top"}
           />
         </Card>
@@ -211,7 +233,10 @@ export const Layout = () => {
             />
           }
         >
-          <CardVisual numberSize={"large"} data={SimpleCard} />
+          <CardVisual
+            numberSize={"large"}
+            data={AverageDaysFloatHeldCardData}
+          />
         </Card>
       </div>
 
@@ -219,11 +244,11 @@ export const Layout = () => {
         <Card title="days stock held">
           <CardVisual
             numberSize={"large"}
-            numberThresholdStatus={"top"}
-            data={DefaultCardData}
+            numberThresholdStatus={"down"}
+            data={DayStockHeldCardData}
           />
         </Card>
       </div>
-    </GridLayout>
+    </AntdGridLayout>
   );
 };

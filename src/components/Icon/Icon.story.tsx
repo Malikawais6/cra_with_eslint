@@ -1,10 +1,21 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import Icon from "./Icon";
 
-storiesOf("Icon", module).add("Default", () => <Icon icon={{ type: "star" }}/>);
+import Icon from "./Icon";
+import { StoryWrapper } from "../StoryWrapper";
+
+storiesOf("Icon", module).add("Default", () => (
+  <StoryWrapper>
+    <Icon icon={{ type: "star" }} />
+  </StoryWrapper>
+));
+
 storiesOf("Icon", module).add(
   "Default with Props",
-  () => <Icon icon={{ type: "star" }} tooltip={{title:"test"}} />,
+  () => (
+    <StoryWrapper>
+      <Icon icon={{ type: "star" }} tooltip={{ title: "test" }} />
+    </StoryWrapper>
+  ),
   { info: { inline: true } }
 );

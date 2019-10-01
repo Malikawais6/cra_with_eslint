@@ -1,9 +1,12 @@
 import React, { useState, useReducer, Fragment } from "react";
 import { storiesOf } from "@storybook/react";
+
 import { Table } from "./Table";
 import { TableContext, initialContent } from "../../context/";
 import { reducer } from "../../reducers/table";
+import { StoryWrapper } from "../StoryWrapper";
 import Icon from "../Icon/Icon";
+
 const dataSource: any = [
   {
     key: "1",
@@ -222,11 +225,13 @@ export const TableComponent = () => {
   };
 
   return (
-    <TableContext.Provider
-      value={{ data: dataSource, columns, dispatch, onAdd, onEdit, onDelete }}
-    >
-      <Table buttonTitle="Add Goal"></Table>
-    </TableContext.Provider>
+    <StoryWrapper>
+      <TableContext.Provider
+        value={{ data: dataSource, columns, dispatch, onAdd, onEdit, onDelete }}
+      >
+        <Table buttonTitle="Add Goal"></Table>
+      </TableContext.Provider>
+    </StoryWrapper>
   );
 };
 

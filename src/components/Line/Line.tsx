@@ -7,7 +7,8 @@ import {
   LabelSeries,
   LineSeries,
   LineMarkSeries,
-  LegendItem
+  LegendItem,
+  GradientDefs
 } from "react-vis";
 import "../../../node_modules/react-vis/dist/style.css";
 
@@ -54,17 +55,34 @@ const Line = (props: Props) => {
     },
     [legendsData]
   );
+  const {
+    showLegends,
+    showGridLines,
+    curve,
+    showLabels,
+    showXAxis,
+    showYAxis,
+    showTitle
+  } = props;
+
   return (
     <LineStyles HorizontalGridLines="dashed">
-      {props.showLegends && (
+      {showLegends && (
         <Legends
           legends={legendsData}
           onLegendClick={onLegendClick}
           colors={["#40d1e7", "#a7a7bb"]}
         />
       )}
-      <FlexibleXYPlot xType="ordinal">
-        {props.showGridLines && <HorizontalGridLines />}
+      <FlexibleXYPlot xType="ordinal" style={{ padding: 0, margin: 0 }}>
+        {showGridLines && <HorizontalGridLines />}
+
+        <GradientDefs>
+          <linearGradient id="CoolGradient" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stopColor="#40D1E7" />
+            <stop offset="100%" stopColor="#74A4EA" />
+          </linearGradient>
+        </GradientDefs>
 
         {legendsData.map((legend: any, index: number) => {
           return (
@@ -73,18 +91,21 @@ const Line = (props: Props) => {
                 color={legend.color}
                 data={legend.data}
                 style={legend.style}
-                curve={props.curve ? "curveMonotoneX" : ""}
+                curve={curve ? "curveMonotoneX" : ""}
                 _sizeValue={2}
               />
             )
           );
         })}
 
-        {props.showLabels && <LabelSeries data={finalLabelSeriesData} />}
+        {showLabels && <LabelSeries data={finalLabelSeriesData} />}
 
-        {props.showXAxis && <XAxis tickSize={0} />}
-        {props.showYAxis && <YAxis hideLine tickSize={0} />}
-        {props.showXAxis && (
+        {showXAxis && <XAxis tickSize={0} />}
+        {showTitle && (
+          <YAxis hideLine hideTicks tickSize={0} title={"12 month"} />
+        )}
+        {showYAxis && <YAxis hideLine tickSize={0} />}
+        {showXAxis && (
           <XAxis
             tickFormat={() => <Threshold />}
             hideLine
