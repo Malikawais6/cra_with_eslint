@@ -1,5 +1,5 @@
 import Numeral from "numeral";
-
+import { DataProps } from "../Visuals/CardVisual/CardVisual.type";
 const getNumeralFigure = (digit: number) => {
   return `£${Numeral(digit).format("0,000,000")}`;
 };
@@ -9,7 +9,8 @@ export const GiftCardVolumeData = {
   percentContent: "120%",
   percentAmount: getNumeralFigure(1000000),
   progressPercentage: 100,
-  numberThreshold: "0"
+  numberThreshold: "0",
+  thresholdStatus: "normal"
 };
 
 export const RevenueCardData = {
@@ -17,7 +18,8 @@ export const RevenueCardData = {
   percentContent: "30%",
   percentAmount: getNumeralFigure(130000),
   progressPercentage: 30,
-  numberThreshold: 4.5
+  numberThreshold: 4.5,
+  thresholdStatus: "top"
 };
 
 export const CostPerCodeCardData = {
@@ -80,21 +82,24 @@ export const DayStockHeldCardData = {
   numberThreshold: 33
 };
 
-export const DefaultCardData = {
+export const DefaultCardData: DataProps = {
   numberContent: getNumeralFigure(2100000),
-  numberThreshold: 30
+  numberThreshold: 13,
+  thresholdStatus: "top"
 };
 
-export const CompleteCardData = {
+export const CompleteCardData: DataProps = {
   numberContent: getNumeralFigure(2100000),
   percentContent: "120%",
   percentAmount: "$155",
   progressPercentage: 35,
-  numberThreshold: 30
+  numberThreshold: 30,
+  thresholdStatus: "top"
 };
 
-export const InlineProgressBarWithNumberData = {
+export const InlineProgressBarWithNumberData: DataProps = {
   numberContent: getNumeralFigure(45000),
   numberThreshold: 30,
-  progressPercentage: 85
+  progressPercentage: 85,
+  thresholdStatus: "top"
 };

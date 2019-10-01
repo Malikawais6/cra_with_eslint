@@ -1,7 +1,12 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { CardVisual } from "./CardVisual/CardVisual";
+import { CardVisualWithChart } from "./CardVisual/CardVisualWithChart/CardVisualWithChart";
+import { CardWithMediumNumberSize } from "./CardVisual/CardWithContentSizes/CardWithMediumNumberSize";
+import { CardWithLargeNumberSize } from "./CardVisual/CardWithContentSizes/CardWithLargeNumberSize";
+import { CardWithMediumContentSizeAndInlineProgressBar } from "./CardVisual/CardWithInlineProgressBar/CardWithMediumContentSizeAndProgressBar";
+import { CardWithLargeContentSizeAndInlineProgressBar } from "./CardVisual/CardWithInlineProgressBar/CardWithLargeContentSizeAndProressBar";
+
 import {
   DefaultCardData,
   CompleteCardData,
@@ -9,34 +14,46 @@ import {
 } from "../Visuals/mockData";
 import { StoryWrapper } from "../StoryWrapper";
 
-storiesOf("Card Visual", module).add("Card Visual Default", () => (
+storiesOf("Card Visual", module).add("Card Visual With Chart", () => (
   <StoryWrapper>
-    <CardVisual data={DefaultCardData} numberSize={"large"} />
+    <CardVisualWithChart data={CompleteCardData} />
   </StoryWrapper>
 ));
 
 storiesOf("Card Visual", module).add(
-  "Card Visual With Line Chart and Progress Bar",
+  "Card Visual With Medium Number Size",
   () => (
     <StoryWrapper>
-      <CardVisual
-        showChart={true}
-        showProgressBar={true}
-        numberSize={"x-large"}
-        percentSize={"large"}
-        data={CompleteCardData}
+      <CardWithMediumNumberSize data={DefaultCardData} />
+    </StoryWrapper>
+  )
+);
+
+storiesOf("Card Visual", module).add(
+  "Card Visual With Large Number Size",
+  () => (
+    <StoryWrapper>
+      <CardWithLargeNumberSize data={DefaultCardData} />
+    </StoryWrapper>
+  )
+);
+
+storiesOf("Card Visual", module).add(
+  "Card Visual With Medium Content and Inline Progress Bar",
+  () => (
+    <StoryWrapper>
+      <CardWithMediumContentSizeAndInlineProgressBar
+        data={InlineProgressBarWithNumberData}
       />
     </StoryWrapper>
   )
 );
 
 storiesOf("Card Visual", module).add(
-  "Card Visual With Number and Progress Bar",
+  "Card Visual With Large Content and Inline Progress Bar",
   () => (
     <StoryWrapper>
-      <CardVisual
-        showInlineProgressBar={true}
-        numberSize={"medium"}
+      <CardWithLargeContentSizeAndInlineProgressBar
         data={InlineProgressBarWithNumberData}
       />
     </StoryWrapper>
