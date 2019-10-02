@@ -21,7 +21,6 @@ import {
   alterLegendData,
   maxLabelSeriesData,
   maxValue,
-  minValue,
   minLabelSeriesData
 } from "./Line.parser";
 import Number from "../Number/Number";
@@ -43,18 +42,26 @@ const minSeriesResult = minLabelSeriesData(
   [...dataSeriesTwo]
 );
 const maxLabelSeriesResult = clone(maxSeriesResult);
-const minLabelSeriesResult = clone(minSeriesResult);
-const minVal = minValue([...minLabelSeriesResult]);
 const maxVal = maxValue([...maxLabelSeriesResult]);
 
-const finalMaxLabelSeriesData = maxLabelSeriesResult.map((obj: any) => {
-  obj.y += maxVal;
-  return obj;
-});
-const finalMinLabelSeriesData = minLabelSeriesResult.map((obj: any) => {
-  obj.y += minVal;
-  return obj;
-});
+const finalMaxLabelSeriesData = maxLabelSeriesResult.map(
+  (obj: any, index: number) => {
+    return {
+      ...obj,
+      y: obj.y + maxVal,
+      label: `(£${maxSeriesResult[index].y})`
+    };
+  }
+);
+const finalMinLabelSeriesData = maxLabelSeriesResult.map(
+  (obj: any, index: number) => {
+    return {
+      ...obj,
+      y: obj.y + 2.5,
+      label: `£${minSeriesResult[index].y}`
+    };
+  }
+);
 
 const Line = (props: Props) => {
   const [legendsData, setLegendData] = React.useState([...props.seriesData]);
@@ -120,8 +127,12 @@ const Line = (props: Props) => {
           );
         })}
 
-        {showLabels && <LabelSeries data={finalMaxLabelSeriesData} />}
-        {showLabels && <LabelSeries data={finalMinLabelSeriesData} />}
+        {showLabels && (
+          <LabelSeries data={finalMaxLabelSeriesData} labelAnchorX={"middle"} />
+        )}
+        {showLabels && (
+          <LabelSeries data={finalMinLabelSeriesData} labelAnchorX={"middle"} />
+        )}
 
         {showXAxis && <XAxis tickSize={0} />}
         {showTitle && (
