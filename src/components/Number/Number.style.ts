@@ -9,10 +9,10 @@ const SIZE = {
   large: "32px",
   "x-large": "42px"
 };
-export const NumberStyles = styled.div<Props>`
+export const NumberStyles = styled.div`
   .numbers-container {
     display: flex;
-    justify-content: ${(props: any) =>
+    justify-content: ${(props: Props) =>
       props.showAmount ? "space-between" : "flex-start"};
     align-items: flex-end;
     line-height: 1;

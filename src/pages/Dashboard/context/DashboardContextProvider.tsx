@@ -43,7 +43,7 @@ interface Layout {
   w: number;
   h: number;
 }
-interface Metric {
+export interface Metric {
   id: string;
   title: string;
   data: any;

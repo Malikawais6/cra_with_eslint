@@ -24,7 +24,7 @@ export const NumberLargeWithProgressBar = ({ data }: Props) => {
         />
 
         <div className="progress-bar">
-          <span className="threshold-ratio">{percentContent}</span>
+          <span className="progress-ratio">{percentContent}</span>
           <span>
             <ProgressBar percent={progressPercentage} />
           </span>

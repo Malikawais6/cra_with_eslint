@@ -12,7 +12,7 @@ export const CardStyles = styled.div<Props>`
       line-height: 1;
     }
 
-    .threshold-ratio {
+    .progress-ratio {
       position: absolute;
       font-family: Visuelt;
       font-size: 24px;
@@ -77,8 +77,8 @@ export const CardStyles = styled.div<Props>`
         }
       }
     }
-    
-    .threshold-ratio {
+
+    .progress-ratio {
       position: absolute;
       margin: -30px 0;
       font-family: Visuelt;
