@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { Select } from "antd";
 import { SelectProps } from "antd/lib/select";
-import styled from "styled-components";
 
 import { CalendarIcon, CaretDownMedium } from "../../assets";
 import { PeriodSelectStyle } from "./style";

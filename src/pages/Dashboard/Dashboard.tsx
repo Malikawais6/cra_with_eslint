@@ -5,8 +5,7 @@ import { EditIcon } from "../../assets";
 import { GridLayout as Layout } from "../../components/GridLayout/GridLayout";
 import { PeriodSelect } from "../../components/PeriodSelect";
 import {
-  DashboardContextProvider,
-  useDashboardContext
+  DashboardContextProvider
 } from "./context/DashboardContextProvider";
 import { extractModuleNameFromPath, extractModuleUrlFromPath } from "../util";
 
@@ -65,7 +64,6 @@ const Dashboard = (props: any) => {
       <DashboardActions match={match} history={history} location={location} />
     );
   }, [match, history, location]);
-
   return (
     <DashboardContextProvider>
       <PageStructure

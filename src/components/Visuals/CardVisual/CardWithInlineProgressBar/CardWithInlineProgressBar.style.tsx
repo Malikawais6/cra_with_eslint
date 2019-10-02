@@ -1,8 +1,8 @@
 import styled from "styled-components";
-
-export const CardVisualInlineProgressStyled = styled.div<any>`
+import {Props} from "../CardVisual.type"
+export const CardVisualInlineProgressStyled = styled.div`
   .ant-row {
-    margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
+    margin-top: ${(props: Props) => (props.showChart ? "10px" : "0px")};
   }
   .inlineNumberWithProgress {
     display: flex;

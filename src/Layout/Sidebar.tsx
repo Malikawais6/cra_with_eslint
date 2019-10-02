@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import { Layout, Menu } from "antd";
+import { Menu } from "antd";
 import { Link } from "react-router-dom";
 
 import { SidebarStyles, StyledMenu } from "./Layout.style";

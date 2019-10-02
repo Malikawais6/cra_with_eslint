@@ -14,7 +14,7 @@ export const GridLayout = () => {
   const layout =
     useMemo(() => {
       return dashboardState && dashboardState.metrics.map(x => x.layout);
-    }, []) || [];
+    }, [dashboardState]) || [];
 
   const layouts = {
     lg: layout,

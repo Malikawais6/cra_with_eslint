@@ -20,7 +20,7 @@ const Settings = (props: any) => {
         Back to dashbaord
       </BackToDashboardLinkStyle>
     );
-  }, [match]);
+  }, [ModuleName]);
 
   return (
     <PageStructure
