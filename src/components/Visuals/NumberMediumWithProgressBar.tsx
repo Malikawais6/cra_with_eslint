@@ -1,29 +1,32 @@
 import React from "react";
 
-import { NumberWithProgressStyled } from "./NumberWithProgressBar.style";
+import { NumberWithProgressStyled } from "./Visuals.style";
 import Number from "../Number/Number";
 import { ProgressBar } from "../ProgressBar/ProgressBar";
 import { Props } from "./Visuals.type";
 
-export const NumberMediumWithProgressBar = (props: Props) => {
+export const NumberMediumWithProgressBar = ({ data }: Props) => {
+  const {
+    numberContent,
+    numberThreshold,
+    thresholdStatus,
+    percentContent,
+    progressPercentage
+  } = data || {};
   return (
     <NumberWithProgressStyled>
-      <div className="inlineNumberWithProgress">
+      <div className="inline-number-with-progress">
         <Number
-          content={props.data && props.data.numberContent}
+          content={numberContent}
           size={"medium"}
-          threshold={props.data && props.data.numberThreshold}
-          thresholdStatus={props.data && props.data.thresholdStatus}
+          threshold={numberThreshold}
+          thresholdStatus={thresholdStatus}
         />
 
-        <div className="progressBar">
-          <span className="threshold-ratio">
-            {props.data && props.data.percentContent}
-          </span>
+        <div className="progress-bar">
+          <span className="threshold-ratio">{percentContent}</span>
           <span>
-            <ProgressBar
-              percent={props.data && props.data.progressPercentage}
-            />
+            <ProgressBar percent={progressPercentage} />
           </span>
         </div>
       </div>

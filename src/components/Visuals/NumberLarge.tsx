@@ -5,14 +5,15 @@ import "antd/dist/antd.css";
 import Number from "../Number/Number";
 import { Props } from "./Visuals.type";
 
-export const NumberLarge = (props: Props) => {
+export const NumberLarge = ({ data }: Props) => {
+  const { numberContent, numberThreshold, thresholdStatus } = data || {};
   return (
     <Row>
       <Col span={24}>
         <Number
-          content={props.data && props.data.numberContent}
-          threshold={props.data && props.data.numberThreshold}
-          thresholdStatus={props.data && props.data.thresholdStatus}
+          content={numberContent}
+          threshold={numberThreshold}
+          thresholdStatus={thresholdStatus}
           size={"large"}
         />
       </Col>

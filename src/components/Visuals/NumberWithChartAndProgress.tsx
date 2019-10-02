@@ -2,22 +2,30 @@ import React from "react";
 import { Row, Col } from "antd";
 import "antd/dist/antd.css";
 
-import { NumberWithChartStyled } from "./NumberWithChart.style";
+import { NumberWithChartStyled } from "./Visuals.style";
 import Number from "../Number/Number";
 import Line from "../Line/Line";
 import { LegendSeriesData } from "../Line/__mock__/mockdata";
 import { ProgressBar } from "../ProgressBar/ProgressBar";
 import { Props } from "./Visuals.type";
 
-export const NumberWithChart = (props: Props) => {
+export const NumberWithChart = ({ data }: Props) => {
+  const {
+    numberContent,
+    numberThreshold,
+    thresholdStatus,
+    percentContent,
+    percentAmount,
+    progressPercentage
+  } = data || {};
   return (
     <NumberWithChartStyled>
       <Row>
         <Col span={24} className="chart-figures">
           <Number
-            content={props.data && props.data.numberContent}
-            threshold={props.data && props.data.numberThreshold}
-            thresholdStatus={props.data && props.data.thresholdStatus}
+            content={numberContent}
+            threshold={numberThreshold}
+            thresholdStatus={thresholdStatus}
             size={"x-large"}
           />
         </Col>
@@ -32,16 +40,16 @@ export const NumberWithChart = (props: Props) => {
       <Row>
         <Col span={24}>
           <Number
-            content={props.data && props.data.percentContent}
+            content={percentContent}
             size={"large"}
-            showAmount={props.data && props.data.percentAmount}
+            showAmount={percentAmount}
           />
         </Col>
       </Row>
 
       <Row>
         <Col span={24}>
-          <ProgressBar percent={props.data && props.data.progressPercentage} />
+          <ProgressBar percent={progressPercentage} />
         </Col>
       </Row>
     </NumberWithChartStyled>
