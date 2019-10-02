@@ -1,21 +1,18 @@
 import styled from "styled-components";
+import {Props} from "./../CardVisual.type"
 
-export const CardVisualStyled = styled.div<any>`
+export const CardVisualWithChartStyled = styled.div`
   .chart-style {
     height: 160px;
     margin-left: -54px;
     width: calc(100% + 78px);
   }
   .chart-figures {
-    justify-content: ${(props: any) =>
+    justify-content: ${(props: Props) =>
       props.showChart ? "flex-start" : "none"};
   }
   .ant-row {
-    margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
-  }
-  .inlineNumberWithProgress {
-    display: flex;
-    justify-content: space-between;
+    margin-top: ${(props: Props) => (props.showChart ? "10px" : "0px")};
   }
   .progressBar {
     align-self: flex-end;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Button } from "antd";
 
 export const DashboardActionsStyle = styled.div`
   display: flex;
   padding: 1.1em 0;
+  justify-content: flex-end;
 `;
 
 export const EditDashboardLinkStyle = styled(Link)`
@@ -28,7 +28,7 @@ export const EditDashboardLinkStyle = styled(Link)`
   }
 `;
 
-export const FinanceStyles = styled.div<any>`
+export const FinanceStyles = styled.div`
   padding: 15px 30px;
   .container {
     box-shadow: ${(props: any) =>

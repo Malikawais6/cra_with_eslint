@@ -79,11 +79,30 @@ export const SidebarStyles = styled(Layout.Sider)`
     letter-spacing: normal;
     color: #ffffff;
     border-radius: 4px;
+    display: flex;
+
+    
+    &.ant-menu-item-selected {
+      a {
+        span {
+          color: #00d4ea;
+        }
+      }
+    }
 
     a {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
+      
+      span {
+        color: #fff;
+      }
+
+      &:hover {
+        color: inherit;
+      }
     }
   }
 
@@ -122,14 +141,6 @@ export const SidebarStyles = styled(Layout.Sider)`
   .dot {
     display: flex;
     justify-content: space-between;
-  }
-  .ant-menu-item {
-    a {
-      color: inherit;
-    }
-    a:hover {
-      color: inherit;
-    }
   }
 `;
 
