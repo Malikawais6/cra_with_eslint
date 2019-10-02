@@ -4,7 +4,10 @@ import Card from "../Card/Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets";
 import { GridLayoutStyle as AntdGridLayout } from "./GridLayout.style";
-import { useDashboardContext } from "../../pages/Dashboard/context/DashboardContextProvider";
+import {
+  useDashboardContext,
+  Metric
+} from "../../pages/Dashboard/context/DashboardContextProvider";
 
 export const GridLayout = () => {
   const { state: dashboardState } = useDashboardContext();
@@ -37,27 +40,38 @@ export const GridLayout = () => {
       cols={{ lg: 12, md: 12, sm: 12, xs: 12, xxs: 12 }}
     >
       {dashboardState &&
-        dashboardState.metrics.map(metric => (
-          <div key={metric.id}>
-            <Card
-              title={metric.title}
-              cardType={metric.cardType}
-              showInfo={metric.showInfo}
-              extra={
-                metric.showGraphIcon ? (
-                  <Icon
-                    icon={{ component: () => <GraphIcon /> }}
-                    tooltip={{
-                      title: () => <span>prompt text</span>
-                    }}
-                  />
-                ) : null
-              }
-            >
-              {metric.visual({ data: metric.data })}
-            </Card>
-          </div>
-        ))}
+        dashboardState.metrics.map((metric: Metric) => {
+          const {
+            id,
+            title,
+            cardType,
+            showInfo,
+            showGraphIcon,
+            visual,
+            data
+          } = metric;
+          return (
+            <div key={id}>
+              <Card
+                title={title}
+                cardType={cardType}
+                showInfo={showInfo}
+                extra={
+                  showGraphIcon ? (
+                    <Icon
+                      icon={{ component: () => <GraphIcon /> }}
+                      tooltip={{
+                        title: () => <span>prompt text</span>
+                      }}
+                    />
+                  ) : null
+                }
+              >
+                {visual({ data })}
+              </Card>
+            </div>
+          );
+        })}
     </AntdGridLayout>
   );
 };
