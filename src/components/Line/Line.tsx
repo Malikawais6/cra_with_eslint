@@ -10,13 +10,20 @@ import {
   LegendItem,
   GradientDefs
 } from "react-vis";
+import { clone } from "rambda";
 import "../../../node_modules/react-vis/dist/style.css";
 
 import { LineStyles, ThresholdStyled } from "./Line.style";
 import { Props } from "./Line.type";
 import { dataSeriesOne, dataSeriesTwo } from "./__mock__/mockdata";
 import { Legends } from "./Legends";
-import { alterLegendData, maxLabelSeriesData, maxValue } from "./Line.parser";
+import {
+  alterLegendData,
+  maxLabelSeriesData,
+  maxValue,
+  minValue,
+  minLabelSeriesData
+} from "./Line.parser";
 import Number from "../Number/Number";
 
 const Threshold = () => (
@@ -27,15 +34,30 @@ const Threshold = () => (
   </foreignObject>
 );
 
-const maxSeriesResult = maxLabelSeriesData(dataSeriesOne, dataSeriesTwo);
-const maxVal = maxValue([...maxSeriesResult]);
-const finalLabelSeriesData = maxSeriesResult.map((obj: any) => {
+const maxSeriesResult = maxLabelSeriesData(
+  [...dataSeriesOne],
+  [...dataSeriesTwo]
+);
+const minSeriesResult = minLabelSeriesData(
+  [...dataSeriesOne],
+  [...dataSeriesTwo]
+);
+const maxLabelSeriesResult = clone(maxSeriesResult);
+const minLabelSeriesResult = clone(minSeriesResult);
+const minVal = minValue([...minLabelSeriesResult]);
+const maxVal = maxValue([...maxLabelSeriesResult]);
+
+const finalMaxLabelSeriesData = maxLabelSeriesResult.map((obj: any) => {
   obj.y += maxVal;
+  return obj;
+});
+const finalMinLabelSeriesData = minLabelSeriesResult.map((obj: any) => {
+  obj.y += minVal;
   return obj;
 });
 
 const Line = (props: Props) => {
-  const [legendsData, setLegendData] = React.useState(props.seriesData);
+  const [legendsData, setLegendData] = React.useState([...props.seriesData]);
   const LineSeriesType: any = props.showLineMarks ? LineMarkSeries : LineSeries;
 
   const onLegendClick = React.useCallback(
@@ -98,7 +120,8 @@ const Line = (props: Props) => {
           );
         })}
 
-        {showLabels && <LabelSeries data={finalLabelSeriesData} />}
+        {showLabels && <LabelSeries data={finalMaxLabelSeriesData} />}
+        {showLabels && <LabelSeries data={finalMinLabelSeriesData} />}
 
         {showXAxis && <XAxis tickSize={0} />}
         {showTitle && (
@@ -110,8 +133,8 @@ const Line = (props: Props) => {
             tickFormat={() => <Threshold />}
             hideLine
             tickSize={0}
-            top={382}
-            left={23}
+            top={335}
+            left={15}
           />
         )}
       </FlexibleXYPlot>

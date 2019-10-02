@@ -16,29 +16,27 @@ export function alterLegendData(
 }
 
 export const maxValue: any = (data: any[]) => {
-  return data.sort((a: any, b: any) => b.y - a.y)[0].y * 0.1;
+  return data.sort((a: any, b: any) => b.y - a.y)[0].y * 0.2;
 };
 
-export function maxLabelSeriesData(dataSeriesOne: any[], dataSeriesTwo: any[]) {
-  return dataSeriesOne.reduce(
-    (accum: number[], el: dataProps, index: number) => {
-      if (el.y > dataSeriesTwo[index].y) {
-        return [...accum, el];
-      }
-      return [...accum, dataSeriesTwo[index]];
-    },
-    []
-  );
+export function maxLabelSeriesData(seriesOne: any[], seriesTwo: any[]) {
+  return seriesOne.reduce((accum: number[], el: dataProps, index: number) => {
+    if (el.y > seriesTwo[index].y) {
+      return [...accum, el];
+    }
+    return [...accum, seriesTwo[index]];
+  }, []);
 }
 
-export function minLabelSeriesData(dataSeriesOne: any[], dataSeriesTwo: any[]) {
-  return dataSeriesOne.reduce(
-    (accum: number[], el: dataProps, index: number) => {
-      if (el.y < dataSeriesTwo[index].y) {
-        return [...accum, el];
-      }
-      return [...accum, dataSeriesTwo[index]];
-    },
-    []
-  );
+export const minValue: any = (data: any[]) => {
+  return data.sort((a: any, b: any) => b.y - a.y)[0].y * 0.2;
+};
+
+export function minLabelSeriesData(seriesOne: any[], seriesTwo: any[]) {
+  return seriesOne.reduce((accum: number[], el: dataProps, index: number) => {
+    if (el.y < seriesTwo[index].y) {
+      return [...accum, el];
+    }
+    return [...accum, seriesTwo[index]];
+  }, []);
 }
