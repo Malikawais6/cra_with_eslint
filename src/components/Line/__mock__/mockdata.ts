@@ -9,7 +9,7 @@ export const dataSeriesOne = [
   { x: "Aug", y: 8, label: "$2.5" },
   { x: "Sep", y: 9, label: "$2.5" },
   { x: "Oct", y: 9.5, label: "$2.5" },
-  { x: "Nov", y: 10.5, label: "$2.5" },
+  { x: "Nov", y: 10.4, label: "$2.5" },
   { x: "Dec", y: 11, label: "$2.5" }
 ];
 
