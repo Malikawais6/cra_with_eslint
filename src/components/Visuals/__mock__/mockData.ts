@@ -1,6 +1,7 @@
 import Numeral from "numeral";
 
-import { DataProps } from "../Visuals/CardVisual/CardVisual.type";
+import { DataProps } from "../Visuals.type";
+
 const getNumeralFigure = (digit: number) => {
   return `£${Numeral(digit).format("0,000,000")}`;
 };

@@ -2,16 +2,16 @@ import React from "react";
 import { Row, Col } from "antd";
 import "antd/dist/antd.css";
 
-import { CardVisualWithChartStyled } from "./CardVisualWithChart.style";
-import Number from "../../../Number/Number";
-import Line from "../../../Line/Line";
-import { LegendSeriesData } from "../../../Line/__mock__/mockdata";
-import { ProgressBar } from "../../../ProgressBar/ProgressBar";
-import { Props } from "../CardVisual.type";
+import { NumberWithChartStyled } from "./NumberWithChart.style";
+import Number from "../Number/Number";
+import Line from "../Line/Line";
+import { LegendSeriesData } from "../Line/__mock__/mockdata";
+import { ProgressBar } from "../ProgressBar/ProgressBar";
+import { Props } from "./Visuals.type";
 
-export const CardVisualWithChart = (props: Props) => {
+export const NumberWithChart = (props: Props) => {
   return (
-    <CardVisualWithChartStyled>
+    <NumberWithChartStyled>
       <Row>
         <Col span={24} className="chart-figures">
           <Number
@@ -44,6 +44,6 @@ export const CardVisualWithChart = (props: Props) => {
           <ProgressBar percent={props.data && props.data.progressPercentage} />
         </Col>
       </Row>
-    </CardVisualWithChartStyled>
+    </NumberWithChartStyled>
   );
 };

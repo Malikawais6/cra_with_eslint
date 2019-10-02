@@ -5,18 +5,18 @@ import Card from "./Card";
 import Icon from "../Icon/Icon";
 import { GraphIcon } from "../../assets/";
 import {
-  CardVisualWithChart,
-  CardWithMediumNumberSize,
-  CardWithLargeNumberSize,
-  CardWithLargeContentSizeAndInlineProgressBar,
-  CardWithMediumContentSizeAndInlineProgressBar
-} from "../Visuals/CardVisual";
+  NumberWithChart,
+  NumberMedium,
+  NumberLarge,
+  NumberLargeWithProgressBar,
+  NumberMediumWithProgressBar
+} from "../Visuals/";
 import { StoryWrapper } from "../StoryWrapper";
 import {
   CompleteCardData,
   DefaultCardData,
   InlineProgressBarWithNumberData
-} from "../Visuals/mockData";
+} from "../Visuals/__mock__/mockData";
 
 storiesOf("Card", module).add(
   "Card with Line Chart and Progress Bar",
@@ -35,7 +35,7 @@ storiesOf("Card", module).add(
         width="353px"
         height="342px"
       >
-        <CardVisualWithChart data={CompleteCardData} />
+        <NumberWithChart data={CompleteCardData} />
       </Card>
     </StoryWrapper>
   ),
@@ -47,7 +47,7 @@ storiesOf("Card", module).add(
   () => (
     <StoryWrapper>
       <Card title="Title" showInfo={true} width="353px" height="342px">
-        <CardWithMediumNumberSize data={DefaultCardData} />
+        <NumberMedium data={DefaultCardData} />
       </Card>
     </StoryWrapper>
   ),
@@ -59,7 +59,7 @@ storiesOf("Card", module).add(
   () => (
     <StoryWrapper>
       <Card title="Title" showInfo={true} width="353px" height="342px">
-        <CardWithLargeNumberSize data={DefaultCardData} />
+        <NumberLarge data={DefaultCardData} />
       </Card>
     </StoryWrapper>
   ),
@@ -71,9 +71,7 @@ storiesOf("Card", module).add(
   () => (
     <StoryWrapper>
       <Card title="Title" showInfo={true} threshold={20}>
-        <CardWithMediumContentSizeAndInlineProgressBar
-          data={InlineProgressBarWithNumberData}
-        />
+        <NumberMediumWithProgressBar data={InlineProgressBarWithNumberData} />
       </Card>
     </StoryWrapper>
   ),
@@ -97,9 +95,7 @@ storiesOf("Card", module).add(
         showInfo={true}
         threshold={20}
       >
-        <CardWithLargeContentSizeAndInlineProgressBar
-          data={InlineProgressBarWithNumberData}
-        />
+        <NumberLargeWithProgressBar data={InlineProgressBarWithNumberData} />
       </Card>
     </StoryWrapper>
   ),
@@ -111,7 +107,7 @@ storiesOf("Card", module).add(
   () => (
     <StoryWrapper>
       <Card title="Title">
-        <CardVisualWithChart data={CompleteCardData} />
+        <NumberWithChart data={CompleteCardData} />
       </Card>
     </StoryWrapper>
   ),

@@ -2,12 +2,12 @@ import React, { useContext, createContext, Dispatch, useEffect } from "react";
 
 import { useCustomReducer } from "../../../components/customHooks/useCustomReducer";
 import {
-  CardVisualWithChart,
-  CardWithMediumNumberSize,
-  CardWithLargeNumberSize,
-  CardWithLargeContentSizeAndInlineProgressBar,
-  CardWithMediumContentSizeAndInlineProgressBar
-} from "../../../components/Visuals/CardVisual";
+  NumberWithChart,
+  NumberMedium,
+  NumberLarge,
+  NumberLargeWithProgressBar,
+  NumberMediumWithProgressBar
+} from "../../../components/Visuals";
 import {
   GiftCardVolumeData,
   RevenueCardData,
@@ -23,7 +23,7 @@ import {
   DepositsCardData,
   AverageDaysFloatHeldCardData,
   DayStockHeldCardData
-} from "../../../components/Visuals/mockData";
+} from "../../../components/Visuals/__mock__/mockData";
 
 export const INITIALIZE_DASHBOARD = "INITIALIZE_DASHBOARD";
 
@@ -76,7 +76,7 @@ const defaultState: DashboardState = {
       id: "cardVolume",
       title: "Gift Card Volume",
       data: GiftCardVolumeData,
-      visual: CardVisualWithChart,
+      visual: NumberWithChart,
       cardType: "visual",
       showGraphIcon: true,
       layout: { i: "cardVolume", x: 0, y: 0, w: 4, h: 4 }
@@ -85,7 +85,7 @@ const defaultState: DashboardState = {
       id: "revenue",
       title: "Revenue",
       data: RevenueCardData,
-      visual: CardVisualWithChart,
+      visual: NumberWithChart,
       cardType: "visual",
       showGraphIcon: true,
       layout: { i: "revenue", x: 4, y: 0, w: 4, h: 4 }
@@ -94,7 +94,7 @@ const defaultState: DashboardState = {
       id: "codeCost",
       title: "Cost per code",
       data: CostPerCodeCardData,
-      visual: CardWithMediumNumberSize,
+      visual: NumberMedium,
       cardType: "cost",
       showInfo: true,
       layout: { i: "codeCost", x: 8, y: 0, w: 4, h: 1 }
@@ -103,7 +103,7 @@ const defaultState: DashboardState = {
       id: "processingFee",
       title: "Processing fee",
       data: ProcessingFeeCardData,
-      visual: CardWithMediumNumberSize,
+      visual: NumberMedium,
       cardType: "cost",
       showInfo: true,
       layout: { i: "processingFee", x: 8, y: 3, w: 4, h: 1 }
@@ -112,7 +112,7 @@ const defaultState: DashboardState = {
       id: "saas",
       title: "SaaS",
       data: SaasCardData,
-      visual: CardWithMediumContentSizeAndInlineProgressBar,
+      visual: NumberMediumWithProgressBar,
       cardType: "cost",
       showInfo: true,
       layout: { i: "saas", x: 8, y: 6, w: 4, h: 1 }
@@ -121,7 +121,7 @@ const defaultState: DashboardState = {
       id: "miscallaneous",
       title: "Miscallaneous",
       data: MiscallaneousCardData,
-      visual: CardWithMediumNumberSize,
+      visual: NumberMedium,
       cardType: "cost",
       layout: { i: "miscallaneous", x: 8, y: 9, w: 4, h: 1 }
     },
@@ -129,7 +129,7 @@ const defaultState: DashboardState = {
       id: "runway",
       title: "Runway",
       data: RunawayCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
 
       layout: { i: "runway", x: 0, y: 12, w: 4, h: 1.23 }
     },
@@ -137,7 +137,7 @@ const defaultState: DashboardState = {
       id: "bankCash",
       title: "Cash in Bank",
       data: CashInBankCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
       showGraphIcon: true,
       layout: { i: "bankCash", x: 4, y: 12, w: 4, h: 1.23 }
     },
@@ -145,7 +145,7 @@ const defaultState: DashboardState = {
       id: "monthlyBudget",
       title: "Monthly budget",
       data: MonthlyBudgetCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
       showInfo: true,
       layout: { i: "monthlyBudget", x: 8, y: 12, w: 4, h: 1.23 }
     },
@@ -153,21 +153,21 @@ const defaultState: DashboardState = {
       id: "floatsBrand",
       title: "Floats with Brand",
       data: FloatsWithBrandCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
       layout: { i: "floatsBrand", x: 0, y: 16, w: 4, h: 1.23 }
     },
     {
       id: "stockheld",
       title: "Stock held",
       data: StockHeldCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
       layout: { i: "stockheld", x: 4, y: 16, w: 4, h: 1.23 }
     },
     {
       id: "deposits",
       title: "Deposits",
       data: DepositsCardData,
-      visual: CardWithLargeContentSizeAndInlineProgressBar,
+      visual: NumberLargeWithProgressBar,
       showInfo: true,
       showGraphIcon: true,
       layout: { i: "deposits", x: 8, y: 16, w: 4, h: 1.23 }
@@ -176,14 +176,14 @@ const defaultState: DashboardState = {
       id: "avgDayFloatHeld",
       title: "Average days float held",
       data: AverageDaysFloatHeldCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
       layout: { i: "avgDayFloatHeld", x: 0, y: 20, w: 4, h: 1.23 }
     },
     {
       id: "daysStockheld",
       title: "days stock held",
       data: DayStockHeldCardData,
-      visual: CardWithLargeNumberSize,
+      visual: NumberLarge,
       layout: { i: "daysStockheld", x: 4, y: 20, w: 4, h: 1.23 }
     }
   ],

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardVisualWithChartStyled = styled.div<any>`
+export const NumberWithChartStyled = styled.div<any>`
   .chart-style {
     height: 160px;
     margin-left: -54px;

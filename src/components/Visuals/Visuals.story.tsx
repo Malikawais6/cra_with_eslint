@@ -1,61 +1,47 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
-import { CardVisualWithChart } from "./CardVisual/CardVisualWithChart/CardVisualWithChart";
-import { CardWithMediumNumberSize } from "./CardVisual/CardWithContentSizes/CardWithMediumNumberSize";
-import { CardWithLargeNumberSize } from "./CardVisual/CardWithContentSizes/CardWithLargeNumberSize";
-import { CardWithMediumContentSizeAndInlineProgressBar } from "./CardVisual/CardWithInlineProgressBar/CardWithMediumContentSizeAndProgressBar";
-import { CardWithLargeContentSizeAndInlineProgressBar } from "./CardVisual/CardWithInlineProgressBar/CardWithLargeContentSizeAndProressBar";
+import {
+  NumberWithChart,
+  NumberMedium,
+  NumberLarge,
+  NumberLargeWithProgressBar,
+  NumberMediumWithProgressBar
+} from "./index";
 
 import {
   DefaultCardData,
   CompleteCardData,
   InlineProgressBarWithNumberData
-} from "../Visuals/mockData";
+} from "./__mock__/mockData";
 import { StoryWrapper } from "../StoryWrapper";
 
-storiesOf("Card Visual", module).add("Card Visual With Chart", () => (
+storiesOf("Visual", module).add("Number With Chart", () => (
   <StoryWrapper>
-    <CardVisualWithChart data={CompleteCardData} />
+    <NumberWithChart data={CompleteCardData} />
   </StoryWrapper>
 ));
 
-storiesOf("Card Visual", module).add(
-  "Card Visual With Medium Number Size",
-  () => (
-    <StoryWrapper>
-      <CardWithMediumNumberSize data={DefaultCardData} />
-    </StoryWrapper>
-  )
-);
+storiesOf("Visual", module).add("Number Medium", () => (
+  <StoryWrapper>
+    <NumberMedium data={DefaultCardData} />
+  </StoryWrapper>
+));
 
-storiesOf("Card Visual", module).add(
-  "Card Visual With Large Number Size",
-  () => (
-    <StoryWrapper>
-      <CardWithLargeNumberSize data={DefaultCardData} />
-    </StoryWrapper>
-  )
-);
+storiesOf("Visual", module).add("Number Large", () => (
+  <StoryWrapper>
+    <NumberLarge data={DefaultCardData} />
+  </StoryWrapper>
+));
 
-storiesOf("Card Visual", module).add(
-  "Card Visual With Medium Content and Inline Progress Bar",
-  () => (
-    <StoryWrapper>
-      <CardWithMediumContentSizeAndInlineProgressBar
-        data={InlineProgressBarWithNumberData}
-      />
-    </StoryWrapper>
-  )
-);
+storiesOf("Visual", module).add("Number Medium With Progress Bar", () => (
+  <StoryWrapper>
+    <NumberMediumWithProgressBar data={InlineProgressBarWithNumberData} />
+  </StoryWrapper>
+));
 
-storiesOf("Card Visual", module).add(
-  "Card Visual With Large Content and Inline Progress Bar",
-  () => (
-    <StoryWrapper>
-      <CardWithLargeContentSizeAndInlineProgressBar
-        data={InlineProgressBarWithNumberData}
-      />
-    </StoryWrapper>
-  )
-);
+storiesOf("Visual", module).add("Number Large With Progress Bar", () => (
+  <StoryWrapper>
+    <NumberLargeWithProgressBar data={InlineProgressBarWithNumberData} />
+  </StoryWrapper>
+));

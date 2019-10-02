@@ -1,17 +1,17 @@
 import React from "react";
 
-import { CardVisualInlineProgressStyled } from "./CardWithInlineProgressBar.style";
-import Number from "../../../Number/Number";
-import { ProgressBar } from "../../../ProgressBar/ProgressBar";
-import { Props } from "../CardVisual.type";
+import { NumberWithProgressStyled } from "./NumberWithProgressBar.style";
+import Number from "../Number/Number";
+import { ProgressBar } from "../ProgressBar/ProgressBar";
+import { Props } from "./Visuals.type";
 
-export const CardWithLargeContentSizeAndInlineProgressBar = (props: Props) => {
+export const NumberMediumWithProgressBar = (props: Props) => {
   return (
-    <CardVisualInlineProgressStyled>
+    <NumberWithProgressStyled>
       <div className="inlineNumberWithProgress">
         <Number
           content={props.data && props.data.numberContent}
-          size={"large"}
+          size={"medium"}
           threshold={props.data && props.data.numberThreshold}
           thresholdStatus={props.data && props.data.thresholdStatus}
         />
@@ -27,6 +27,6 @@ export const CardWithLargeContentSizeAndInlineProgressBar = (props: Props) => {
           </span>
         </div>
       </div>
-    </CardVisualInlineProgressStyled>
+    </NumberWithProgressStyled>
   );
 };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CardVisualInlineProgressStyled = styled.div<any>`
+export const NumberWithProgressStyled = styled.div<any>`
   .ant-row {
     margin-top: ${(props: any) => (props.showChart ? "10px" : "0px")};
   }
