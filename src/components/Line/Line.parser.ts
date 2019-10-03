@@ -16,7 +16,7 @@ export function alterLegendData(
 }
 
 export const maxValue: any = (data: any[]) => {
-  return data.sort((a: any, b: any) => b.y - a.y)[0].y * 0.2;
+  return data.sort((a: any, b: any) => b.y - a.y)[0].y * 0.13;
 };
 
 export function maxLabelSeriesData(seriesOne: any[], seriesTwo: any[]) {
@@ -27,10 +27,6 @@ export function maxLabelSeriesData(seriesOne: any[], seriesTwo: any[]) {
     return [...accum, seriesTwo[index]];
   }, []);
 }
-
-export const minValue: any = (data: any[]) => {
-  return data.sort((a: any, b: any) => b.y - a.y)[0].y * 0.2;
-};
 
 export function minLabelSeriesData(seriesOne: any[], seriesTwo: any[]) {
   return seriesOne.reduce((accum: number[], el: dataProps, index: number) => {

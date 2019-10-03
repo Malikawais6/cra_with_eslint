@@ -404,6 +404,7 @@ declare module "react-vis" {
     rotation?: number; //default: 0
     labelAnchorX?: string;
     labelAnchorY?: string;
+    className?: string;
   }
   export class LabelSeries extends AbstractSeries<LabelSeriesProps> {}
 

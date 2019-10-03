@@ -25,11 +25,10 @@ export const LineStyles = styled.div<Props>`
     transform: rotate(360deg);
     transform: translate(70px, 20px);
   }
-  /* .rv-xy-plot__series {
-    .rv-xy-plot__series--label {
-      transform: translate(10px, -36px);
-    }
-  } */
+
+  .label-series {
+    fill: #a7a7bb;
+  }
 `;
 
 export const ThresholdStyled = styled.div`
@@ -37,6 +36,6 @@ export const ThresholdStyled = styled.div`
 `;
 
 export const LineChartStory = styled.div`
-  width: 500px;
-  height: 300px;
+  width: 600px;
+  height: 350px;
 `;

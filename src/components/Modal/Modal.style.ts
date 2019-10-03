@@ -17,6 +17,7 @@ export const ModalStyled = styled(Modal)`
   .ant-modal-header {
     border-bottom: none;
     padding-top: 27px;
+    padding-bottom: 0px;
     .ant-modal-title {
       font-size: 24px;
       font-weight: 500;
